@@ -1,0 +1,153 @@
+/* Eye Safe Writer palette: Gruvbox. Enable only one Eye Safe palette snippet at a time. */
+
+body.theme-light {
+
+  --color-base-00: #fbf1c7;
+  --color-base-05: #f2e5bc;
+  --color-base-10: #ebdbb2;
+  --color-base-20: #d5c4a1;
+  --color-base-25: #c7b58d;
+  --color-base-30: #bdae93;
+  --color-base-35: #a89984;
+  --color-base-40: #928374;
+  --color-base-50: #7c6f64;
+  --color-base-60: #665c54;
+  --color-base-70: #504945;
+  --color-base-100: #3c3836;
+
+  --background-primary: #fbf1c7;
+  --background-primary-alt: #f2e5bc;
+  --background-secondary: #ebdbb2;
+  --background-secondary-alt: #e3d3a6;
+  --background-modifier-hover: rgba(60, 56, 54, 0.07);
+  --background-modifier-active-hover: rgba(60, 56, 54, 0.11);
+  --background-modifier-border: #d5c4a1;
+  --background-modifier-border-hover: #bdae93;
+  --background-modifier-border-focus: #458588;
+  --background-modifier-box-shadow: rgba(60, 56, 54, 0.14);
+  --background-modifier-form-field: #fff7d6;
+
+  --text-normal: #3c3836;
+  --text-muted: #665c54;
+  --text-faint: #928374;
+  --text-on-accent: #fbf1c7;
+  --text-accent: #076678;
+  --text-accent-hover: #005b67;
+  --text-selection: rgba(69, 133, 136, 0.22);
+  --text-highlight-bg: rgba(250, 189, 47, 0.32);
+
+  --interactive-normal: #ebdbb2;
+  --interactive-hover: #e2d0a5;
+  --interactive-accent: #458588;
+  --interactive-accent-hover: #076678;
+
+  --writer-yellow: #b57614;
+  --writer-red: #9d0006;
+  --writer-blue: #076678;
+  --writer-green: #79740e;
+  --writer-purple: #8f3f71;
+  --writer-berry: #b16286;
+  --writer-orange: #af3a03;
+
+  --paper-grain-opacity: 0.16;
+  --paper-fiber-opacity: 0.18;
+  --paper-fiber-color: rgba(80, 73, 69, 0.08);
+  --paper-grain-blend: multiply;
+  --paper-surface: #fff7d6;
+  --paper-edge-color: rgba(80, 73, 69, 0.12);
+  --paper-shadow: rgba(60, 56, 54, 0.09);
+  --focus-line-color: rgba(175, 58, 3, 0.12);
+
+  --icon-color: #7c6f64;
+  --icon-color-hover: #3c3836;
+  --icon-color-active: #076678;
+  --nav-item-color: #665c54;
+  --nav-item-color-hover: #3c3836;
+  --nav-item-color-active: #3c3836;
+  --nav-item-background-hover: rgba(255, 255, 255, 0.26);
+  --nav-item-background-active: rgba(69, 133, 136, 0.14);
+  --nav-item-background-selected: rgba(69, 133, 136, 0.17);
+
+  --code-background: #ebdbb2;
+  --code-normal: #79740e;
+  --blockquote-border-color: #79740e;
+  --table-border-color: #d5c4a1;
+  --table-header-background: #f2e5bc;
+  --table-row-alt-background: rgba(255, 255, 255, 0.22);
+}
+
+body.theme-dark {
+
+  --color-base-00: #282828;
+  --color-base-05: #32302f;
+  --color-base-10: #3c3836;
+  --color-base-20: #504945;
+  --color-base-25: #5a524c;
+  --color-base-30: #665c54;
+  --color-base-35: #7c6f64;
+  --color-base-40: #928374;
+  --color-base-50: #a89984;
+  --color-base-60: #bdae93;
+  --color-base-70: #d5c4a1;
+  --color-base-100: #ebdbb2;
+
+  --background-primary: #282828;
+  --background-primary-alt: #32302f;
+  --background-secondary: #1d2021;
+  --background-secondary-alt: #1b1b1b;
+  --background-modifier-hover: rgba(235, 219, 178, 0.06);
+  --background-modifier-active-hover: rgba(235, 219, 178, 0.1);
+  --background-modifier-border: #3c3836;
+  --background-modifier-border-hover: #665c54;
+  --background-modifier-border-focus: #83a598;
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.32);
+  --background-modifier-form-field: #32302f;
+
+  --text-normal: #ebdbb2;
+  --text-muted: #bdae93;
+  --text-faint: #928374;
+  --text-on-accent: #1d2021;
+  --text-accent: #83a598;
+  --text-accent-hover: #8ec07c;
+  --text-selection: rgba(131, 165, 152, 0.24);
+  --text-highlight-bg: rgba(250, 189, 47, 0.25);
+
+  --interactive-normal: #3c3836;
+  --interactive-hover: #504945;
+  --interactive-accent: #83a598;
+  --interactive-accent-hover: #8ec07c;
+
+  --writer-yellow: #fabd2f;
+  --writer-red: #fb4934;
+  --writer-blue: #83a598;
+  --writer-green: #b8bb26;
+  --writer-purple: #d3869b;
+  --writer-berry: #fe8019;
+  --writer-orange: #fe8019;
+
+  --paper-grain-opacity: 0.11;
+  --paper-fiber-opacity: 0.12;
+  --paper-fiber-color: rgba(235, 219, 178, 0.08);
+  --paper-grain-blend: screen;
+  --paper-surface: #2f2f2f;
+  --paper-edge-color: rgba(0, 0, 0, 0.28);
+  --paper-shadow: rgba(0, 0, 0, 0.26);
+  --focus-line-color: rgba(254, 128, 25, 0.1);
+
+  --icon-color: #928374;
+  --icon-color-hover: #ebdbb2;
+  --icon-color-active: #83a598;
+  --nav-item-color: #bdae93;
+  --nav-item-color-hover: #ebdbb2;
+  --nav-item-color-active: #ebdbb2;
+  --nav-item-background-hover: rgba(235, 219, 178, 0.06);
+  --nav-item-background-active: rgba(131, 165, 152, 0.13);
+  --nav-item-background-selected: rgba(131, 165, 152, 0.16);
+
+  --code-background: #32302f;
+  --code-normal: #b8bb26;
+  --blockquote-border-color: #8ec07c;
+  --table-border-color: #3c3836;
+  --table-header-background: #32302f;
+  --table-row-alt-background: rgba(255, 255, 255, 0.02);
+}

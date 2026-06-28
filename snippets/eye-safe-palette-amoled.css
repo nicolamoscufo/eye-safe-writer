@@ -1,0 +1,156 @@
+/* Eye Safe Writer palette: AMOLED. Enable only one Eye Safe palette snippet at a time. */
+
+body.theme-light {
+  color-scheme: light;
+
+  --color-base-00: #f7f7f2;
+  --color-base-05: #efefe8;
+  --color-base-10: #e7e7df;
+  --color-base-20: #d9d9ce;
+  --color-base-25: #c8c8bd;
+  --color-base-30: #b4b4aa;
+  --color-base-35: #999991;
+  --color-base-40: #7b7f78;
+  --color-base-50: #666a64;
+  --color-base-60: #555a55;
+  --color-base-70: #3a3e3b;
+  --color-base-100: #1f2220;
+
+  --background-primary: #f7f7f2;
+  --background-primary-alt: #efefe8;
+  --background-secondary: #e7e7df;
+  --background-secondary-alt: #d9d9ce;
+  --background-modifier-hover: rgba(31, 34, 32, 0.07);
+  --background-modifier-active-hover: rgba(31, 34, 32, 0.11);
+  --background-modifier-border: #c8c8bd;
+  --background-modifier-border-hover: #999991;
+  --background-modifier-border-focus: #00766f;
+  --background-modifier-box-shadow: rgba(31, 34, 32, 0.12);
+  --background-modifier-form-field: #ffffff;
+
+  --text-normal: #1f2220;
+  --text-muted: #555a55;
+  --text-faint: #7b7f78;
+  --text-on-accent: #f7f7f2;
+  --text-accent: #00766f;
+  --text-accent-hover: #005f59;
+  --text-selection: rgba(0, 118, 111, 0.2);
+  --text-highlight-bg: rgba(159, 111, 0, 0.25);
+
+  --interactive-normal: #e7e7df;
+  --interactive-hover: #d9d9ce;
+  --interactive-accent: #00766f;
+  --interactive-accent-hover: #005f59;
+
+  --writer-yellow: #8a6500;
+  --writer-red: #b13c3c;
+  --writer-blue: #00766f;
+  --writer-green: #2e7d4f;
+  --writer-purple: #6f53a8;
+  --writer-berry: #b24d8a;
+  --writer-orange: #a85f00;
+
+  --paper-grain-opacity: 0.12;
+  --paper-fiber-opacity: 0.12;
+  --paper-fiber-color: rgba(31, 34, 32, 0.06);
+  --paper-grain-blend: multiply;
+  --paper-surface: #ffffff;
+  --paper-edge-color: rgba(31, 34, 32, 0.08);
+  --paper-shadow: rgba(31, 34, 32, 0.07);
+  --focus-line-color: rgba(168, 95, 0, 0.11);
+
+  --icon-color: #7b7f78;
+  --icon-color-hover: #1f2220;
+  --icon-color-active: #00766f;
+  --nav-item-color: #555a55;
+  --nav-item-color-hover: #1f2220;
+  --nav-item-color-active: #1f2220;
+  --nav-item-background-hover: rgba(255, 255, 255, 0.36);
+  --nav-item-background-active: rgba(0, 118, 111, 0.13);
+  --nav-item-background-selected: rgba(0, 118, 111, 0.16);
+
+  --code-background: #e7e7df;
+  --code-normal: #2e7d4f;
+  --blockquote-border-color: #2e7d4f;
+  --table-border-color: #c8c8bd;
+  --table-header-background: #efefe8;
+  --table-row-alt-background: rgba(255, 255, 255, 0.24);
+}
+
+body.theme-dark {
+
+  color-scheme: dark;
+
+  --color-base-00: #000000;
+  --color-base-05: #050505;
+  --color-base-10: #0a0a0a;
+  --color-base-20: #111111;
+  --color-base-25: #161616;
+  --color-base-30: #202020;
+  --color-base-35: #2a2a2a;
+  --color-base-40: #3a3a3a;
+  --color-base-50: #555555;
+  --color-base-60: #777777;
+  --color-base-70: #aaaaaa;
+  --color-base-100: #f0f0ea;
+
+  --background-primary: #000000;
+  --background-primary-alt: #050505;
+  --background-secondary: #030303;
+  --background-secondary-alt: #000000;
+  --background-modifier-hover: rgba(240, 240, 234, 0.05);
+  --background-modifier-active-hover: rgba(240, 240, 234, 0.08);
+  --background-modifier-border: #151515;
+  --background-modifier-border-hover: #303030;
+  --background-modifier-border-focus: #00d1c1;
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.7);
+  --background-modifier-form-field: #070707;
+
+  --text-normal: #ecece7;
+  --text-muted: #b8b8b0;
+  --text-faint: #6f6f68;
+  --text-on-accent: #000000;
+  --text-accent: #00d1c1;
+  --text-accent-hover: #50f0df;
+  --text-selection: rgba(0, 209, 193, 0.22);
+  --text-highlight-bg: rgba(255, 209, 102, 0.22);
+
+  --interactive-normal: #0a0a0a;
+  --interactive-hover: #141414;
+  --interactive-accent: #00c2b2;
+  --interactive-accent-hover: #50f0df;
+
+  --writer-yellow: #ffd166;
+  --writer-red: #ff6b6b;
+  --writer-blue: #5cc8ff;
+  --writer-green: #75f0a0;
+  --writer-purple: #c792ea;
+  --writer-berry: #ff8bd1;
+  --writer-orange: #ff9f43;
+
+  --paper-grain-opacity: 0.06;
+  --paper-fiber-opacity: 0.06;
+  --paper-fiber-color: rgba(255, 255, 255, 0.05);
+  --paper-grain-blend: screen;
+  --paper-surface: #000000;
+  --paper-edge-color: rgba(255, 255, 255, 0.03);
+  --paper-shadow: rgba(0, 0, 0, 0);
+  --focus-line-color: rgba(255, 159, 67, 0.1);
+
+  --icon-color: #6f6f68;
+  --icon-color-hover: #ecece7;
+  --icon-color-active: #00d1c1;
+  --nav-item-color: #b8b8b0;
+  --nav-item-color-hover: #ecece7;
+  --nav-item-color-active: #ecece7;
+  --nav-item-background-hover: rgba(255, 255, 255, 0.04);
+  --nav-item-background-active: rgba(0, 209, 193, 0.13);
+  --nav-item-background-selected: rgba(0, 209, 193, 0.16);
+
+  --code-background: #080808;
+  --code-normal: #75f0a0;
+  --blockquote-border-color: #75f0a0;
+  --table-border-color: #151515;
+  --table-header-background: #070707;
+  --table-row-alt-background: rgba(255, 255, 255, 0.018);
+}
