@@ -67,7 +67,7 @@ Suggested entry for `obsidianmd/obsidian-releases`:
 {
   "name": "Eye Safe Writer",
   "author": "Nicola",
-  "repo": "screamkface/eye-safe-writer"
+  "repo": "nicolamoscufo/eye-safe-writer"
 }
 ```
 
