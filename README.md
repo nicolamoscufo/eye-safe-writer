@@ -7,68 +7,77 @@ Warm, low-distraction Obsidian theme for long writing sessions.
 ## Features
 
 - Light and dark palettes tuned for eye comfort.
-- Style Settings palette selector: Salvia, Gruvbox, AMOLED, Tokyo Night, Rose Pine, Solarized, Nord, Cappuccino. Every palette includes light and dark tokens.
-- Palette tokens override full UI surface set, so selected palette controls workspace, text, accents, navigation, code, tables, callouts, and focus states.
-- Customization controls for typography, line width, heading style, link style, UI density, panel shape, panel shadows, writing focus intensity, and texture.
-- Stable sidebar/ribbon layout without extra CSS snippets.
+- Style Settings palette selector: Salvia, Gruvbox, AMOLED, Tokyo Night, Rose Pine, Solarized, Nord, Cappuccino.
+- Full UI token system controlling workspace, text, accents, navigation, code, tables, callouts, and focus states.
+- Typography, line width, headings, links, UI density, panels, shadows, and paper texture controls.
+- Writing focus mode with reduced visual distraction.
+- Built-in compatibility layer for productivity workflows.
+- Eye Safe Pomodoro integration snippet for focused writing sessions.
 - Reduced-motion, high-contrast, forced-colors, print, and small-screen support.
-- Paper texture controls: grain type, grain amount, fiber amount, grain scale, and fiber spacing.
 
 ## Install
 
 1. Copy `Eye Safe Writer` into `.obsidian/themes/`.
-2. Enable theme in Obsidian Appearance settings.
-3. Optional: install Style Settings plugin to change palette, typography, panels, focus mode, and texture controls.
+2. Enable the theme in Obsidian Appearance settings.
+3. Install the Style Settings plugin for advanced customization.
+4. For Pomodoro support, enable `snippets/eye-safe-pomodoro.css` from Obsidian CSS snippets.
+
+## Recommended Workflow
+
+Eye Safe Writer works well with:
+
+- Obsidian Style Settings for theme customization.
+- Pomodoro Timer plugins for timed deep-work sessions.
+- Focus mode plugins for distraction-free writing.
+- Daily notes, Canvas, Tasks, and markdown-based knowledge management.
 
 ## Style Settings
 
-Eye Safe Writer exposes customization without editing CSS manually:
+Available controls:
 
-- Palette: full light/dark variants for Salvia, Gruvbox, AMOLED, Tokyo Night, Rose Pine, Solarized, Nord, Cappuccino.
-- Manual colors: link, link hover, button accent, bold, italic, tags, and H1-H6.
-- Heading style: colored, monochrome, accent-only, or muted.
-- Link style: clean, underlined, or high contrast.
-- Typography: text size, line height, line width, H1 size, H2 size.
-- UI density: compact, comfortable, spacious.
-- Panels: paper, flat, framed, or soft shadow.
-- Texture: paper grain, fine dust, linen weave, speckles, diagonal fibers, or none.
-- Texture amount: grain opacity, fiber opacity, grain scale, fiber spacing.
-- Writing focus: calm, deep focus, or no dimming, plus opacity sliders.
+- Palette variants and light/dark themes.
+- Manual colors for links, accents, tags, emphasis, and headings.
+- Heading styles.
+- Typography scale and reading width.
+- UI density.
+- Panel appearance.
+- Paper textures.
+- Writing focus intensity.
 
-## Palette Notes
+## Pomodoro Integration
 
-Preferred: use Style Settings plugin and keep `eye-safe-palette-*` snippets disabled.
+The included `eye-safe-pomodoro.css` snippet provides:
 
-Fallback: if Style Settings is not installed, copy snippets from `snippets/` into `.obsidian/snippets/` and enable exactly one `eye-safe-palette-*` snippet. Palette snippets are generated from same tokens as `theme.css`, so Gruvbox, Tokyo Night, Nord, and other choices override full UI color set.
+- Calm timer cards matching the current theme palette.
+- Large readable countdown typography.
+- Soft buttons and reduced visual noise.
+- Reduced-motion accessibility support.
+
+It is designed to work with modern Obsidian Pomodoro plugins without changing plugin functionality.
 
 ## QA Checklist
 
 - Obsidian desktop on Windows, macOS, Linux.
-- Obsidian mobile or narrow desktop under 700px.
-- Light and dark mode for every palette.
-- Sidebar open, collapsed, resized, and stacked tabs.
-- File explorer, search, backlinks, graph, canvas, settings, command palette, modals, popovers.
+- Obsidian mobile and narrow layouts.
+- Light and dark mode.
+- Sidebar, ribbon, tabs, search, backlinks, graph, canvas, settings, modals.
 - Zoom 80%, 100%, 150%.
-- Keyboard navigation and visible focus rings.
+- Keyboard navigation and focus states.
 - Reduced motion, high contrast, forced colors, print/export.
 
 ## Release
 
 - Update `manifest.json` version.
 - Add entry to `CHANGELOG.md`.
-- Test checklist above.
-- Add screenshots for light and dark palettes before public release.
+- Test supported Obsidian workflows.
+- Update screenshots when releasing major visual changes.
 
 ## Community Theme Submission
-
-Suggested entry for `obsidianmd/obsidian-releases`:
 
 ```json
 {
   "name": "Eye Safe Writer",
   "author": "Nicola",
-  "repo": "screamkface/eye-safe-writer"
+  "repo": "nicolamoscufo/eye-safe-writer"
 }
 ```
-
-Use a dedicated GitHub repo with `theme.css`, `manifest.json`, `README.md`, `LICENSE.md`, and `screenshot.png` at repository root.
