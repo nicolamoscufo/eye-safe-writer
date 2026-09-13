@@ -1,0 +1,52 @@
+/*
+Eye Safe Writer - Pomodoro Timer integration
+Designed for Obsidian Pomodoro Timer / Periodic Notes widgets.
+Enable from Settings > Appearance > CSS snippets.
+*/
+
+/* Calm timer container */
+.pomodoro-timer,
+.pomodoro-plugin,
+.workspace-leaf-content .pomodoro {
+  border-radius: 18px;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: var(--input-shadow);
+  padding: 1rem;
+  color: var(--text-normal);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Large distraction-free countdown */
+.pomodoro-timer .timer,
+.pomodoro-plugin .timer {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--interactive-accent);
+}
+
+/* Focus mode: reduce visual noise */
+.is-focused .pomodoro-timer,
+.mod-root .pomodoro-timer {
+  backdrop-filter: blur(12px);
+}
+
+/* Gentle buttons */
+.pomodoro-timer button,
+.pomodoro-plugin button {
+  border-radius: 999px;
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+
+.pomodoro-timer button:hover,
+.pomodoro-plugin button:hover {
+  opacity: 0.85;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pomodoro-timer button,
+  .pomodoro-plugin button {
+    transition: none;
+  }
+}
