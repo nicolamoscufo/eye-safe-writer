@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.5.0 - 2026-09-13
+
+- Added Eye Safe Pomodoro integration snippet for distraction-free focus sessions.
+- Added calm timer cards with adaptive theme variables and reduced-motion support.
+- Improved compatibility with modern Obsidian workflows and productivity plugins.
+- Updated release metadata for the latest theme iteration.
+
 ## 1.4.0 - 2026-06-18
 
 - Added broad Style Settings controls for palette, heading style, link style, typography, UI density, panels, paper texture, and writing focus.
@@ -14,7 +21,6 @@
 - Added minimal paper-panel design for Obsidian sidebars, modals, menus, prompts, settings, metadata, search, and non-markdown panels.
 - Hidden rectangular sidebar leaf backgrounds behind rounded paper panels.
 - Kept active/selected states text-led and subtle to avoid competing geometries.
-- Added high-contrast panel fallback with shadows disabled.
 
 ## 1.2.0 - 2026-06-16
 
