@@ -377,7 +377,7 @@ settings:
     id: quiet-ui-opacity
     title: Normal UI opacity
     type: variable-number-slider
-    default: 0.78
+    default: 0.84
     min: 0.35
     max: 1
     step: 0.01
@@ -385,7 +385,7 @@ settings:
     id: writing-quiet-ui-opacity
     title: Writing UI opacity
     type: variable-number-slider
-    default: 0.42
+    default: 0.56
     min: 0.1
     max: 1
     step: 0.01
@@ -393,10 +393,33 @@ settings:
     id: writing-inactive-pane-opacity
     title: Inactive pane opacity
     type: variable-number-slider
-    default: 0.46
+    default: 0.62
     min: 0.1
     max: 1
     step: 0.01
+  -
+    id: eye-safe-readability
+    title: Readability and Accessibility
+    type: heading
+    level: 1
+  -
+    id: eye-safe-high-legibility
+    title: Clear navigation
+    description: Keep navigation and inactive panes visible even when writing.
+    type: class-toggle
+    default: false
+  -
+    id: eye-safe-active-line-guide
+    title: Active writing line
+    description: Add a gentle highlight behind the current editor line.
+    type: class-toggle
+    default: false
+  -
+    id: eye-safe-flat-writing-surface
+    title: Flat editor background
+    description: Remove the writing surface vignette while retaining the chosen palette.
+    type: class-toggle
+    default: false
 */
 
 body {
@@ -466,12 +489,12 @@ body {
 
   --anim-duration-fast: 80ms;
   --anim-duration-moderate: 120ms;
-  --quiet-ui-opacity: 0.78;
-  --hidden-ui-opacity: 0.52;
-  --writing-quiet-ui-opacity: 0.42;
-  --writing-hidden-ui-opacity: 0.24;
-  --writing-secondary-ui-opacity: 0.32;
-  --writing-inactive-pane-opacity: 0.46;
+  --quiet-ui-opacity: 0.84;
+  --hidden-ui-opacity: 0.66;
+  --writing-quiet-ui-opacity: 0.56;
+  --writing-hidden-ui-opacity: 0.4;
+  --writing-secondary-ui-opacity: 0.56;
+  --writing-inactive-pane-opacity: 0.62;
   --paper-edge-size: clamp(26px, 8vw, 120px);
   --paper-grain-size: 180px;
   --paper-fiber-gap: 6px;
@@ -485,6 +508,7 @@ body {
   --sidebar-top-row-height: 56px;
   --sidebar-ribbon-width: 44px;
   --focus-ring-shadow: 0 0 0 3px var(--focus-line-color);
+  --focus-ring-shadow: 0 0 0 3px color-mix(in srgb, var(--interactive-accent) 30%, transparent);
 }
 
 .theme-light {
@@ -1982,7 +2006,7 @@ body:not(.is-mobile) .mod-left-split .nav-header {
   background: transparent;
   border-radius: var(--radius-m);
   color: var(--icon-color);
-  opacity: 0.52;
+  opacity: 0.74;
   transition:
     background-color var(--anim-duration-fast) ease,
     color var(--anim-duration-fast) ease,
@@ -2091,7 +2115,7 @@ body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .w
   border-radius: var(--radius-m);
   color: var(--text-faint);
   background: transparent;
-  opacity: 0.58;
+  opacity: 0.78;
   box-shadow: none;
   transition:
     background-color var(--anim-duration-fast) ease,
@@ -2130,7 +2154,7 @@ body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .w
   color: var(--text-muted);
   font-size: var(--font-ui-small);
   font-weight: 500;
-  opacity: 0.7;
+  opacity: 0.88;
   transition: opacity var(--anim-duration-fast) ease;
 }
 
@@ -2141,12 +2165,14 @@ body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .w
 
 .view-actions,
 .view-header-nav-buttons {
-  opacity: 0.34;
+  opacity: 0.64;
   transition: opacity var(--anim-duration-fast) ease;
 }
 
 .view-header:hover .view-actions,
-.view-header:hover .view-header-nav-buttons {
+.view-header:hover .view-header-nav-buttons,
+.view-header:focus-within .view-actions,
+.view-header:focus-within .view-header-nav-buttons {
   opacity: 1;
 }
 
@@ -2159,12 +2185,13 @@ body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .w
 }
 
 .titlebar-button-container {
-  opacity: 0.38;
+  opacity: 0.68;
   transition: opacity var(--anim-duration-fast) ease;
 }
 
-.titlebar:hover .titlebar-button-container {
-  opacity: 0.9;
+.titlebar:hover .titlebar-button-container,
+.titlebar:focus-within .titlebar-button-container {
+  opacity: 1;
 }
 
 .titlebar-button:hover {
@@ -2231,7 +2258,7 @@ body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .w
   background: transparent;
   border-radius: var(--radius-m);
   color: var(--icon-color);
-  opacity: 0.48;
+  opacity: 0.72;
   transition:
     background-color var(--anim-duration-fast) ease,
     color var(--anim-duration-fast) ease,
@@ -2283,7 +2310,7 @@ body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .w
 
 .nav-folder-collapse-indicator {
   color: var(--text-faint);
-  opacity: 0.54;
+  opacity: 0.74;
 }
 
 .nav-file-title.is-active {
@@ -3044,6 +3071,117 @@ select:focus,
   .callout {
     background: var(--background-primary-alt);
     border-color: var(--background-modifier-border);
+  }
+}
+
+/* Readability options: opt-in, palette-independent, and keyboard friendly. */
+body.eye-safe-high-legibility {
+  --quiet-ui-opacity: 1;
+  --hidden-ui-opacity: 1;
+  --writing-quiet-ui-opacity: 1;
+  --writing-hidden-ui-opacity: 1;
+  --writing-secondary-ui-opacity: 1;
+  --writing-inactive-pane-opacity: 1;
+}
+
+body.eye-safe-high-legibility .workspace-tab-header,
+body.eye-safe-high-legibility .workspace-ribbon .clickable-icon,
+body.eye-safe-high-legibility .nav-action-button,
+body.eye-safe-high-legibility .nav-header .clickable-icon,
+body.eye-safe-high-legibility .view-header-title,
+body.eye-safe-high-legibility .view-actions,
+body.eye-safe-high-legibility .view-header-nav-buttons,
+body.eye-safe-high-legibility .titlebar-button-container,
+body.eye-safe-high-legibility .nav-folder-collapse-indicator {
+  opacity: 1;
+}
+
+body.eye-safe-active-line-guide .markdown-source-view.mod-cm6 .cm-line.cm-active {
+  background: var(--background-modifier-hover);
+  background: color-mix(in srgb, var(--interactive-accent) 7%, transparent);
+  border-radius: var(--radius-s);
+}
+
+body.eye-safe-flat-writing-surface .workspace-leaf-content[data-type="markdown"] {
+  background: var(--background-primary);
+}
+
+/* Focusing a control must not leave it visually dimmed. */
+.workspace-ribbon .clickable-icon:focus-visible,
+.side-dock-actions .clickable-icon:focus-visible,
+.workspace-ribbon-collapse-btn .clickable-icon:focus-visible,
+.nav-action-button:focus-visible,
+.nav-header .clickable-icon:focus-visible,
+.workspace-tab-header:focus-visible,
+.view-header .clickable-icon:focus-visible,
+.titlebar-button:focus-visible {
+  color: var(--icon-color-hover);
+  opacity: 1;
+}
+
+@media (max-width: 700px) {
+  .markdown-rendered pre,
+  .markdown-rendered table {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .markdown-rendered table {
+    display: block;
+  }
+}
+
+@media (prefers-contrast: more) {
+  body::before,
+  body::after {
+    display: none;
+  }
+
+  .workspace-ribbon .clickable-icon,
+  .nav-action-button,
+  .nav-header .clickable-icon,
+  .workspace-tab-header,
+  .view-actions,
+  .view-header-nav-buttons,
+  .titlebar-button-container,
+  .nav-folder-collapse-indicator {
+    opacity: 1;
+  }
+}
+
+@media (forced-colors: active) {
+  button:focus-visible,
+  .clickable-icon:focus-visible,
+  .nav-file-title:focus-visible,
+  .nav-folder-title:focus-visible,
+  .workspace-tab-header:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline-color: Highlight;
+    box-shadow: none;
+  }
+}
+
+@media print {
+  body,
+  .theme-light,
+  .theme-dark {
+    --background-primary: #ffffff;
+    --background-primary-alt: #ffffff;
+    --text-normal: #202020;
+    --text-muted: #444444;
+    --text-faint: #555555;
+    --text-accent: #16466b;
+    --link-color: #16466b;
+    --paper-surface: #ffffff;
+    --paper-edge-color: transparent;
+    color: #202020;
+  }
+
+  .workspace-leaf-content[data-type="markdown"] {
+    background: #ffffff;
+    box-shadow: none;
   }
 }
 
