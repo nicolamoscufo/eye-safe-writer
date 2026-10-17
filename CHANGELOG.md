@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.6.0 - 2026-10-17
+
+- Improved default navigation legibility with clearer inactive tabs, toolbar icons, sidebar controls, and window actions.
+- Added Style Settings toggles for Clear navigation, Active writing line, and Flat editor background.
+- Made keyboard focus reveal otherwise dimmed view controls and titlebar actions.
+- Improved long code and table overflow handling on narrow screens.
+- Strengthened system high-contrast, forced-colors focus outlines, and print readability in dark mode.
+- Updated repository metadata to match the canonical GitHub owner.
+
 ## 1.5.0 - 2026-09-13
 
 - Added Eye Safe Pomodoro integration snippet for distraction-free focus sessions.
