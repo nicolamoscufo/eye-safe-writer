@@ -223,6 +223,37 @@ settings:
         label: Spacious
         value: eye-safe-ui-spacious
   -
+    id: eye-safe-ribbon-layout
+    title: Left ribbon spacing
+    type: heading
+    level: 2
+  -
+    id: eye-safe-ribbon-gap
+    title: Space between ribbon icons
+    description: Increase the distance between toolbar actions in the left ribbon.
+    type: variable-number-slider
+    default: 26
+    min: 8
+    max: 60
+    step: 2
+    format: px
+  -
+    id: eye-safe-ribbon-hit-area
+    title: Ribbon button row height
+    description: Vertical room for each ribbon action, including the hover and keyboard target.
+    type: variable-number-slider
+    default: 48
+    min: 36
+    max: 72
+    step: 2
+    format: px
+  -
+    id: eye-safe-ribbon-distributed
+    title: Distribute ribbon icons vertically
+    description: Spread actions over the full available ribbon height instead of grouping them near the top.
+    type: class-toggle
+    default: false
+  -
     id: eye-safe-surface
     title: Surfaces
     type: heading
@@ -508,6 +539,8 @@ body {
   /* Let Obsidian size its own ribbon and header from shared layout tokens. */
   --sidebar-ribbon-width: 44px;
   --ribbon-width: var(--sidebar-ribbon-width);
+  --eye-safe-ribbon-gap: 26px;
+  --eye-safe-ribbon-hit-area: 48px;
   --focus-ring-shadow: 0 0 0 3px var(--focus-line-color);
   --focus-ring-shadow: 0 0 0 3px color-mix(in srgb, var(--interactive-accent) 30%, transparent);
 }
@@ -1756,6 +1789,8 @@ body.eye-safe-ui-compact {
   --paper-panel-radius: 10px;
   --paper-panel-control-radius: 7px;
   --sidebar-ribbon-width: 40px;
+  --eye-safe-ribbon-gap: 18px;
+  --eye-safe-ribbon-hit-area: 44px;
 }
 
 body.eye-safe-ui-spacious {
@@ -1765,6 +1800,8 @@ body.eye-safe-ui-spacious {
   --paper-panel-radius: 22px;
   --paper-panel-control-radius: 14px;
   --sidebar-ribbon-width: 48px;
+  --eye-safe-ribbon-gap: 32px;
+  --eye-safe-ribbon-hit-area: 54px;
 }
 
 body.eye-safe-panels-flat {
@@ -1909,15 +1946,17 @@ body:not(.is-mobile) .workspace-ribbon.mod-left::before {
   pointer-events: none;
 }
 
-/* Give each ribbon action its own row. When the window becomes short or
-   plugins add more buttons, scroll the action list rather than overlap. */
+/* Desktop action buttons used to retain native 30-32px row heights while
+   the action-list gap was only 6px, bunching everything at the top of tall
+   windows. Explicit row heights and configurable spacing make each action
+   visually distinct. Keep the app-owned sidebar toggle outside these rules. */
 body:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-actions {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 6px;
+  row-gap: var(--eye-safe-ribbon-gap);
   min-height: 0;
   min-width: 0;
   overflow-x: hidden;
@@ -1931,17 +1970,34 @@ body:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-settings {
   flex: 0 0 auto;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  row-gap: var(--eye-safe-ribbon-gap);
   margin-top: auto;
 }
 
 body:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-actions > .side-dock-ribbon-action,
 body:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-settings > .side-dock-ribbon-action {
+  display: flex;
   box-sizing: border-box;
-  flex: 0 0 auto;
-  min-height: 32px;
+  flex: 0 0 var(--eye-safe-ribbon-hit-area);
+  align-items: center;
+  justify-content: center;
+  height: var(--eye-safe-ribbon-hit-area);
+  min-height: var(--eye-safe-ribbon-hit-area);
   min-width: 32px;
   margin-inline: auto;
+}
+
+/* Optional setting for users with very tall monitors: spread out the
+   actions over the available scroll area, without changing button sizing. */
+body.eye-safe-ribbon-distributed:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-actions {
+  justify-content: space-evenly;
+}
+
+/* Small desktop windows must be able to scroll instead of shrinking icons. */
+@media (max-height: 700px) {
+  body:not(.is-mobile) {
+    --eye-safe-ribbon-gap: 12px;
+  }
 }
 
 /* Only style action icons: never override the sidebar toggle, its position,
