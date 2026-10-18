@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.6.1 - 2026-10-18
+
+- Fixed overlapping or clipped controls in the left ribbon and sidebar header after Obsidian UI changes.
+- Removed theme-enforced ribbon layout, top padding, action positions, and fixed sidebar tab header sizing so the app can manage native chrome.
+- Prevented decorative ribbon pseudo-element backgrounds and borders from painting over the toolbar junction.
+- Kept plugin ribbon actions from shrinking and allowed vertical scrolling when there are more actions than available height.
+- Preserved compact and spacious ribbon width settings via Obsidian's native `--ribbon-width` token.
+
+
 ## 1.6.0 - 2026-10-17
 
 - Improved default navigation legibility with clearer inactive tabs, toolbar icons, sidebar controls, and window actions.
