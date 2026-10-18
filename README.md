@@ -26,6 +26,17 @@ Warm, low-distraction Obsidian theme for long writing sessions.
 
 To update an existing manual installation, replace `theme.css` and `manifest.json`; your vault notes are unaffected.
 
+## Troubleshooting left sidebar / ribbon overlap
+
+Version 1.6.1 removes the fixed positioning that could make left ribbon icons and sidebar header controls overlap after Obsidian updates.
+
+1. Update **both** `.obsidian/themes/Eye Safe Writer/theme.css` and `manifest.json` from this repository.
+2. Reload Obsidian (Command palette → **Reload app without saving**, if available, or fully quit and reopen).
+3. If the overlap remains, temporarily disable all CSS snippets and test again; custom ribbon snippets may override the theme.
+4. Test with Obsidian's default theme: if the issue disappears, check that Eye Safe Writer 1.6.1 is the version actually loaded.
+
+On short windows with many plugin shortcuts, the left ribbon action list now scrolls instead of letting buttons shrink into each other.
+
 ## Recommended Workflow
 
 Eye Safe Writer works well with:
