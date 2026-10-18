@@ -35,7 +35,13 @@ Version 1.6.1 removes the fixed positioning that could make left ribbon icons an
 3. If the overlap remains, temporarily disable all CSS snippets and test again; custom ribbon snippets may override the theme.
 4. Test with Obsidian's default theme: if the issue disappears, check that Eye Safe Writer 1.6.1 is the version actually loaded.
 
-On short windows with many plugin shortcuts, the left ribbon action list now scrolls instead of letting buttons shrink into each other.
+Since v1.6.2, icons have a larger default spacing and a taller action row. To customize it, open **Settings → Style Settings → Eye Safe Writer → Layout and Typography → Left ribbon spacing** (in some Style Settings versions, the section is nested under Layout and Typography):
+
+- **Space between ribbon icons:** default 26px; range 8–60px.
+- **Ribbon button row height:** default 48px; range 36–72px.
+- **Distribute ribbon icons vertically:** optional full-height distribution, useful on tall displays.
+
+On short windows with many plugin shortcuts, the left ribbon action list scrolls instead of letting buttons shrink into each other.
 
 ## Recommended Workflow
 
