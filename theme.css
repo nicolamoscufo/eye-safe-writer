@@ -505,8 +505,9 @@ body {
   --paper-panel-background-muted: var(--background-secondary);
   --paper-panel-border: var(--background-modifier-border);
   --paper-panel-shadow: 0 12px 34px var(--paper-shadow);
-  --sidebar-top-row-height: 56px;
+  /* Let Obsidian size its own ribbon and header from shared layout tokens. */
   --sidebar-ribbon-width: 44px;
+  --ribbon-width: var(--sidebar-ribbon-width);
   --focus-ring-shadow: 0 0 0 3px var(--focus-line-color);
   --focus-ring-shadow: 0 0 0 3px color-mix(in srgb, var(--interactive-accent) 30%, transparent);
 }
@@ -1754,7 +1755,6 @@ body.eye-safe-ui-compact {
   --paper-panel-gap: 4px;
   --paper-panel-radius: 10px;
   --paper-panel-control-radius: 7px;
-  --sidebar-top-row-height: 46px;
   --sidebar-ribbon-width: 40px;
 }
 
@@ -1764,7 +1764,6 @@ body.eye-safe-ui-spacious {
   --paper-panel-gap: 12px;
   --paper-panel-radius: 22px;
   --paper-panel-control-radius: 14px;
-  --sidebar-top-row-height: 64px;
   --sidebar-ribbon-width: 48px;
 }
 
@@ -1894,80 +1893,65 @@ body:not(.eye-safe-no-texture):has(.menu)::after {
   opacity: var(--hidden-ui-opacity);
 }
 
-body:not(.is-mobile) .workspace-ribbon {
-  align-items: center;
-  border-inline-end: 1px solid var(--background-modifier-border);
+/* Ribbon: Obsidian owns the main layout, header clearance, and sidebar toggle.
+   Replacing those with fixed flex-bases / top padding made controls overlap
+   after upstream app changes (including the newer ribbon header). */
+body:not(.is-mobile) .workspace-ribbon.mod-left {
   box-sizing: border-box;
-  display: flex;
-  flex: 0 0 var(--sidebar-ribbon-width);
-  flex-direction: column;
-  justify-content: flex-start;
-  min-width: var(--sidebar-ribbon-width);
-  overflow: visible;
-  padding: 6px 0;
-  position: relative;
-  width: var(--sidebar-ribbon-width);
-  z-index: 20;
 }
 
+/* Obsidian's top-left chrome pseudo-element should not paint a second
+   panel or border over the ribbon / sidebar junction. */
+body:not(.is-mobile) .workspace-ribbon.mod-left::before {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+/* Give each ribbon action its own row. When the window becomes short or
+   plugins add more buttons, scroll the action list rather than overlap. */
 body:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-actions {
-  padding-top: var(--sidebar-top-row-height);
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  min-height: 0;
+  min-width: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-width: thin;
 }
 
-body:not(.is-mobile) .side-dock-actions,
-body:not(.is-mobile) .side-dock-settings,
-body:not(.is-mobile) .workspace-ribbon .side-dock-actions,
-body:not(.is-mobile) .workspace-ribbon .workspace-ribbon-collapse-btn {
-  align-items: center;
-  box-sizing: border-box;
+body:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-settings {
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
+  align-items: center;
   gap: 6px;
-  height: auto;
-  justify-content: flex-start;
-  margin: 0;
-  width: 100%;
+  margin-top: auto;
 }
 
-body:not(.is-mobile) .side-dock-ribbon-action,
-body:not(.is-mobile) .workspace-ribbon .side-dock-ribbon-action,
-body:not(.is-mobile) .workspace-ribbon .workspace-ribbon-collapse-btn {
-  align-items: center;
-  display: flex;
-  flex: 0 0 32px;
-  height: 32px;
-  justify-content: center;
-  margin: 0;
-  min-height: 32px;
-  padding: 0;
-  position: static;
-  transform: none;
-  width: 100%;
-  z-index: auto;
-}
-
-body:not(.is-mobile) .workspace-ribbon .clickable-icon {
-  align-items: center;
+body:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-actions > .side-dock-ribbon-action,
+body:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-settings > .side-dock-ribbon-action {
   box-sizing: border-box;
-  display: inline-flex;
-  flex: 0 0 28px;
-  height: 28px;
-  justify-content: center;
-  margin: 0 auto;
-  min-height: 28px;
-  min-width: 28px;
-  padding: 0;
-  position: static;
-  transform: none;
-  width: 28px;
-  z-index: auto;
+  flex: 0 0 auto;
+  min-height: 32px;
+  min-width: 32px;
+  margin-inline: auto;
+}
+
+/* Only style action icons: never override the sidebar toggle, its position,
+   or its transform (they are managed by Obsidian). */
+body:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-ribbon-action {
+  border-radius: var(--radius-m);
 }
 
 body:not(.is-mobile) .mod-left-split {
   min-width: 0;
-  position: relative;
-  z-index: 10;
 }
 
 body:not(.is-mobile) .mod-left-split .workspace-tabs,
@@ -1975,21 +1959,16 @@ body:not(.is-mobile) .mod-left-split .workspace-tab-header-container-inner {
   min-width: 0;
 }
 
+/* Sidebar headers and tab widths must follow the app's current
+   header-height and available width, not an independent fixed height. */
 body:not(.is-mobile) .mod-left-split .workspace-tab-header-container {
-  align-items: center;
   box-sizing: border-box;
-  flex: 0 0 var(--sidebar-top-row-height);
-  height: var(--sidebar-top-row-height);
-  min-height: var(--sidebar-top-row-height);
-  overflow: hidden;
+  min-width: 0;
   padding-inline: 8px;
-  position: relative;
-  z-index: 30;
 }
 
 body:not(.is-mobile) .mod-left-split .workspace-tab-header {
-  flex: 0 0 44px;
-  max-width: 56px;
+  min-width: 0;
 }
 
 body:not(.is-mobile) .mod-left-split .nav-header {
@@ -3189,7 +3168,6 @@ body.eye-safe-flat-writing-surface .workspace-leaf-content[data-type="markdown"]
 
 @media (max-width: 900px) {
   body:not(.is-mobile) {
-    --sidebar-top-row-height: 48px;
     --sidebar-ribbon-width: 42px;
   }
 }
