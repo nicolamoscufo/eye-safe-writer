@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.6.3 - 2026-10-18
+
+- Fixed the sidebar toggle overlapping the first ribbon action by disabling ribbon filters, including hover and editor-focus states.
+- Added support for Obsidian 1.14's `.mod-primary` ribbon class while retaining compatibility with `.mod-left`.
+- Made the ribbon compact by default: 8px gaps, 36px button rows, and actions grouped near the top. Full-height distribution remains opt-in.
+- Adjusted compact and spacious density presets consistently and expanded the ribbon controls to 4–60px gaps and 32–72px button rows.
+- Kept action rows fixed-height, constrained their width, and preserved scrolling on short windows without overriding the chosen spacing.
+- Integrated the local ribbon fix into the theme; a separate ribbon-fix CSS snippet is no longer required.
+
+
 ## 1.6.2 - 2026-10-18
 
 - Increased left ribbon action spacing and button hit-area height to prevent densely packed icons on tall windows.

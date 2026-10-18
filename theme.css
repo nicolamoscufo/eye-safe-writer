@@ -232,8 +232,8 @@ settings:
     title: Space between ribbon icons
     description: Increase the distance between toolbar actions in the left ribbon.
     type: variable-number-slider
-    default: 26
-    min: 8
+    default: 8
+    min: 4
     max: 60
     step: 2
     format: px
@@ -242,8 +242,8 @@ settings:
     title: Ribbon button row height
     description: Vertical room for each ribbon action, including the hover and keyboard target.
     type: variable-number-slider
-    default: 48
-    min: 36
+    default: 36
+    min: 32
     max: 72
     step: 2
     format: px
@@ -539,8 +539,8 @@ body {
   /* Let Obsidian size its own ribbon and header from shared layout tokens. */
   --sidebar-ribbon-width: 44px;
   --ribbon-width: var(--sidebar-ribbon-width);
-  --eye-safe-ribbon-gap: 26px;
-  --eye-safe-ribbon-hit-area: 48px;
+  --eye-safe-ribbon-gap: 8px;
+  --eye-safe-ribbon-hit-area: 36px;
   --focus-ring-shadow: 0 0 0 3px var(--focus-line-color);
   --focus-ring-shadow: 0 0 0 3px color-mix(in srgb, var(--interactive-accent) 30%, transparent);
 }
@@ -1789,8 +1789,8 @@ body.eye-safe-ui-compact {
   --paper-panel-radius: 10px;
   --paper-panel-control-radius: 7px;
   --sidebar-ribbon-width: 40px;
-  --eye-safe-ribbon-gap: 18px;
-  --eye-safe-ribbon-hit-area: 44px;
+  --eye-safe-ribbon-gap: 4px;
+  --eye-safe-ribbon-hit-area: 32px;
 }
 
 body.eye-safe-ui-spacious {
@@ -1800,8 +1800,8 @@ body.eye-safe-ui-spacious {
   --paper-panel-radius: 22px;
   --paper-panel-control-radius: 14px;
   --sidebar-ribbon-width: 48px;
-  --eye-safe-ribbon-gap: 32px;
-  --eye-safe-ribbon-hit-area: 54px;
+  --eye-safe-ribbon-gap: 12px;
+  --eye-safe-ribbon-hit-area: 40px;
 }
 
 body.eye-safe-panels-flat {
@@ -1932,27 +1932,31 @@ body:not(.eye-safe-no-texture):has(.menu)::after {
 
 /* Ribbon: Obsidian owns the main layout, header clearance, and sidebar toggle.
    Replacing those with fixed flex-bases / top padding made controls overlap
-   after upstream app changes (including the newer ribbon header). */
-body:not(.is-mobile) .workspace-ribbon.mod-left {
+   after upstream app changes (including the newer ribbon header).
+   Obsidian 1.14+ uses .mod-primary; keep .mod-left for earlier versions. */
+body:not(.is-mobile) .workspace-ribbon:is(.mod-primary, .mod-left) {
   box-sizing: border-box;
+  /* A filter creates a containing block for the absolutely positioned sidebar
+     toggle, moving it onto the first ribbon action. Keep the native containing
+     block in every hover and editor-focus state; do not position this ribbon. */
+  filter: none !important;
 }
 
 /* Obsidian's top-left chrome pseudo-element should not paint a second
    panel or border over the ribbon / sidebar junction. */
-body:not(.is-mobile) .workspace-ribbon.mod-left::before {
+body:not(.is-mobile) .workspace-ribbon:is(.mod-primary, .mod-left)::before {
   background: transparent;
   border-color: transparent;
   box-shadow: none;
   pointer-events: none;
 }
 
-/* Desktop action buttons used to retain native 30-32px row heights while
-   the action-list gap was only 6px, bunching everything at the top of tall
-   windows. Explicit row heights and configurable spacing make each action
-   visually distinct. Keep the app-owned sidebar toggle outside these rules. */
-body:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-actions {
+/* Keep actions compact and grouped near the top by default. Fixed-height rows
+   and a scrollable list prevent plugin actions from shrinking or overlapping.
+   Keep the app-owned sidebar toggle outside these rules. */
+body:not(.is-mobile) .workspace-ribbon:is(.mod-primary, .mod-left) .side-dock-actions {
   display: flex;
-  flex: 1 1 auto;
+  flex: 1 1 0%;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
@@ -1965,7 +1969,7 @@ body:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-actions {
   scrollbar-width: thin;
 }
 
-body:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-settings {
+body:not(.is-mobile) .workspace-ribbon:is(.mod-primary, .mod-left) .side-dock-settings {
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
@@ -1974,8 +1978,8 @@ body:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-settings {
   margin-top: auto;
 }
 
-body:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-actions > .side-dock-ribbon-action,
-body:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-settings > .side-dock-ribbon-action {
+body:not(.is-mobile) .workspace-ribbon:is(.mod-primary, .mod-left) .side-dock-actions > .side-dock-ribbon-action,
+body:not(.is-mobile) .workspace-ribbon:is(.mod-primary, .mod-left) .side-dock-settings > .side-dock-ribbon-action {
   display: flex;
   box-sizing: border-box;
   flex: 0 0 var(--eye-safe-ribbon-hit-area);
@@ -1984,25 +1988,19 @@ body:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-settings > .side-dock
   height: var(--eye-safe-ribbon-hit-area);
   min-height: var(--eye-safe-ribbon-hit-area);
   min-width: 32px;
+  max-width: 100%;
   margin-inline: auto;
 }
 
 /* Optional setting for users with very tall monitors: spread out the
    actions over the available scroll area, without changing button sizing. */
-body.eye-safe-ribbon-distributed:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-actions {
+body.eye-safe-ribbon-distributed:not(.is-mobile) .workspace-ribbon:is(.mod-primary, .mod-left) .side-dock-actions {
   justify-content: space-evenly;
-}
-
-/* Small desktop windows must be able to scroll instead of shrinking icons. */
-@media (max-height: 700px) {
-  body:not(.is-mobile) {
-    --eye-safe-ribbon-gap: 12px;
-  }
 }
 
 /* Only style action icons: never override the sidebar toggle, its position,
    or its transform (they are managed by Obsidian). */
-body:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-ribbon-action {
+body:not(.is-mobile) .workspace-ribbon:is(.mod-primary, .mod-left) .side-dock-ribbon-action {
   border-radius: var(--radius-m);
 }
 
