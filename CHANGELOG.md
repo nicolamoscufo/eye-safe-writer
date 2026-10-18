@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.6.2 - 2026-10-18
+
+- Increased left ribbon action spacing and button hit-area height to prevent densely packed icons on tall windows.
+- Added Style Settings controls for ribbon gap (8–60px) and action row height (36–72px).
+- Added optional full-height vertical distribution of left ribbon actions.
+- Kept button rows fixed-height and action lists scrollable on shorter desktop windows.
+
+
 ## 1.6.1 - 2026-10-18
 
 - Fixed overlapping or clipped controls in the left ribbon and sidebar header after Obsidian UI changes.
