@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.7.0 - 2026-10-29
+
+- Added opt-in Study, Writing, and Code activity presets in Style Settings, with a Default option that preserves the existing appearance.
+- Presets adjust prose size, line height, reading width, paragraph spacing, and writing font or code size without changing palettes, ribbon spacing, UI density, or saved typography overrides.
+- Added palette-aware Definition, Formula, Example, Exercise, and Doubt callouts with English and Italian names and distinct native icons.
+- Kept study callout text in the normal reading color, with explicit titles and neutral print and forced-color styles for legibility without relying on color alone.
+- Added copyable study callout examples, including mathematics, nested callouts, and collapsible exercises.
+
+
 ## 1.6.3 - 2026-10-18
 
 - Fixed the sidebar toggle overlapping the first ribbon action by disabling ribbon filters, including hover and editor-focus states.

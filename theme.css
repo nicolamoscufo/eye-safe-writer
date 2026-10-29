@@ -8,6 +8,31 @@ name: Eye Safe Writer
 id: eye-safe-writer
 settings:
   -
+    id: eye-safe-activity
+    title: Activity Presets
+    type: heading
+    level: 1
+  -
+    id: eye-safe-activity-preset
+    title: Activity preset
+    description: Adjust reading typography and spacing without changing your palette or ribbon. Saved typography overrides take precedence. Default keeps the existing appearance.
+    type: class-select
+    allowEmpty: false
+    default: eye-safe-activity-default
+    options:
+      -
+        label: Default (current appearance)
+        value: eye-safe-activity-default
+      -
+        label: Study
+        value: eye-safe-activity-study
+      -
+        label: Writing
+        value: eye-safe-activity-writing
+      -
+        label: Code
+        value: eye-safe-activity-code
+  -
     id: eye-safe-colors
     title: Colors
     type: heading
@@ -466,6 +491,7 @@ body {
   --line-height-tight: 1.35;
   --file-line-width: 700px;
   --file-folding-offset: 28px;
+  --eye-safe-paragraph-spacing: 0.95em;
 
   --radius-s: 4px;
   --radius-m: 7px;
@@ -543,6 +569,33 @@ body {
   --eye-safe-ribbon-hit-area: 36px;
   --focus-ring-shadow: 0 0 0 3px var(--focus-line-color);
   --focus-ring-shadow: 0 0 0 3px color-mix(in srgb, var(--interactive-accent) 30%, transparent);
+}
+
+/* Activity presets are opt-in typography defaults, not replacements for saved
+   Style Settings or Obsidian font overrides. :where() keeps their specificity
+   below body.css-settings-manager and lets the narrow-window rules still fit
+   the text to the screen. Palette, ribbon, UI density, and focus stay untouched. */
+body:where(.eye-safe-activity-study) {
+  --font-text-size: 17px;
+  --line-height-normal: 1.8;
+  --file-line-width: 760px;
+  --eye-safe-paragraph-spacing: 1.1em;
+}
+
+body:where(.eye-safe-activity-writing) {
+  --font-text-theme: Georgia, Cambria, "Times New Roman", serif;
+  --font-text-size: 18px;
+  --line-height-normal: 1.85;
+  --file-line-width: 660px;
+  --eye-safe-paragraph-spacing: 1.15em;
+}
+
+body:where(.eye-safe-activity-code) {
+  --font-text-size: 16px;
+  --line-height-normal: 1.6;
+  --file-line-width: 1000px;
+  --code-size: 0.95em;
+  --eye-safe-paragraph-spacing: 0.8em;
 }
 
 .theme-light {
@@ -2488,7 +2541,7 @@ body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .w
 }
 
 .markdown-rendered p {
-  margin-block: 0 0.95em;
+  margin-block: 0 var(--eye-safe-paragraph-spacing);
 }
 
 .markdown-rendered h1,
@@ -2740,6 +2793,72 @@ body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .w
 .callout-title {
   font-size: var(--font-ui-small);
   font-weight: 600;
+}
+
+/* Study callouts: native Markdown only, with English and Italian aliases.
+   Explicit titles and distinct native icons carry the meaning without color.
+   Palette colors are full CSS colors, so set icon/title colors directly rather
+   than relying on the RGB-channel syntax used by older Obsidian versions. */
+.callout:is([data-callout="definition"], [data-callout="definizione"]) {
+  --callout-color: var(--writer-blue);
+  --callout-icon: lucide-book-open;
+}
+
+.callout[data-callout="formula"] {
+  --callout-color: var(--writer-purple);
+  --callout-icon: lucide-sigma;
+}
+
+.callout:is([data-callout="example"], [data-callout="esempio"]) {
+  --callout-color: var(--writer-green);
+  --callout-icon: lucide-flask-conical;
+}
+
+.callout:is([data-callout="exercise"], [data-callout="esercizio"]) {
+  --callout-color: var(--writer-orange);
+  --callout-icon: lucide-pencil;
+}
+
+.callout:is([data-callout="doubt"], [data-callout="dubbio"]) {
+  --callout-color: var(--writer-yellow);
+  --callout-icon: help-circle;
+}
+
+.callout:where(
+  [data-callout="definition"], [data-callout="definizione"],
+  [data-callout="formula"],
+  [data-callout="example"], [data-callout="esempio"],
+  [data-callout="exercise"], [data-callout="esercizio"],
+  [data-callout="doubt"], [data-callout="dubbio"]
+) {
+  color: var(--text-normal);
+  border-inline-start: 3px solid var(--callout-color);
+}
+
+/* Direct-child selectors keep title styling out of nested native callouts.
+   Title variables belong on the title, not on the inheritable content root. */
+.callout:where(
+  [data-callout="definition"], [data-callout="definizione"],
+  [data-callout="formula"],
+  [data-callout="example"], [data-callout="esempio"],
+  [data-callout="exercise"], [data-callout="esercizio"],
+  [data-callout="doubt"], [data-callout="dubbio"]
+) > .callout-title {
+  --callout-title-color: currentColor;
+  --callout-title-weight: 650;
+  color: var(--text-normal);
+  font-size: 1em;
+  gap: 0.55em;
+}
+
+.callout:where(
+  [data-callout="definition"], [data-callout="definizione"],
+  [data-callout="formula"],
+  [data-callout="example"], [data-callout="esempio"],
+  [data-callout="exercise"], [data-callout="esercizio"],
+  [data-callout="doubt"], [data-callout="dubbio"]
+) > .callout-title > .callout-icon > .svg-icon {
+  color: var(--callout-color);
 }
 
 .internal-link,
@@ -3306,6 +3425,15 @@ body.eye-safe-flat-writing-surface .workspace-leaf-content[data-type="markdown"]
   .prompt {
     border-color: CanvasText;
   }
+
+  .callout {
+    border-color: CanvasText;
+  }
+
+  .callout > .callout-title,
+  .callout > .callout-title > .callout-icon > .svg-icon {
+    color: CanvasText;
+  }
 }
 
 @media print {
@@ -3323,6 +3451,18 @@ body.eye-safe-flat-writing-surface .workspace-leaf-content[data-type="markdown"]
     max-width: none;
     padding: 0;
     width: auto;
+  }
+
+  .callout {
+    background: white;
+    color: #202020;
+    border-color: #555555;
+    break-inside: avoid;
+  }
+
+  .callout > .callout-title,
+  .callout > .callout-title > .callout-icon > .svg-icon {
+    color: #202020;
   }
 }
 

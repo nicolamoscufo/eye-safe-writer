@@ -10,6 +10,8 @@ Warm, low-distraction Obsidian theme for long writing sessions.
 - Style Settings palette selector: Salvia, Gruvbox, AMOLED, Tokyo Night, Rose Pine, Solarized, Nord, Cappuccino.
 - Full UI token system controlling workspace, text, accents, navigation, code, tables, callouts, and focus states.
 - Typography, line width, headings, links, UI density, compact ribbon spacing, panels, shadows, and paper texture controls.
+- Optional Study, Writing, and Code activity presets that respect saved typography preferences.
+- Study callouts for definitions, formulas, examples, exercises, and questions, with English and Italian names.
 - Writing focus mode with reduced visual distraction and optional clearer navigation.
 - Optional current-line guidance and flat editor background for different writing preferences.
 - Built-in compatibility layer for productivity workflows.
@@ -34,7 +36,7 @@ Version 1.6.3 fixes the sidebar toggle overlapping the first ribbon action in Ob
 2. Fully quit and reopen Obsidian.
 3. If you previously enabled an `eye-safe-ribbon-fix` CSS snippet, disable it: the fix is now built into the theme.
 4. If the overlap remains, temporarily disable other ribbon CSS snippets and test again; custom snippets may override the theme.
-5. Test with Obsidian's default theme: if the issue disappears, check that Eye Safe Writer 1.6.3 is the version actually loaded.
+5. Test with Obsidian's default theme: if the issue disappears, check that Eye Safe Writer 1.6.3 or newer is the version actually loaded.
 
 ### Ribbon spacing
 
@@ -75,6 +77,48 @@ Available controls:
 
 The three new readability options are off by default. Open **Settings → Style Settings → Eye Safe Writer → Readability and Accessibility** to enable them.
 
+## Activity presets
+
+Open **Settings → Style Settings → Eye Safe Writer → Activity Presets → Activity preset**. No additional workflow plugin is needed.
+
+| Preset | Prose font | Text size | Line height | Reading width | Best for |
+| --- | --- | --- | --- | --- | --- |
+| Default | Current theme font | 16.5px | 1.72 | 700px | Keeping your current appearance |
+| Study | Current theme font | 17px | 1.8 | 760px | Notes, explanations, and revision |
+| Writing | Georgia / Cambria / system serif | 18px | 1.85 | 660px | Longer prose and drafts |
+| Code | Current theme font; code stays monospace | 16px | 1.6 | 1000px | Technical documentation and wider code samples |
+
+Default is selected initially, so an update does not switch your workflow. The numbers above are defaults, not forced values: saved **Text size**, **Line height**, and **Readable line width** overrides in Style Settings take precedence. Reset those individual overrides if you want the preset to control them. Obsidian's custom text font also takes precedence over the preset font.
+
+Presets leave your palette, ribbon spacing, UI density, focus options, and notes untouched. Paragraph spacing changes in Reading view; text size, line height, and width apply in both Reading view and Live Preview. The Code preset uses `0.95em` for rendered code. On narrow windows the reading width fits the screen and the theme's mobile-friendly text sizing remains in effect. Select **Default** to return to the original typography.
+
+## Study callouts
+
+These use native Obsidian callouts, work in Reading view and rendered Live Preview, and do not require an activity preset or another plugin.
+
+| Meaning | English type | Italian type | Icon |
+| --- | --- | --- | --- |
+| Definition | `definition` | `definizione` | Open book |
+| Formula | `formula` | `formula` | Sigma |
+| Example | `example` | `esempio` | Flask |
+| Exercise | `exercise` | `esercizio` | Pencil |
+| Question / doubt | `doubt` | `dubbio` | Question mark |
+
+```md
+> [!definizione] Definizione — policy
+> Una policy descrive come scegliere un'azione dato uno stato.
+
+> [!formula] Formula — valore atteso
+> $$\mathbb{E}[X] = \sum_x x\,P(X=x)$$
+
+> [!esercizio]- Esercizio — prova tu
+> Calcola il valore atteso e spiega i passaggi.
+```
+
+Use a descriptive title after `[!type]` in whichever language you prefer; the theme never inserts or replaces your text. Icons and titles distinguish the types even without color. The native `+` / `-` folding syntax, nested callouts, links, and math keep working. The built-in `example` type gets the study example styling; other native types keep their normal styles. In Source mode the underlying Markdown remains visible. Without this theme, the content still works as a native callout with fallback styling.
+
+See [examples/study-callouts.md](examples/study-callouts.md) for a complete, copyable study note.
+
 ## Pomodoro Integration
 
 The included `eye-safe-pomodoro.css` snippet provides:
@@ -100,6 +144,8 @@ It is designed to work with modern Obsidian Pomodoro plugins without changing pl
 - Reduced motion, high contrast, forced colors, print/export.
 - Readability settings enabled individually, including keyboard-only navigation.
 - Long tables and code blocks at narrow screen widths.
+- Each activity preset in Reading view and Live Preview, including returning to Default and saved manual typography overrides.
+- All study callout names in light/dark palettes, nested and collapsed states, narrow windows, and print/forced colors.
 
 ## Release
 
