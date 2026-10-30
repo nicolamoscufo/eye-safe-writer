@@ -1,5 +1,7 @@
 # Eye Safe Writer
 
+**Current version: 1.8.0 (Obsidian 1.13.0+).**
+
 Warm, low-distraction Obsidian theme for long writing sessions.
 
 ![Eye Safe Writer screenshot](screenshot.png)
@@ -10,7 +12,7 @@ Warm, low-distraction Obsidian theme for long writing sessions.
 - Style Settings palette selector: Salvia, Gruvbox, AMOLED, Tokyo Night, Rose Pine, Solarized, Nord, Cappuccino.
 - Full UI token system controlling workspace, text, accents, navigation, code, tables, callouts, and focus states.
 - Typography, line width, headings, links, UI density, compact ribbon spacing, panels, shadows, and paper texture controls.
-- Optional Study, Writing, and Code activity presets that respect saved typography preferences.
+- Optional Study, Writing, Code, and Academic / Research activity presets that respect saved typography preferences.
 - Study callouts for definitions, formulas, examples, exercises, and questions, with English and Italian names.
 - Writing focus mode with reduced visual distraction and optional clearer navigation.
 - Optional current-line guidance and flat editor background for different writing preferences.
@@ -163,3 +165,18 @@ It is designed to work with modern Obsidian Pomodoro plugins without changing pl
   "repo": "nicolamoscufo/eye-safe-writer"
 }
 ```
+
+## New in 1.8.0 — Academic / Research
+
+**Style Settings → Eye Safe Writer → Activity Presets → Academic / Research** sets 17px text, 1.78 line height and 820px reading width, with responsive mobile fallback. Saved manual font controls still take precedence.
+
+Additional native callouts, available in all presets: `theorem` / `teorema`, `proof` / `dimostrazione`, `lemma`, `important` / `importante`. See [the complete example](examples/academic-notes.md).
+
+**Style Settings → Academic and Advanced Focus** provides three default-off controls:
+- **Paragraph focus**: dims other Markdown prose lines around the active line in Live Preview and dims other rendered paragraphs on hover/keyboard focus in Reading view. Full multiline paragraph tracking is not possible with theme CSS alone.
+- **Academic print layout**: improved typography and page breaks for Obsidian PDF exports.
+- **Enhanced contrast**: improves subdued text and icon readability while respecting the selected palette.
+
+## Development
+
+`theme.css` is now generated from seven `src/` modules without changing how users install the theme. See [DEVELOPMENT.md](DEVELOPMENT.md) for build commands, CI, screenshots and native Obsidian QA requirements.

@@ -1,7 +1,7 @@
 {
   "name": "Eye Safe Writer",
-  "version": "1.7.0",
-  "minAppVersion": "1.6.0",
+  "version": "1.8.0",
+  "minAppVersion": "1.13.0",
   "author": "Nicola",
   "authorUrl": "https://github.com/nicolamoscufo"
 }
