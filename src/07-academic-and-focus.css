@@ -51,8 +51,8 @@ body.eye-safe-activity-academic .markdown-rendered :is(pre, table) { max-width: 
   color: var(--callout-color);
 }
 body.eye-safe-enhanced-contrast:is(.theme-light,.theme-dark) {
-  --text-muted: color-mix(in srgb, var(--text-normal) 85%, var(--background-primary));
-  --text-faint: color-mix(in srgb, var(--text-normal) 78%, var(--background-primary));
+  --text-muted: color-mix(in srgb, var(--text-normal) 97%, var(--background-primary));
+  --text-faint: color-mix(in srgb, var(--text-normal) 95%, var(--background-primary));
   --icon-color: var(--text-faint);
   --nav-item-color: var(--text-muted);
   --quiet-ui-opacity: 1;

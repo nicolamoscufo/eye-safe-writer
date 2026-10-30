@@ -3,7 +3,7 @@
 ## 1.8.0 - 2026-10-30
 
 - Added optional Academic / Research typography and bilingual theorem, proof, lemma, and important callouts.
-- Added enhanced contrast, CSS-only prose-line/reading-paragraph focus, and academic print layout.
+- Added enhanced contrast (AA-targeted across all built-in palettes), CSS-only prose-line/reading-paragraph focus, and academic print layout.
 - Split CSS into seven maintainable source modules, keeping the distributable theme.css intact.
 - Added reproducible build checks, Node tests, and CI Playwright HTML visual smoke artifacts.
 - Updated minimum Obsidian compatibility to 1.13.0 for the full-color callout API.

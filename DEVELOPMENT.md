@@ -9,3 +9,5 @@ For optional screenshots run `npm install`, `npx playwright install chromium`, `
 Color contrast should be measured separately for each palette and UI/plugin surface. Faint decorative text must not be the only channel for important information.
 
 The CSS-only Paragraph focus option in Live Preview detects the *active line*, not every line belonging to a multiline Markdown paragraph. Reading view supports paragraph hover/keyboard focus. Full editor paragraph tracking would require a separate Obsidian plugin; the theme does not bundle script execution.
+
+The automated WCAG test checks all 16 light/dark palette combinations for 4.5:1 text contrast and approximates the opt-in Enhanced Contrast color mix in sRGB. Plugin UI and non-text WCAG requirements still need manual inspection.
