@@ -1,0 +1,114 @@
+
+/* Eye Safe Writer 1.8: opt-in Academic / Research defaults */
+body:where(.eye-safe-activity-academic) {
+  --font-text-size: 17px;
+  --line-height-normal: 1.78;
+  --file-line-width: 820px;
+  --code-size: 0.94em;
+  --eye-safe-paragraph-spacing: 1.05em;
+}
+body.eye-safe-activity-academic .markdown-rendered :is(.math-block, mjx-container[display="true"]) {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-block: 0.35em;
+}
+body.eye-safe-activity-academic .markdown-rendered :is(pre, table) { max-width: 100%; }
+/* English and Italian native callout aliases. */
+.callout:is([data-callout="theorem"], [data-callout="teorema"]) {
+  --callout-color: var(--writer-blue);
+  --callout-icon: lucide-book-open-check;
+}
+.callout:is([data-callout="proof"], [data-callout="dimostrazione"]) {
+  --callout-color: var(--writer-green);
+  --callout-icon: lucide-check-check;
+}
+.callout[data-callout="lemma"] {
+  --callout-color: var(--writer-purple);
+  --callout-icon: lucide-book-marked;
+}
+.callout:is([data-callout="important"], [data-callout="importante"]) {
+  --callout-color: var(--writer-orange);
+  --callout-icon: lucide-alert-circle;
+}
+.callout:where([data-callout="theorem"],[data-callout="teorema"],
+  [data-callout="proof"],[data-callout="dimostrazione"],[data-callout="lemma"],
+  [data-callout="important"],[data-callout="importante"]) {
+  color: var(--text-normal);
+  border-inline-start: 3px solid var(--callout-color);
+}
+.callout:where([data-callout="theorem"],[data-callout="teorema"],
+  [data-callout="proof"],[data-callout="dimostrazione"],[data-callout="lemma"],
+  [data-callout="important"],[data-callout="importante"]) > .callout-title {
+  color: var(--text-normal);
+  font-weight: 650;
+  font-size: 1em;
+  gap: 0.55em;
+}
+.callout:where([data-callout="theorem"],[data-callout="teorema"],
+  [data-callout="proof"],[data-callout="dimostrazione"],[data-callout="lemma"],
+  [data-callout="important"],[data-callout="importante"]) > .callout-title > .callout-icon > .svg-icon {
+  color: var(--callout-color);
+}
+body.eye-safe-enhanced-contrast:is(.theme-light,.theme-dark) {
+  --text-muted: color-mix(in srgb, var(--text-normal) 97%, var(--background-primary));
+  --text-faint: color-mix(in srgb, var(--text-normal) 95%, var(--background-primary));
+  --icon-color: var(--text-faint);
+  --nav-item-color: var(--text-muted);
+  --quiet-ui-opacity: 1;
+  --writing-quiet-ui-opacity: 1;
+}
+/* CSS has active lines, not full CodeMirror paragraph boundaries. */
+body.eye-safe-paragraph-focus .markdown-source-view.mod-cm6 .cm-content > .cm-line.HyperMD-paragraph {
+  opacity: 0.46;
+  transition: opacity 120ms ease;
+}
+body.eye-safe-paragraph-focus .markdown-source-view.mod-cm6 .cm-content > .cm-line.HyperMD-paragraph:is(.cm-active,.cm-activeLine,:hover,:focus-within) {
+  opacity: 1;
+}
+@media (hover: hover) {
+  body.eye-safe-paragraph-focus .markdown-rendered:has(p:hover) p:not(:hover),
+  body.eye-safe-paragraph-focus .markdown-rendered:has(p:focus-within) p:not(:focus-within) {
+    opacity: 0.48;
+    transition: opacity 120ms ease;
+  }
+}
+@media (forced-colors: active), print {
+  body.eye-safe-paragraph-focus .markdown-source-view.mod-cm6 .cm-content > .cm-line.HyperMD-paragraph,
+  body.eye-safe-paragraph-focus .markdown-rendered p { opacity: 1 !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.eye-safe-paragraph-focus .markdown-source-view.mod-cm6 .cm-line,
+  body.eye-safe-paragraph-focus .markdown-rendered p { transition: none; }
+}
+@media (max-width: 700px) {
+  body.eye-safe-activity-academic { --font-text-size: 16px; --file-line-width: 100%; }
+}
+@media print {
+  body.eye-safe-print-academic {
+    --font-text-theme: Georgia, Cambria, "Times New Roman", serif;
+    --font-text-size: 11pt;
+    --line-height-normal: 1.5;
+    --file-line-width: 100%;
+    --paper-grain-opacity: 0;
+    --paper-fiber-opacity: 0;
+    color: #202020;
+  }
+  body.eye-safe-print-academic :is(.markdown-rendered,.markdown-preview-sizer) {
+    padding: 0; margin: 0; max-width: 100%;
+  }
+  body.eye-safe-print-academic .markdown-rendered :is(h1,h2,h3,h4) {
+    break-after: avoid-page; page-break-after: avoid; orphans: 3;
+  }
+  body.eye-safe-print-academic .markdown-rendered p { orphans: 3; widows: 3; }
+  body.eye-safe-print-academic .markdown-rendered :is(pre,table,figure,mjx-container[display="true"]) {
+    break-inside: avoid-page; max-width: 100%;
+  }
+  body.eye-safe-print-academic .markdown-rendered :is(pre,table) { overflow: visible; }
+  body.eye-safe-print-academic .callout {
+    background: #fff; color: #202020; border: 1px solid #777;
+    border-inline-start-width: 3px; box-shadow: none; break-inside: auto;
+  }
+  body.eye-safe-print-academic .callout > .callout-title { break-after: avoid-page; }
+  body.eye-safe-print-academic .markdown-rendered a { color: #16466b; text-decoration: underline; }
+}

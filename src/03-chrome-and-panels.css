@@ -1,0 +1,584 @@
+
+body.eye-safe-ui-compact {
+  --font-ui-small: 12px;
+  --font-ui-smaller: 11px;
+  --paper-panel-gap: 4px;
+  --paper-panel-radius: 10px;
+  --paper-panel-control-radius: 7px;
+  --sidebar-ribbon-width: 40px;
+  --eye-safe-ribbon-gap: 4px;
+  --eye-safe-ribbon-hit-area: 32px;
+}
+
+body.eye-safe-ui-spacious {
+  --font-ui-small: 14px;
+  --font-ui-smaller: 13px;
+  --paper-panel-gap: 12px;
+  --paper-panel-radius: 22px;
+  --paper-panel-control-radius: 14px;
+  --sidebar-ribbon-width: 48px;
+  --eye-safe-ribbon-gap: 12px;
+  --eye-safe-ribbon-hit-area: 40px;
+}
+
+body.eye-safe-panels-flat {
+  --paper-edge-color: transparent;
+  --paper-panel-background: var(--background-primary);
+  --paper-panel-background-muted: var(--background-primary-alt);
+  --paper-panel-shadow: none;
+}
+
+body.eye-safe-panels-framed {
+  --paper-edge-color: color-mix(in srgb, var(--background-modifier-border) 80%, transparent);
+  --paper-panel-border: color-mix(in srgb, var(--interactive-accent) 26%, var(--background-modifier-border));
+  --paper-panel-shadow: 0 0 0 1px color-mix(in srgb, var(--interactive-accent) 10%, transparent);
+}
+
+body.eye-safe-panels-soft-shadow {
+  --paper-panel-shadow: 0 18px 48px color-mix(in srgb, var(--paper-shadow) 82%, transparent);
+}
+
+body.eye-safe-focus-none {
+  --writing-quiet-ui-opacity: 1;
+  --writing-hidden-ui-opacity: 1;
+  --writing-secondary-ui-opacity: 1;
+  --writing-inactive-pane-opacity: 1;
+}
+
+body.eye-safe-focus-deep {
+  --writing-quiet-ui-opacity: 0.28;
+  --writing-hidden-ui-opacity: 0.16;
+  --writing-secondary-ui-opacity: 0.2;
+  --writing-inactive-pane-opacity: 0.28;
+}
+
+body.eye-safe-headings-mono {
+  --h1-color: var(--text-normal);
+  --h2-color: var(--text-normal);
+  --h3-color: var(--text-normal);
+  --h4-color: var(--text-muted);
+  --h5-color: var(--text-muted);
+  --h6-color: var(--text-faint);
+}
+
+body.eye-safe-headings-accent {
+  --h1-color: var(--text-accent);
+  --h2-color: var(--text-accent);
+  --h3-color: var(--text-accent-hover);
+  --h4-color: var(--text-accent);
+  --h5-color: var(--text-accent-hover);
+  --h6-color: var(--text-muted);
+}
+
+body.eye-safe-headings-muted {
+  --h1-color: var(--text-normal);
+  --h2-color: var(--text-muted);
+  --h3-color: var(--text-muted);
+  --h4-color: var(--text-faint);
+  --h5-color: var(--text-faint);
+  --h6-color: var(--text-faint);
+}
+
+body.eye-safe-links-underlined {
+  --link-decoration: underline;
+  --link-external-decoration: underline;
+}
+
+body.eye-safe-links-high-contrast {
+  --link-color: var(--interactive-accent-hover);
+  --link-color-hover: var(--text-normal);
+  --link-decoration: underline;
+  --link-external-decoration: underline;
+}
+
+body:not(.eye-safe-no-texture):has(.modal)::before,
+body:not(.eye-safe-no-texture):has(.modal)::after,
+body:not(.eye-safe-no-texture):has(.prompt)::before,
+body:not(.eye-safe-no-texture):has(.prompt)::after,
+body:not(.eye-safe-no-texture):has(.popover)::before,
+body:not(.eye-safe-no-texture):has(.popover)::after,
+body:not(.eye-safe-no-texture):has(.menu)::before,
+body:not(.eye-safe-no-texture):has(.menu)::after {
+  display: none;
+}
+
+.workspace,
+.workspace-split,
+.workspace-tabs,
+.workspace-leaf,
+.workspace-leaf-content {
+  background: var(--background-primary);
+}
+
+.mod-left-split,
+.mod-right-split,
+.workspace-ribbon,
+.titlebar,
+.status-bar {
+  background: var(--background-secondary);
+  background: color-mix(in srgb, var(--background-secondary) 82%, var(--background-primary));
+}
+
+.workspace-ribbon,
+.mod-left-split,
+.mod-right-split,
+.view-header,
+.status-bar,
+.titlebar {
+  border-color: var(--background-modifier-border);
+  box-shadow: none;
+}
+
+.mod-left-split,
+.mod-right-split,
+.workspace-ribbon,
+.status-bar,
+.titlebar,
+.workspace-tab-header-container {
+  opacity: var(--quiet-ui-opacity);
+  transition:
+    opacity var(--anim-duration-moderate) ease,
+    filter var(--anim-duration-moderate) ease;
+  filter: saturate(0.75);
+}
+
+.workspace-ribbon,
+.status-bar {
+  opacity: var(--hidden-ui-opacity);
+}
+
+/* Ribbon: Obsidian owns the main layout, header clearance, and sidebar toggle.
+   Replacing those with fixed flex-bases / top padding made controls overlap
+   after upstream app changes (including the newer ribbon header).
+   Obsidian 1.14+ uses .mod-primary; keep .mod-left for earlier versions. */
+body:not(.is-mobile) .workspace-ribbon:is(.mod-primary, .mod-left) {
+  box-sizing: border-box;
+  /* A filter creates a containing block for the absolutely positioned sidebar
+     toggle, moving it onto the first ribbon action. Keep the native containing
+     block in every hover and editor-focus state; do not position this ribbon. */
+  filter: none !important;
+}
+
+/* Obsidian's top-left chrome pseudo-element should not paint a second
+   panel or border over the ribbon / sidebar junction. */
+body:not(.is-mobile) .workspace-ribbon:is(.mod-primary, .mod-left)::before {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+/* Keep actions compact and grouped near the top by default. Fixed-height rows
+   and a scrollable list prevent plugin actions from shrinking or overlapping.
+   Keep the app-owned sidebar toggle outside these rules. */
+body:not(.is-mobile) .workspace-ribbon:is(.mod-primary, .mod-left) .side-dock-actions {
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  row-gap: var(--eye-safe-ribbon-gap);
+  min-height: 0;
+  min-width: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-width: thin;
+}
+
+body:not(.is-mobile) .workspace-ribbon:is(.mod-primary, .mod-left) .side-dock-settings {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  row-gap: var(--eye-safe-ribbon-gap);
+  margin-top: auto;
+}
+
+body:not(.is-mobile) .workspace-ribbon:is(.mod-primary, .mod-left) .side-dock-actions > .side-dock-ribbon-action,
+body:not(.is-mobile) .workspace-ribbon:is(.mod-primary, .mod-left) .side-dock-settings > .side-dock-ribbon-action {
+  display: flex;
+  box-sizing: border-box;
+  flex: 0 0 var(--eye-safe-ribbon-hit-area);
+  align-items: center;
+  justify-content: center;
+  height: var(--eye-safe-ribbon-hit-area);
+  min-height: var(--eye-safe-ribbon-hit-area);
+  min-width: 32px;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+/* Optional setting for users with very tall monitors: spread out the
+   actions over the available scroll area, without changing button sizing. */
+body.eye-safe-ribbon-distributed:not(.is-mobile) .workspace-ribbon:is(.mod-primary, .mod-left) .side-dock-actions {
+  justify-content: space-evenly;
+}
+
+/* Only style action icons: never override the sidebar toggle, its position,
+   or its transform (they are managed by Obsidian). */
+body:not(.is-mobile) .workspace-ribbon:is(.mod-primary, .mod-left) .side-dock-ribbon-action {
+  border-radius: var(--radius-m);
+}
+
+body:not(.is-mobile) .mod-left-split {
+  min-width: 0;
+}
+
+body:not(.is-mobile) .mod-left-split .workspace-tabs,
+body:not(.is-mobile) .mod-left-split .workspace-tab-header-container-inner {
+  min-width: 0;
+}
+
+/* Sidebar headers and tab widths must follow the app's current
+   header-height and available width, not an independent fixed height. */
+body:not(.is-mobile) .mod-left-split .workspace-tab-header-container {
+  box-sizing: border-box;
+  min-width: 0;
+  padding-inline: 8px;
+}
+
+body:not(.is-mobile) .mod-left-split .workspace-tab-header {
+  min-width: 0;
+}
+
+body:not(.is-mobile) .mod-left-split .nav-header {
+  box-sizing: border-box;
+  flex: 0 0 44px;
+  min-height: 44px;
+  position: relative;
+  z-index: 15;
+}
+
+.workspace-ribbon .clickable-icon,
+.side-dock-actions .clickable-icon,
+.workspace-ribbon-collapse-btn .clickable-icon {
+  background: transparent;
+  border-radius: var(--radius-m);
+  color: var(--icon-color);
+  opacity: 0.74;
+  transition:
+    background-color var(--anim-duration-fast) ease,
+    color var(--anim-duration-fast) ease,
+    opacity var(--anim-duration-fast) ease;
+}
+
+.workspace-ribbon .clickable-icon:hover,
+.workspace-ribbon .clickable-icon.is-active,
+.side-dock-actions .clickable-icon:hover,
+.side-dock-actions .clickable-icon.is-active,
+.workspace-ribbon-collapse-btn .clickable-icon:hover {
+  background: var(--background-modifier-hover);
+  background: color-mix(in srgb, var(--interactive-accent) 10%, transparent);
+  color: var(--icon-color-hover);
+  opacity: 1;
+}
+
+.mod-left-split .workspace-tabs,
+.mod-right-split .workspace-tabs,
+.mod-left-split .workspace-leaf,
+.mod-right-split .workspace-leaf,
+.mod-left-split .workspace-leaf-content,
+.mod-right-split .workspace-leaf-content {
+  background: transparent;
+}
+
+.mod-left-split .workspace-leaf-content,
+.mod-right-split .workspace-leaf-content {
+  border-radius: 0;
+}
+
+.mod-left-split:hover,
+.mod-left-split:focus-within,
+.mod-right-split:hover,
+.mod-right-split:focus-within,
+.workspace-ribbon:hover,
+.workspace-ribbon:focus-within,
+.status-bar:hover,
+.titlebar:hover,
+.workspace-tab-header-container:hover,
+.workspace-tab-header-container:focus-within {
+  opacity: 1;
+  filter: saturate(1);
+}
+
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) {
+  --quiet-ui-opacity: var(--writing-quiet-ui-opacity);
+  --hidden-ui-opacity: var(--writing-hidden-ui-opacity);
+}
+
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .view-header,
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .nav-header,
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .workspace-sidedock-vault-profile,
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .workspace-leaf-resize-handle {
+  filter: saturate(0.55);
+  opacity: var(--writing-secondary-ui-opacity);
+}
+
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .workspace-split.mod-root .workspace-leaf:not(.mod-active) {
+  filter: saturate(0.55);
+  opacity: var(--writing-inactive-pane-opacity);
+}
+
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .mod-left-split:hover,
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .mod-left-split:focus-within,
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .mod-right-split:hover,
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .mod-right-split:focus-within,
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .workspace-ribbon:hover,
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .workspace-ribbon:focus-within,
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .status-bar:hover,
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .titlebar:hover,
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .workspace-tab-header-container:hover,
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .workspace-tab-header-container:focus-within,
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .view-header:hover,
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .view-header:focus-within,
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .nav-header:hover,
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .nav-header:focus-within,
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .workspace-sidedock-vault-profile:hover,
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .workspace-sidedock-vault-profile:focus-within,
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .workspace-split.mod-root .workspace-leaf:not(.mod-active):hover,
+body:not(.is-mobile):has(.markdown-source-view.mod-cm6 .cm-editor.cm-focused) .workspace-split.mod-root .workspace-leaf:not(.mod-active):focus-within {
+  filter: saturate(1);
+  opacity: 1;
+}
+
+.workspace-leaf-content[data-type="markdown"] {
+  background:
+    radial-gradient(circle at 50% 38%, var(--paper-surface) 0 34%, var(--background-primary) 68%),
+    linear-gradient(90deg, var(--paper-edge-color) 0, transparent var(--paper-edge-size), transparent calc(100% - var(--paper-edge-size)), var(--paper-edge-color) 100%);
+}
+
+.workspace-leaf-content[data-type="markdown"] .view-content,
+.workspace-leaf-content[data-type="markdown"] .markdown-source-view,
+.workspace-leaf-content[data-type="markdown"] .markdown-reading-view {
+  background: transparent;
+}
+
+.workspace-tab-header-container {
+  background: var(--background-secondary);
+  background: color-mix(in srgb, var(--background-secondary) 72%, transparent);
+  border-bottom: 1px solid var(--background-modifier-border);
+  border-bottom: 1px solid color-mix(in srgb, var(--background-modifier-border) 72%, transparent);
+}
+
+.workspace-tab-header {
+  border-radius: var(--radius-m);
+  color: var(--text-faint);
+  background: transparent;
+  opacity: 0.78;
+  box-shadow: none;
+  transition:
+    background-color var(--anim-duration-fast) ease,
+    color var(--anim-duration-fast) ease,
+    opacity var(--anim-duration-fast) ease;
+}
+
+.workspace-tab-header:hover {
+  color: var(--text-muted);
+  background: var(--background-modifier-hover);
+  background: color-mix(in srgb, var(--interactive-accent) 7%, transparent);
+  opacity: 0.9;
+}
+
+.workspace-tab-header.is-active {
+  color: var(--text-normal);
+  background: var(--nav-item-background-active);
+  background: color-mix(in srgb, var(--interactive-accent) 10%, transparent);
+  box-shadow: none;
+  opacity: 1;
+}
+
+.workspace-tab-header.is-active::before,
+.workspace-tab-header.is-active::after {
+  display: none;
+}
+
+.view-header {
+  background: var(--background-primary);
+  background: color-mix(in srgb, var(--background-primary) 78%, transparent);
+  border-bottom: 1px solid var(--background-modifier-border);
+  border-bottom: 1px solid color-mix(in srgb, var(--background-modifier-border) 55%, transparent);
+}
+
+.view-header-title {
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  font-weight: 500;
+  opacity: 0.88;
+  transition: opacity var(--anim-duration-fast) ease;
+}
+
+.view-header:hover .view-header-title,
+.view-header:focus-within .view-header-title {
+  opacity: 1;
+}
+
+.view-actions,
+.view-header-nav-buttons {
+  opacity: 0.64;
+  transition: opacity var(--anim-duration-fast) ease;
+}
+
+.view-header:hover .view-actions,
+.view-header:hover .view-header-nav-buttons,
+.view-header:focus-within .view-actions,
+.view-header:focus-within .view-header-nav-buttons {
+  opacity: 1;
+}
+
+.status-bar {
+  color: var(--text-faint);
+  font-size: var(--font-ui-smallest);
+  border-top: 1px solid var(--background-modifier-border);
+  border-top: 1px solid color-mix(in srgb, var(--background-modifier-border) 55%, transparent);
+  min-height: 24px;
+}
+
+.titlebar-button-container {
+  opacity: 0.68;
+  transition: opacity var(--anim-duration-fast) ease;
+}
+
+.titlebar:hover .titlebar-button-container,
+.titlebar:focus-within .titlebar-button-container {
+  opacity: 1;
+}
+
+.titlebar-button:hover {
+  background: var(--background-modifier-hover);
+  background: color-mix(in srgb, var(--interactive-accent) 8%, transparent);
+}
+
+.workspace-sidedock-vault-profile,
+.workspace-sidedock-vault-profile:hover {
+  background: transparent;
+}
+
+.workspace-sidedock-vault-profile {
+  align-items: center;
+  border-top: 1px solid var(--background-modifier-border);
+  box-sizing: border-box;
+  color: var(--text-faint);
+  display: flex;
+  flex: 0 0 auto;
+  gap: 8px;
+  margin-inline: 0;
+  min-height: 44px;
+  min-width: 0;
+  overflow: hidden;
+  padding: 8px 10px;
+  width: 100%;
+}
+
+.workspace-sidedock-vault-profile-name,
+.workspace-sidedock-vault-profile-title,
+.workspace-sidedock-vault-profile-info,
+.workspace-sidedock-vault-profile-label,
+.workspace-sidedock-vault-profile-text,
+.workspace-sidedock-vault-profile .workspace-sidedock-vault-name,
+.workspace-sidedock-vault-profile .workspace-sidedock-vault-profile-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.workspace-sidedock-vault-profile .clickable-icon,
+.workspace-sidedock-vault-profile-icon,
+.workspace-sidedock-vault-profile-action {
+  flex: 0 0 auto;
+}
+
+.workspace-sidedock-vault-profile-actions {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 4px;
+  margin-inline-start: auto;
+}
+
+.nav-header {
+  border-bottom: 1px solid var(--background-modifier-border);
+  border-bottom: 1px solid color-mix(in srgb, var(--background-modifier-border) 52%, transparent);
+}
+
+.nav-action-button,
+.nav-header .clickable-icon {
+  background: transparent;
+  border-radius: var(--radius-m);
+  color: var(--icon-color);
+  opacity: 0.72;
+  transition:
+    background-color var(--anim-duration-fast) ease,
+    color var(--anim-duration-fast) ease,
+    opacity var(--anim-duration-fast) ease;
+}
+
+.nav-action-button:hover,
+.nav-header .clickable-icon:hover {
+  background: var(--background-modifier-hover);
+  background: color-mix(in srgb, var(--interactive-accent) 8%, transparent);
+  color: var(--icon-color-hover);
+  opacity: 0.92;
+}
+
+.nav-file-title,
+.nav-folder-title {
+  border-radius: var(--radius-m);
+  font-size: var(--font-ui-small);
+  transition:
+    background-color var(--anim-duration-fast) ease,
+    color var(--anim-duration-fast) ease;
+}
+
+.nav-file-title {
+  color: var(--nav-item-color);
+  color: color-mix(in srgb, var(--nav-item-color) 84%, var(--text-faint));
+  font-weight: 450;
+}
+
+.nav-file-title:hover,
+.nav-folder-title:hover {
+  background: var(--nav-item-background-hover);
+  color: var(--nav-item-color-hover);
+}
+
+.nav-file-title-content,
+.nav-folder-title-content {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav-folder-title {
+  color: var(--text-muted);
+  color: color-mix(in srgb, var(--text-muted) 82%, var(--text-faint));
+  font-weight: 520;
+}
+
+.nav-folder-collapse-indicator {
+  color: var(--text-faint);
+  opacity: 0.74;
+}
+
+.nav-file-title.is-active {
+  color: var(--text-accent);
+  background: transparent;
+  font-weight: 580;
+  box-shadow: none;
+}
+
+.tree-item-flair,
+.nav-file-tag {
+  background: var(--background-modifier-hover);
+  background: color-mix(in srgb, var(--interactive-accent) 8%, transparent);
+  color: var(--text-faint);
+  font-size: var(--font-ui-smallest);
+  font-weight: 500;
+}
+
+.workspace-leaf-resize-handle {
+  border-color: var(--background-modifier-border);
+}

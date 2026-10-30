@@ -1,0 +1,282 @@
+
+/* Paper panels */
+
+body:not(.is-mobile) .workspace-split.mod-root {
+  background: var(--background-primary);
+  background:
+    radial-gradient(circle at 50% 0, color-mix(in srgb, var(--paper-surface) 38%, transparent) 0 28%, transparent 62%),
+    var(--background-primary);
+}
+
+body:not(.is-mobile) .mod-left-split,
+body:not(.is-mobile) .mod-right-split {
+  gap: var(--paper-panel-gap);
+  padding: var(--paper-panel-gap);
+}
+
+body:not(.is-mobile) .mod-left-split .workspace-tabs,
+body:not(.is-mobile) .mod-right-split .workspace-tabs,
+body:not(.is-mobile) .workspace-split.mod-root .workspace-tabs:not(.mod-top) {
+  gap: var(--paper-panel-gap);
+}
+
+body:not(.is-mobile) .mod-left-split .workspace-leaf,
+body:not(.is-mobile) .mod-right-split .workspace-leaf {
+  background: transparent;
+  margin: 0;
+  overflow: visible;
+}
+
+body:not(.is-mobile) .mod-left-split .workspace-leaf-content,
+body:not(.is-mobile) .mod-right-split .workspace-leaf-content,
+body:not(.is-mobile) .workspace-split.mod-root .workspace-leaf-content:not([data-type="markdown"]),
+.menu,
+.suggestion-container,
+.modal,
+.popover,
+.prompt {
+  background: var(--paper-panel-background);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--paper-surface) 58%, transparent) 0%, transparent 42%),
+    var(--paper-panel-background);
+  border: 1px solid var(--paper-panel-border);
+  border-radius: var(--paper-panel-radius);
+  box-shadow: var(--paper-panel-shadow);
+}
+
+body:not(.is-mobile) .mod-left-split .workspace-leaf-content,
+body:not(.is-mobile) .mod-right-split .workspace-leaf-content,
+body:not(.is-mobile) .workspace-split.mod-root .workspace-leaf-content:not([data-type="markdown"]) {
+  overflow: hidden;
+}
+
+body:not(.is-mobile) .workspace-leaf-content[data-type="file-explorer"] .view-content,
+body:not(.is-mobile) .workspace-leaf-content[data-type="file-explorer"] .nav-files-container,
+body:not(.is-mobile) .workspace-leaf-content[data-type="file-explorer"] .nav-folder,
+body:not(.is-mobile) .workspace-leaf-content[data-type="file-explorer"] .nav-folder-children,
+body:not(.is-mobile) .workspace-leaf-content[data-type="file-explorer"] .nav-file {
+  background: transparent;
+}
+
+body:not(.is-mobile) .mod-left-split .workspace-tab-header-container,
+body:not(.is-mobile) .mod-right-split .workspace-tab-header-container,
+body:not(.is-mobile) .mod-left-split .nav-header,
+body:not(.is-mobile) .mod-right-split .nav-header,
+.modal-title,
+.prompt-title {
+  background: transparent;
+  border-color: var(--paper-panel-border);
+}
+
+.view-header,
+.modal-button-container,
+.modal-close-button,
+.prompt-instructions,
+.suggestion-item,
+.menu-item,
+.setting-item,
+.metadata-property,
+.search-result-file-match,
+.tree-item-self,
+.vertical-tab-nav-item {
+  border-radius: var(--paper-panel-control-radius);
+}
+
+.view-header {
+  min-height: 38px;
+}
+
+.view-header-title,
+.modal-title,
+.prompt-title {
+  letter-spacing: 0.01em;
+}
+
+.menu,
+.suggestion-container,
+.prompt,
+.popover {
+  padding: 6px;
+}
+
+.menu-item,
+.suggestion-item,
+.vertical-tab-nav-item,
+.tree-item-self {
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.menu-item:hover,
+.suggestion-item.is-selected,
+.vertical-tab-nav-item:hover,
+.tree-item-self:hover {
+  background: var(--background-modifier-hover);
+  border-color: var(--paper-panel-border);
+}
+
+.vertical-tab-nav-item.is-active,
+.vertical-tab-nav-item.is-active:hover {
+  background: transparent;
+  border-color: transparent;
+  color: var(--text-accent);
+  font-weight: 580;
+}
+
+.modal.mod-settings .vertical-tab-header,
+.modal.mod-settings .vertical-tab-content,
+.modal.mod-settings .vertical-tab-header-group,
+.modal.mod-settings .vertical-tab-content-container {
+  background: transparent;
+  border-color: var(--paper-panel-border);
+}
+
+.setting-item {
+  border-color: var(--paper-panel-border);
+  padding-block: 12px;
+}
+
+.metadata-container {
+  background: var(--paper-panel-background);
+  border: 1px solid var(--paper-panel-border);
+  border-radius: var(--paper-panel-radius);
+  padding: 8px;
+}
+
+.metadata-property {
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.metadata-property:focus-within,
+.metadata-property:hover {
+  background: var(--background-modifier-hover);
+  border-color: var(--paper-panel-border);
+}
+
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+select,
+.dropdown,
+.search-input-container input {
+  background: var(--paper-panel-background);
+  border: 1px solid var(--paper-panel-border);
+  border-radius: var(--paper-panel-control-radius);
+}
+
+select,
+.dropdown {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--paper-panel-background);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--text-muted) 50%),
+    linear-gradient(135deg, var(--text-muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 16px) 50%,
+    calc(100% - 11px) 50%;
+  background-repeat: no-repeat;
+  background-size: 5px 5px;
+  color: var(--text-normal);
+  padding-inline-end: 32px;
+}
+
+.modal.mod-settings select,
+.modal.mod-settings .dropdown,
+.setting-item-control select,
+.setting-item-control .dropdown {
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--text-muted) 50%),
+    linear-gradient(135deg, var(--text-muted) 50%, transparent 50%) !important;
+  background-position:
+    calc(100% - 16px) 50%,
+    calc(100% - 11px) 50% !important;
+  background-repeat: no-repeat !important;
+  background-size: 5px 5px !important;
+}
+
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button,
+.clickable-icon,
+.nav-action-button {
+  border-radius: var(--paper-panel-control-radius);
+}
+
+button.mod-cta {
+  border: 1px solid transparent;
+}
+
+button:not(.mod-cta) {
+  background: var(--paper-panel-background-muted);
+  border: 1px solid var(--paper-panel-border);
+}
+
+button:hover,
+.clickable-icon:hover,
+.nav-action-button:hover {
+  background: var(--background-modifier-hover);
+}
+
+button:focus-visible,
+.clickable-icon:focus-visible,
+.nav-file-title:focus-visible,
+.nav-folder-title:focus-visible,
+.workspace-tab-header:focus-visible,
+.tree-item-self:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--background-modifier-border-focus);
+  outline-offset: 2px;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.dropdown:focus {
+  border-color: var(--background-modifier-border-focus);
+}
+
+@supports not (background: color-mix(in srgb, black, white)) {
+  .workspace-ribbon .clickable-icon:hover,
+  .workspace-ribbon .clickable-icon.is-active,
+  .side-dock-actions .clickable-icon:hover,
+  .side-dock-actions .clickable-icon.is-active,
+  .workspace-ribbon-collapse-btn .clickable-icon:hover,
+  .nav-action-button:hover,
+  .nav-header .clickable-icon:hover,
+  .workspace-tab-header:hover {
+    background: var(--background-modifier-hover);
+  }
+
+  .workspace-tab-header.is-active {
+    background: var(--nav-item-background-active);
+  }
+
+  .markdown-rendered blockquote,
+  .HyperMD-quote,
+  .task-list-item.is-checked,
+  .task-list-item[data-task="x"] {
+    background: var(--background-modifier-hover);
+  }
+
+  .callout {
+    background: var(--background-primary-alt);
+    border-color: var(--background-modifier-border);
+  }
+}

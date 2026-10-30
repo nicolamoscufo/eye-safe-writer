@@ -1,0 +1,15 @@
+{
+  "name": "eye-safe-writer-theme",
+  "private": true,
+  "version": "1.8.0",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-theme.mjs",
+    "check": "node scripts/build-theme.mjs --check",
+    "test": "node --test tests/theme.test.mjs",
+    "visual:smoke": "node scripts/visual-smoke.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.55.0"
+  }
+}

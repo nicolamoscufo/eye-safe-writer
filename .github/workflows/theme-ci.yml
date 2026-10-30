@@ -1,0 +1,30 @@
+name: Theme validation
+on:
+  push:
+    branches: [main, 'feature/**']
+  pull_request:
+  workflow_dispatch:
+jobs:
+  static:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - run: npm run check
+      - run: npm test
+  visual-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: npm run visual:smoke
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: theme-smoke-screenshots
+          path: visual-artifacts/
+          if-no-files-found: ignore

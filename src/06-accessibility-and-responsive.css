@@ -1,0 +1,251 @@
+
+/* Readability options: opt-in, palette-independent, and keyboard friendly. */
+body.eye-safe-high-legibility {
+  --quiet-ui-opacity: 1;
+  --hidden-ui-opacity: 1;
+  --writing-quiet-ui-opacity: 1;
+  --writing-hidden-ui-opacity: 1;
+  --writing-secondary-ui-opacity: 1;
+  --writing-inactive-pane-opacity: 1;
+}
+
+body.eye-safe-high-legibility .workspace-tab-header,
+body.eye-safe-high-legibility .workspace-ribbon .clickable-icon,
+body.eye-safe-high-legibility .nav-action-button,
+body.eye-safe-high-legibility .nav-header .clickable-icon,
+body.eye-safe-high-legibility .view-header-title,
+body.eye-safe-high-legibility .view-actions,
+body.eye-safe-high-legibility .view-header-nav-buttons,
+body.eye-safe-high-legibility .titlebar-button-container,
+body.eye-safe-high-legibility .nav-folder-collapse-indicator {
+  opacity: 1;
+}
+
+body.eye-safe-active-line-guide .markdown-source-view.mod-cm6 .cm-line.cm-active {
+  background: var(--background-modifier-hover);
+  background: color-mix(in srgb, var(--interactive-accent) 7%, transparent);
+  border-radius: var(--radius-s);
+}
+
+body.eye-safe-flat-writing-surface .workspace-leaf-content[data-type="markdown"] {
+  background: var(--background-primary);
+}
+
+/* Focusing a control must not leave it visually dimmed. */
+.workspace-ribbon .clickable-icon:focus-visible,
+.side-dock-actions .clickable-icon:focus-visible,
+.workspace-ribbon-collapse-btn .clickable-icon:focus-visible,
+.nav-action-button:focus-visible,
+.nav-header .clickable-icon:focus-visible,
+.workspace-tab-header:focus-visible,
+.view-header .clickable-icon:focus-visible,
+.titlebar-button:focus-visible {
+  color: var(--icon-color-hover);
+  opacity: 1;
+}
+
+@media (max-width: 700px) {
+  .markdown-rendered pre,
+  .markdown-rendered table {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .markdown-rendered table {
+    display: block;
+  }
+}
+
+@media (prefers-contrast: more) {
+  body::before,
+  body::after {
+    display: none;
+  }
+
+  .workspace-ribbon .clickable-icon,
+  .nav-action-button,
+  .nav-header .clickable-icon,
+  .workspace-tab-header,
+  .view-actions,
+  .view-header-nav-buttons,
+  .titlebar-button-container,
+  .nav-folder-collapse-indicator {
+    opacity: 1;
+  }
+}
+
+@media (forced-colors: active) {
+  button:focus-visible,
+  .clickable-icon:focus-visible,
+  .nav-file-title:focus-visible,
+  .nav-folder-title:focus-visible,
+  .workspace-tab-header:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline-color: Highlight;
+    box-shadow: none;
+  }
+}
+
+@media print {
+  body,
+  .theme-light,
+  .theme-dark {
+    --background-primary: #ffffff;
+    --background-primary-alt: #ffffff;
+    --text-normal: #202020;
+    --text-muted: #444444;
+    --text-faint: #555555;
+    --text-accent: #16466b;
+    --link-color: #16466b;
+    --paper-surface: #ffffff;
+    --paper-edge-color: transparent;
+    color: #202020;
+  }
+
+  .workspace-leaf-content[data-type="markdown"] {
+    background: #ffffff;
+    box-shadow: none;
+  }
+}
+
+/* Keep interface calm while preserving discoverability. */
+
+@media (max-width: 900px) {
+  body:not(.is-mobile) {
+    --sidebar-ribbon-width: 42px;
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    --font-text-size: 16px;
+    --file-line-width: 100%;
+    --paper-edge-size: 20px;
+  }
+
+  .markdown-source-view.mod-cm6 .cm-scroller,
+  .markdown-reading-view {
+    padding-inline: max(8px, env(safe-area-inset-left)) max(8px, env(safe-area-inset-right));
+  }
+
+  .markdown-source-view.mod-cm6 .cm-content,
+  .markdown-preview-sizer {
+    padding-top: 24px;
+    padding-inline: 10px;
+  }
+}
+
+@media (prefers-contrast: more) {
+  body {
+    --quiet-ui-opacity: 1;
+    --hidden-ui-opacity: 1;
+    --paper-grain-opacity: 0;
+    --paper-fiber-opacity: 0;
+    --paper-panel-shadow: none;
+  }
+
+  .mod-left-split,
+  .mod-right-split,
+  .workspace-ribbon,
+  .status-bar,
+  .titlebar,
+  .workspace-tab-header-container {
+    filter: none;
+    opacity: 1;
+  }
+
+  .menu,
+  .suggestion-container,
+  .modal,
+  .popover,
+  .prompt,
+  .metadata-container,
+  body:not(.is-mobile) .mod-left-split .workspace-leaf-content,
+  body:not(.is-mobile) .mod-right-split .workspace-leaf-content,
+  body:not(.is-mobile) .workspace-split.mod-root .workspace-leaf-content:not([data-type="markdown"]) {
+    box-shadow: none;
+  }
+
+  .internal-link,
+  .external-link {
+    text-decoration: underline;
+  }
+}
+
+@media (forced-colors: active) {
+  body {
+    --paper-grain-opacity: 0;
+    --paper-fiber-opacity: 0;
+    --paper-panel-shadow: none;
+  }
+
+  body::before,
+  body::after {
+    display: none;
+  }
+
+  .workspace-ribbon,
+  .workspace-tab-header-container,
+  .view-header,
+  .nav-header,
+  .status-bar,
+  .menu,
+  .suggestion-container,
+  .modal,
+  .popover,
+  .prompt {
+    border-color: CanvasText;
+  }
+
+  .callout {
+    border-color: CanvasText;
+  }
+
+  .callout > .callout-title,
+  .callout > .callout-title > .callout-icon > .svg-icon {
+    color: CanvasText;
+  }
+}
+
+@media print {
+  body::before,
+  body::after,
+  .workspace-ribbon,
+  .workspace-tab-header-container,
+  .view-header,
+  .status-bar {
+    display: none;
+  }
+
+  .markdown-source-view.mod-cm6 .cm-content,
+  .markdown-preview-sizer {
+    max-width: none;
+    padding: 0;
+    width: auto;
+  }
+
+  .callout {
+    background: white;
+    color: #202020;
+    border-color: #555555;
+    break-inside: avoid;
+  }
+
+  .callout > .callout-title,
+  .callout > .callout-title > .callout-icon > .svg-icon {
+    color: #202020;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
