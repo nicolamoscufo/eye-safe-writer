@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.8.1 - 2026-11-02
+
+- Adjusted palette-specific emphasis, headings, links, muted text, code, callout, button and focus colors after measuring their actual semantic surfaces.
+- Removed stacked navigation opacity; readable Calm defaults preserve saved custom dimming and optional Deep/Paragraph focus. Enhanced Contrast now reveals all navigation and inactive panes.
+- Default link underlines provide a non-color identification cue while preserving explicitly saved Clean links. Contrast tests include real composited texture backgrounds, not just solid palette tokens.
+- Moved paper texture behind note content, removed body-wide `:has()` scans, and retained native ribbon/sidebar-toggle positioning without `!important`.
+- Preserved component-local variables, independent external/unresolved links and tag overrides; stopped blanket clipping of plugin panels.
+- Fixed dark-palette printing, responsive Academic overrides, and escaped math in the Academic example.
+- Added official Obsidian Stylelint, reproducible theme/palette builds, a dependency lockfile, expanded cascade/contrast and browser regression tests, isolated native QA, and gated draft-release automation.
+- Replaced the illustrated community thumbnail with an authentic isolated-vault Obsidian capture; documented QA scope and current Community directory submission.
+
 ## 1.8.0 - 2026-10-30
 
 - Added optional Academic / Research typography and bilingual theorem, proof, lemma, and important callouts.

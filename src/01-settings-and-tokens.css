@@ -96,7 +96,7 @@ settings:
     title: Link style
     type: class-select
     allowEmpty: false
-    default: eye-safe-links-clean
+    default: eye-safe-links-underlined
     options:
       -
         label: Clean
@@ -436,7 +436,7 @@ settings:
     id: quiet-ui-opacity
     title: Normal UI opacity
     type: variable-number-slider
-    default: 0.84
+    default: 1
     min: 0.35
     max: 1
     step: 0.01
@@ -444,7 +444,7 @@ settings:
     id: writing-quiet-ui-opacity
     title: Writing UI opacity
     type: variable-number-slider
-    default: 0.56
+    default: 1
     min: 0.1
     max: 1
     step: 0.01
@@ -452,7 +452,7 @@ settings:
     id: writing-inactive-pane-opacity
     title: Inactive pane opacity
     type: variable-number-slider
-    default: 0.62
+    default: 1
     min: 0.1
     max: 1
     step: 0.01
@@ -505,10 +505,9 @@ settings:
 */
 
 body {
-  --font-interface-theme: Inter, "Segoe UI", system-ui, sans-serif;
-  --font-text-theme: Inter, "Segoe UI", system-ui, sans-serif;
-  --font-monospace-theme: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
-
+  --font-interface-theme: inter, "Segoe UI", system-ui, sans-serif;
+  --font-text-theme: inter, "Segoe UI", system-ui, sans-serif;
+  --font-monospace-theme: "Cascadia Code", "SFMono-Regular", consolas, monospace;
   --font-text-size: 16.5px;
   --font-ui-small: 13px;
   --font-ui-smaller: 12px;
@@ -518,7 +517,6 @@ body {
   --file-line-width: 700px;
   --file-folding-offset: 28px;
   --eye-safe-paragraph-spacing: 0.95em;
-
   --radius-s: 4px;
   --radius-m: 7px;
   --radius-l: 10px;
@@ -526,7 +524,6 @@ body {
   --button-radius: 6px;
   --tab-radius-active: 0;
   --tab-radius: 0;
-
   --h1-size: 1.8em;
   --h2-size: 1.45em;
   --h3-size: 1.2em;
@@ -542,7 +539,6 @@ body {
   --h1-line-height: 1.25;
   --h2-line-height: 1.3;
   --h3-line-height: 1.35;
-
   --bold-weight: 650;
   --bold-color: var(--writer-berry);
   --italic-color: var(--writer-orange);
@@ -565,19 +561,50 @@ body {
   --checkbox-color-hover: var(--writer-green);
   --checkbox-marker-color: var(--text-on-accent);
   --list-marker-color: var(--writer-yellow);
-  --link-decoration: none;
+  --callout-default: var(--writer-blue);
+  --callout-info: var(--writer-blue);
+  --callout-todo: var(--writer-blue);
+  --callout-summary: var(--writer-blue);
+  --callout-important: var(--writer-orange);
+  --callout-tip: var(--writer-green);
+  --callout-success: var(--writer-green);
+  --callout-question: var(--writer-yellow);
+  --callout-warning: var(--writer-orange);
+  --callout-fail: var(--writer-red);
+  --callout-error: var(--writer-red);
+  --callout-bug: var(--writer-red);
+  --callout-example: var(--writer-purple);
+  --callout-quote: var(--text-muted);
+  --callout-blend-mode: normal;
+  --code-comment: var(--text-faint);
+  --code-keyword: var(--writer-purple);
+  --code-string: var(--writer-green);
+  --code-function: var(--writer-yellow);
+  --code-important: var(--writer-orange);
+  --code-operator: var(--text-normal);
+  --code-property: var(--writer-blue);
+  --code-tag: var(--writer-red);
+  --code-value: var(--writer-orange);
+  --code-punctuation: var(--text-muted);
+  --link-decoration: underline;
   --link-decoration-hover: underline;
-  --link-external-decoration: none;
+  --link-external-decoration: underline;
   --link-external-decoration-hover: underline;
-
   --anim-duration-fast: 80ms;
   --anim-duration-moderate: 120ms;
-  --quiet-ui-opacity: 0.84;
-  --hidden-ui-opacity: 0.66;
-  --writing-quiet-ui-opacity: 0.56;
-  --writing-hidden-ui-opacity: 0.4;
-  --writing-secondary-ui-opacity: 0.56;
-  --writing-inactive-pane-opacity: 0.62;
+  --quiet-ui-opacity: 1;
+  --hidden-ui-opacity: var(--quiet-ui-opacity);
+  --writing-quiet-ui-opacity: 1;
+  --writing-hidden-ui-opacity: var(--writing-quiet-ui-opacity);
+  --writing-secondary-ui-opacity: 1;
+  --writing-inactive-pane-opacity: 1;
+  --icon-opacity: 1;
+  --icon-opacity-hover: 1;
+  --icon-opacity-active: 1;
+  --link-unresolved-opacity: 1;
+  --tag-color-hover: var(--tag-color);
+  --tag-background-hover: var(--tag-background);
+  --input-border-color: var(--text-faint);
   --paper-edge-size: clamp(26px, 8vw, 120px);
   --paper-grain-size: 180px;
   --paper-fiber-gap: 6px;
@@ -588,12 +615,12 @@ body {
   --paper-panel-background-muted: var(--background-secondary);
   --paper-panel-border: var(--background-modifier-border);
   --paper-panel-shadow: 0 12px 34px var(--paper-shadow);
+
   /* Let Obsidian size its own ribbon and header from shared layout tokens. */
   --sidebar-ribbon-width: 44px;
   --ribbon-width: var(--sidebar-ribbon-width);
   --eye-safe-ribbon-gap: 8px;
   --eye-safe-ribbon-hit-area: 36px;
-  --focus-ring-shadow: 0 0 0 3px var(--focus-line-color);
   --focus-ring-shadow: 0 0 0 3px color-mix(in srgb, var(--interactive-accent) 30%, transparent);
 }
 
@@ -609,7 +636,7 @@ body:where(.eye-safe-activity-study) {
 }
 
 body:where(.eye-safe-activity-writing) {
-  --font-text-theme: Georgia, Cambria, "Times New Roman", serif;
+  --font-text-theme: georgia, cambria, "Times New Roman", serif;
   --font-text-size: 18px;
   --line-height-normal: 1.85;
   --file-line-width: 660px;

@@ -1,0 +1,7 @@
+{
+  "name": "Eye Safe Writer",
+  "author": "Nicola",
+  "repository": "https://github.com/nicolamoscufo/eye-safe-writer",
+  "screenshot": "screenshot.png",
+  "modes": ["light", "dark"]
+}

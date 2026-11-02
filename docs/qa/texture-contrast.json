@@ -1,0 +1,2214 @@
+{
+  "method": "Browser-resolved foreground colors against every background pixel within text probes; real composited default texture/gradient, no glyph antialiasing.",
+  "report": [
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "text-normal",
+      "minimum": 10.684175650136417
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "text-muted",
+      "minimum": 5.561074249320914
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "text-faint",
+      "minimum": 5.506849473598213
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "bold-color",
+      "minimum": 5.1090923805093365
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "italic-color",
+      "minimum": 5.0110072663573355
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "writer-yellow",
+      "minimum": 5.100943937379864
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "writer-red",
+      "minimum": 5.12185397567209
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "writer-blue",
+      "minimum": 5.189370122440207
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "writer-green",
+      "minimum": 5.10057421124507
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "writer-purple",
+      "minimum": 5.080321668653133
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "writer-berry",
+      "minimum": 5.105874006317912
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "writer-orange",
+      "minimum": 5.0469117746297085
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "link-color",
+      "minimum": 5.122656409837026
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "link-color-hover",
+      "minimum": 5.980008456362614
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "link-external-color",
+      "minimum": 5.054173147205971
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "link-external-color-hover",
+      "minimum": 5.9957794539412435
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "link-unresolved-color",
+      "minimum": 5.065090232112523
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "h1-color",
+      "minimum": 5.1037247851889145
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "h2-color",
+      "minimum": 5.072537144611705
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "h3-color",
+      "minimum": 5.079232644094687
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "h4-color",
+      "minimum": 5.036999865145719
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "h5-color",
+      "minimum": 5.030097622191028
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "token": "h6-color",
+      "minimum": 5.042933943575249
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "text-normal",
+      "minimum": 9.09824309212336
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "text-muted",
+      "minimum": 5.400031332115332
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "text-faint",
+      "minimum": 4.818004372323929
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "bold-color",
+      "minimum": 6.382321627462291
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "italic-color",
+      "minimum": 6.240177005685096
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "writer-yellow",
+      "minimum": 7.164929175893649
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "writer-red",
+      "minimum": 5.200612129889165
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "writer-blue",
+      "minimum": 6.602127300338485
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "writer-green",
+      "minimum": 7.216963604317818
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "writer-purple",
+      "minimum": 5.616339233256071
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "writer-berry",
+      "minimum": 6.420668447967398
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "writer-orange",
+      "minimum": 6.185543467186336
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "link-color",
+      "minimum": 7.236958693588354
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "link-color-hover",
+      "minimum": 9.053090083015643
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "link-external-color",
+      "minimum": 7.2521313527729845
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "link-external-color-hover",
+      "minimum": 9.170099546315264
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "link-unresolved-color",
+      "minimum": 5.225189442561757
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "h1-color",
+      "minimum": 7.054836967399049
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "h2-color",
+      "minimum": 6.764056493812032
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "h3-color",
+      "minimum": 5.209734243910371
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "h4-color",
+      "minimum": 7.155556622913233
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "h5-color",
+      "minimum": 5.625778993709773
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "token": "h6-color",
+      "minimum": 6.132746736691367
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "text-normal",
+      "minimum": 9.654874907415307
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "text-muted",
+      "minimum": 6.208348371989855
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "text-faint",
+      "minimum": 6.092445686444043
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "bold-color",
+      "minimum": 5.662736051252108
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "italic-color",
+      "minimum": 5.533494278796775
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "writer-yellow",
+      "minimum": 5.705588659347974
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "writer-red",
+      "minimum": 7.322558621372952
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "writer-blue",
+      "minimum": 5.753912091047063
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "writer-green",
+      "minimum": 5.688862784648553
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "writer-purple",
+      "minimum": 5.732704886681133
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "writer-berry",
+      "minimum": 5.666965048741403
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "writer-orange",
+      "minimum": 5.624151088152284
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "link-color",
+      "minimum": 5.707620454037884
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "link-color-hover",
+      "minimum": 6.645079139371215
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "link-external-color",
+      "minimum": 5.64178659745192
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "link-external-color-hover",
+      "minimum": 6.640344947360463
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "link-unresolved-color",
+      "minimum": 7.235789083360659
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "h1-color",
+      "minimum": 5.726639780549214
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "h2-color",
+      "minimum": 5.574202127179693
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "h3-color",
+      "minimum": 7.32050162003379
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "h4-color",
+      "minimum": 5.600988157424267
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "h5-color",
+      "minimum": 5.675642978499236
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "token": "h6-color",
+      "minimum": 5.565719267796577
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "text-normal",
+      "minimum": 8.565839262938885
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "text-muted",
+      "minimum": 5.307139138486046
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "text-faint",
+      "minimum": 4.927785111643482
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "bold-color",
+      "minimum": 4.578399939587972
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "italic-color",
+      "minimum": 4.653307903325412
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "writer-yellow",
+      "minimum": 6.862189336607321
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "writer-red",
+      "minimum": 4.8586646536534275
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "writer-blue",
+      "minimum": 4.91833340027586
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "writer-green",
+      "minimum": 5.668677537498925
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "writer-purple",
+      "minimum": 4.793399965598312
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "writer-berry",
+      "minimum": 4.583289375899186
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "writer-orange",
+      "minimum": 4.5880907815106
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "link-color",
+      "minimum": 4.870662194953816
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "link-color-hover",
+      "minimum": 5.495187667327155
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "link-external-color",
+      "minimum": 4.870662194953816
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "link-external-color-hover",
+      "minimum": 5.512854838305133
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "link-unresolved-color",
+      "minimum": 4.911673424581448
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "h1-color",
+      "minimum": 5.607498871273634
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "h2-color",
+      "minimum": 4.939747602215568
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "h3-color",
+      "minimum": 4.8586646536534275
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "h4-color",
+      "minimum": 5.65634119675483
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "h5-color",
+      "minimum": 4.793399965598312
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "token": "h6-color",
+      "minimum": 4.648369102511763
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "text-normal",
+      "minimum": 14.635406805077553
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "text-muted",
+      "minimum": 6.660364655642194
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "text-faint",
+      "minimum": 6.406253308641113
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "bold-color",
+      "minimum": 5.6987663881891235
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "italic-color",
+      "minimum": 5.531450808483843
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "writer-yellow",
+      "minimum": 5.729916731777546
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "writer-red",
+      "minimum": 5.624617964449427
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "writer-blue",
+      "minimum": 5.710477470438153
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "writer-green",
+      "minimum": 5.664012830268209
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "writer-purple",
+      "minimum": 5.670203426466034
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "writer-berry",
+      "minimum": 5.635116257326572
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "writer-orange",
+      "minimum": 5.667964562437251
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "link-color",
+      "minimum": 5.639869346317647
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "link-color-hover",
+      "minimum": 7.127594287035679
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "link-external-color",
+      "minimum": 5.597828076279008
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "link-external-color-hover",
+      "minimum": 7.109938156560183
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "link-unresolved-color",
+      "minimum": 5.582477407359294
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "h1-color",
+      "minimum": 5.752720301561051
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "h2-color",
+      "minimum": 5.55591108875252
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "h3-color",
+      "minimum": 5.680918641664986
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "h4-color",
+      "minimum": 5.583119427795676
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "h5-color",
+      "minimum": 5.628117460638863
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "token": "h6-color",
+      "minimum": 5.4863690985531655
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "text-normal",
+      "minimum": 17.117283436682747
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "text-muted",
+      "minimum": 10.151435033718105
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "text-faint",
+      "minimum": 5.026293254192168
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "bold-color",
+      "minimum": 9.51902374654371
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "italic-color",
+      "minimum": 9.947192983483466
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "writer-yellow",
+      "minimum": 14.117328742662798
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "writer-red",
+      "minimum": 7.301443189577833
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "writer-blue",
+      "minimum": 10.76854748551174
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "writer-green",
+      "minimum": 14.288085572626901
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "writer-purple",
+      "minimum": 8.438992551039627
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "writer-berry",
+      "minimum": 9.52305094901849
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "writer-orange",
+      "minimum": 9.934801090301388
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "link-color",
+      "minimum": 10.511964353260083
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "link-color-hover",
+      "minimum": 14.348069431161758
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "link-external-color",
+      "minimum": 10.507518949251967
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "link-external-color-hover",
+      "minimum": 14.348069431161758
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "link-unresolved-color",
+      "minimum": 7.301443189577833
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "h1-color",
+      "minimum": 14.216451659521613
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "h2-color",
+      "minimum": 10.773103322563747
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "h3-color",
+      "minimum": 7.304532202786064
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "h4-color",
+      "minimum": 14.216451659521613
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "h5-color",
+      "minimum": 8.456772456858312
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "token": "h6-color",
+      "minimum": 9.930599762832754
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "text-normal",
+      "minimum": 8.701164593830688
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "text-muted",
+      "minimum": 6.081306026416138
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "text-faint",
+      "minimum": 5.925060942671003
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "bold-color",
+      "minimum": 5.536084732123333
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "italic-color",
+      "minimum": 5.394825867511633
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "writer-yellow",
+      "minimum": 5.591840290355892
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "writer-red",
+      "minimum": 5.589747059793785
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "writer-blue",
+      "minimum": 5.624781669264947
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "writer-green",
+      "minimum": 5.883263044641417
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "writer-purple",
+      "minimum": 6.454519328654097
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "writer-berry",
+      "minimum": 5.5029838542254526
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "writer-orange",
+      "minimum": 5.528379751284579
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "link-color",
+      "minimum": 5.534750575854889
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "link-color-hover",
+      "minimum": 6.661721791159201
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "link-external-color",
+      "minimum": 5.5201385353582975
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "link-external-color-hover",
+      "minimum": 6.70517567660914
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "link-unresolved-color",
+      "minimum": 5.5454084850697845
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "h1-color",
+      "minimum": 5.945559326601911
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "h2-color",
+      "minimum": 5.413966204698713
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "h3-color",
+      "minimum": 5.729923958295626
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "h4-color",
+      "minimum": 5.745866412477382
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "h5-color",
+      "minimum": 6.429307271121719
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "token": "h6-color",
+      "minimum": 5.38116399671965
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "text-normal",
+      "minimum": 8.79604672409685
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "text-muted",
+      "minimum": 6.543749805584878
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "text-faint",
+      "minimum": 4.706599789116153
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "bold-color",
+      "minimum": 6.7852609098693835
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "italic-color",
+      "minimum": 6.879817784372058
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "writer-yellow",
+      "minimum": 6.986185138698445
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "writer-red",
+      "minimum": 5.1564542003514
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "writer-blue",
+      "minimum": 7.952924148132523
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "writer-green",
+      "minimum": 7.653279451136375
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "writer-purple",
+      "minimum": 6.00317350269789
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "writer-berry",
+      "minimum": 6.821189580858976
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "writer-orange",
+      "minimum": 6.794795002406839
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "link-color",
+      "minimum": 5.4858020033043005
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "link-color-hover",
+      "minimum": 8.041349631969451
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "link-external-color",
+      "minimum": 5.49366535068964
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "link-external-color-hover",
+      "minimum": 8.064616797728767
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "link-unresolved-color",
+      "minimum": 5.236239462751448
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "h1-color",
+      "minimum": 7.48497264095624
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "h2-color",
+      "minimum": 8.155188268943528
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "h3-color",
+      "minimum": 5.2213882623106125
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "h4-color",
+      "minimum": 7.610551229240235
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "h5-color",
+      "minimum": 6.004992431508589
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "token": "h6-color",
+      "minimum": 6.888173210541297
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "text-normal",
+      "minimum": 6.368656525095715
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "text-muted",
+      "minimum": 5.766058828655483
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "text-faint",
+      "minimum": 5.62942610499106
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "bold-color",
+      "minimum": 5.18275381769953
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "italic-color",
+      "minimum": 5.157613095152197
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "writer-yellow",
+      "minimum": 5.226341113597118
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "writer-red",
+      "minimum": 5.179218283413309
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "writer-blue",
+      "minimum": 5.524922049599714
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "writer-green",
+      "minimum": 5.202352337407211
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "writer-purple",
+      "minimum": 5.234746062226442
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "writer-berry",
+      "minimum": 5.169857424891171
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "writer-orange",
+      "minimum": 5.193507802812602
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "link-color",
+      "minimum": 5.462885935108881
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "link-color-hover",
+      "minimum": 6.562516180736112
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "link-external-color",
+      "minimum": 5.431677526259325
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "link-external-color-hover",
+      "minimum": 6.603864231622876
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "link-unresolved-color",
+      "minimum": 5.172725738734186
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "h1-color",
+      "minimum": 5.231595629943881
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "h2-color",
+      "minimum": 5.377065497839788
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "h3-color",
+      "minimum": 5.258779984918913
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "h4-color",
+      "minimum": 5.10693658425049
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "h5-color",
+      "minimum": 5.214354201783934
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "token": "h6-color",
+      "minimum": 5.1436101200948405
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "text-normal",
+      "minimum": 11.34078144712005
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "text-muted",
+      "minimum": 4.692645079431114
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "text-faint",
+      "minimum": 4.794094124687498
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "bold-color",
+      "minimum": 8.62372412350033
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "italic-color",
+      "minimum": 9.080313053411878
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "writer-yellow",
+      "minimum": 8.992813353193684
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "writer-red",
+      "minimum": 5.015964545588226
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "writer-blue",
+      "minimum": 8.564732950056689
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "writer-green",
+      "minimum": 4.8438279778406965
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "writer-purple",
+      "minimum": 6.999271550445703
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "writer-berry",
+      "minimum": 8.673196916228182
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "writer-orange",
+      "minimum": 8.992813353193684
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "link-color",
+      "minimum": 8.564732950056689
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "link-color-hover",
+      "minimum": 7.019675840206562
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "link-external-color",
+      "minimum": 8.67879693717745
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "link-external-color-hover",
+      "minimum": 7.0385769647657455
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "link-unresolved-color",
+      "minimum": 5.075982696172905
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "h1-color",
+      "minimum": 4.749169814055925
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "h2-color",
+      "minimum": 8.768149946976004
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "h3-color",
+      "minimum": 5.068282563145767
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "h4-color",
+      "minimum": 4.866309326763686
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "h5-color",
+      "minimum": 7.061459303842495
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "token": "h6-color",
+      "minimum": 8.936974776894813
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "text-normal",
+      "minimum": 5.533415742847023
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "text-muted",
+      "minimum": 5.883548948031616
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "text-faint",
+      "minimum": 5.859334949031251
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "bold-color",
+      "minimum": 5.261350062355901
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "italic-color",
+      "minimum": 5.281887691348762
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "writer-yellow",
+      "minimum": 5.304670166662255
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "writer-red",
+      "minimum": 5.322244800080485
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "writer-blue",
+      "minimum": 5.358723862846892
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "writer-green",
+      "minimum": 5.327502831795539
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "writer-purple",
+      "minimum": 5.343376994253196
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "writer-berry",
+      "minimum": 5.278165778563184
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "writer-orange",
+      "minimum": 5.2777492265874715
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "link-color",
+      "minimum": 5.325126980177262
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "link-color-hover",
+      "minimum": 5.496782247015701
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "link-external-color",
+      "minimum": 5.262214846719346
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "link-external-color-hover",
+      "minimum": 5.531606164548888
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "link-unresolved-color",
+      "minimum": 5.305548468054574
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "h1-color",
+      "minimum": 5.32342847217221
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "h2-color",
+      "minimum": 5.2586754544919625
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "h3-color",
+      "minimum": 5.360137026679376
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "h4-color",
+      "minimum": 5.2397402192979445
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "h5-color",
+      "minimum": 5.322448171104877
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "token": "h6-color",
+      "minimum": 5.26483375517081
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "text-normal",
+      "minimum": 5.367079885674083
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "text-muted",
+      "minimum": 4.78680338470608
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "text-faint",
+      "minimum": 4.915614957805704
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "bold-color",
+      "minimum": 4.924807727521261
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "italic-color",
+      "minimum": 4.864219537675045
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "writer-yellow",
+      "minimum": 4.85407833768701
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "writer-red",
+      "minimum": 4.812429335709022
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "writer-blue",
+      "minimum": 4.8516029882296685
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "writer-green",
+      "minimum": 4.849226168022519
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "writer-purple",
+      "minimum": 4.870287462177258
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "writer-berry",
+      "minimum": 4.927719723237869
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "writer-orange",
+      "minimum": 4.847954765410913
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "link-color",
+      "minimum": 4.93986007705036
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "link-color-hover",
+      "minimum": 4.907872876478005
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "link-external-color",
+      "minimum": 4.873822994007271
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "link-external-color-hover",
+      "minimum": 4.856659536436417
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "link-unresolved-color",
+      "minimum": 4.887653578976077
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "h1-color",
+      "minimum": 4.793598396551467
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "h2-color",
+      "minimum": 4.9274395643043984
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "h3-color",
+      "minimum": 4.877565767411512
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "h4-color",
+      "minimum": 4.837099302163006
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "h5-color",
+      "minimum": 4.875424685785921
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "token": "h6-color",
+      "minimum": 4.857981335318746
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "text-normal",
+      "minimum": 10.484260742007155
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "text-muted",
+      "minimum": 6.3631287206426945
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "text-faint",
+      "minimum": 5.964444256312463
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "bold-color",
+      "minimum": 5.602578576231303
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "italic-color",
+      "minimum": 5.518008454362518
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "writer-yellow",
+      "minimum": 5.659770562747366
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "writer-red",
+      "minimum": 5.595329184429918
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "writer-blue",
+      "minimum": 5.676251613995798
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "writer-green",
+      "minimum": 5.670531308093255
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "writer-purple",
+      "minimum": 5.662963935781685
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "writer-berry",
+      "minimum": 5.576728439449067
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "writer-orange",
+      "minimum": 5.608072207142348
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "link-color",
+      "minimum": 5.611134623360956
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "link-color-hover",
+      "minimum": 6.4741082414604545
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "link-external-color",
+      "minimum": 5.578653937319211
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "link-external-color-hover",
+      "minimum": 6.515724137587865
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "link-unresolved-color",
+      "minimum": 5.551708486029096
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "h1-color",
+      "minimum": 5.7148253874347015
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "h2-color",
+      "minimum": 5.520364785004019
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "h3-color",
+      "minimum": 5.69261013941003
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "h4-color",
+      "minimum": 5.565663227928524
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "h5-color",
+      "minimum": 5.641289115855914
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "token": "h6-color",
+      "minimum": 5.507611993585985
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "text-normal",
+      "minimum": 8.060173202255337
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "text-muted",
+      "minimum": 6.580078701651232
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "text-faint",
+      "minimum": 4.934682328127011
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "bold-color",
+      "minimum": 4.865575800750291
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "italic-color",
+      "minimum": 4.849921776988644
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "writer-yellow",
+      "minimum": 5.765099314361804
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "writer-red",
+      "minimum": 4.851209210183122
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "writer-blue",
+      "minimum": 4.821809994898444
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "writer-green",
+      "minimum": 4.923083060342465
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "writer-purple",
+      "minimum": 4.887887231169679
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "writer-berry",
+      "minimum": 4.894823217184037
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "writer-orange",
+      "minimum": 4.781002897909139
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "link-color",
+      "minimum": 4.8803793712452155
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "link-color-hover",
+      "minimum": 4.852267700023704
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "link-external-color",
+      "minimum": 4.894900245990496
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "link-external-color-hover",
+      "minimum": 4.87367468853927
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "link-unresolved-color",
+      "minimum": 4.879692896085191
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "h1-color",
+      "minimum": 4.798588376613591
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "h2-color",
+      "minimum": 4.905210270577141
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "h3-color",
+      "minimum": 4.864988444979057
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "h4-color",
+      "minimum": 4.894040093697995
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "h5-color",
+      "minimum": 4.894823217184037
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "token": "h6-color",
+      "minimum": 4.871433244931807
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "text-normal",
+      "minimum": 6.777641777732444
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "text-muted",
+      "minimum": 6.534923745904409
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "text-faint",
+      "minimum": 6.371226665842983
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "bold-color",
+      "minimum": 5.544292973729413
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "italic-color",
+      "minimum": 5.516858607316636
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "writer-yellow",
+      "minimum": 5.593068886749437
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "writer-red",
+      "minimum": 5.5304723646811
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "writer-blue",
+      "minimum": 5.64328804563044
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "writer-green",
+      "minimum": 5.561029075116351
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "writer-purple",
+      "minimum": 5.634688858852062
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "writer-berry",
+      "minimum": 5.518791663398393
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "writer-orange",
+      "minimum": 5.5667974939114435
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "link-color",
+      "minimum": 5.567250624861783
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "link-color-hover",
+      "minimum": 6.884380791150867
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "link-external-color",
+      "minimum": 5.535078205659844
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "link-external-color-hover",
+      "minimum": 6.928398039604343
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "link-unresolved-color",
+      "minimum": 5.512437920658342
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "h1-color",
+      "minimum": 5.604234917814154
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "h2-color",
+      "minimum": 5.478833016543064
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "h3-color",
+      "minimum": 5.615545918117941
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "h4-color",
+      "minimum": 5.46900954505511
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "h5-color",
+      "minimum": 5.613118762626391
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "token": "h6-color",
+      "minimum": 5.505917714761033
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "text-normal",
+      "minimum": 10.491965138604883
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "text-muted",
+      "minimum": 7.1285145100797145
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "text-faint",
+      "minimum": 5.883941247252161
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "bold-color",
+      "minimum": 10.304123059165754
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "italic-color",
+      "minimum": 8.84498366109918
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "writer-yellow",
+      "minimum": 12.622958770189182
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "writer-red",
+      "minimum": 6.712571230139011
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "writer-blue",
+      "minimum": 7.454064200479398
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "writer-green",
+      "minimum": 10.529658041174034
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "writer-purple",
+      "minimum": 7.849693032848912
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "writer-berry",
+      "minimum": 10.253393824784599
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "writer-orange",
+      "minimum": 8.96345319562385
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "link-color",
+      "minimum": 7.462966120787751
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "link-color-hover",
+      "minimum": 10.641298182000684
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "link-external-color",
+      "minimum": 7.472773783512639
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "link-external-color-hover",
+      "minimum": 10.667293944727026
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "link-unresolved-color",
+      "minimum": 6.720693450035002
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "h1-color",
+      "minimum": 10.595969130061945
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "h2-color",
+      "minimum": 7.4171620030569345
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "h3-color",
+      "minimum": 6.8528524444834495
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "h4-color",
+      "minimum": 10.335689745545203
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "h5-color",
+      "minimum": 7.849693032848912
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "token": "h6-color",
+      "minimum": 8.711628478150827
+    }
+  ],
+  "failures": []
+}

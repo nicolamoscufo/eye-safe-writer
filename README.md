@@ -1,182 +1,105 @@
 # Eye Safe Writer
 
-**Current version: 1.8.0 (Obsidian 1.13.0+).**
+Warm paper surfaces, quiet chrome, and eight light/dark palettes for Obsidian.
+Version **1.8.1** requires **Obsidian 1.13.0 or later**.
 
-Warm, low-distraction Obsidian theme for long writing sessions.
-
-![Eye Safe Writer screenshot](screenshot.png)
+![Eye Safe Writer in Obsidian, light mode](screenshot.png)
 
 ## Features
 
-- Light and dark palettes tuned for eye comfort.
-- Style Settings palette selector: Salvia, Gruvbox, AMOLED, Tokyo Night, Rose Pine, Solarized, Nord, Cappuccino.
-- Full UI token system controlling workspace, text, accents, navigation, code, tables, callouts, and focus states.
-- Typography, line width, headings, links, UI density, compact ribbon spacing, panels, shadows, and paper texture controls.
-- Optional Study, Writing, Code, and Academic / Research activity presets that respect saved typography preferences.
-- Study callouts for definitions, formulas, examples, exercises, and questions, with English and Italian names.
-- Writing focus mode with reduced visual distraction and optional clearer navigation.
-- Optional current-line guidance and flat editor background for different writing preferences.
-- Built-in compatibility layer for productivity workflows.
-- Eye Safe Pomodoro integration snippet for focused writing sessions.
-- Reduced-motion, high-contrast, forced-colors, print, and small-screen support.
+- **Salvia, Gruvbox, AMOLED, Tokyo Night, Rose Pine, Solarized, Nord, and Cappuccino**, each in light and dark mode.
+- Reading View, Live Preview, and Source Mode styling; local system fonts and embedded textures, with no remote CSS assets.
+- Optional **Study, Writing, Code, and Academic / Research** typography presets.
+- Palette, emphasis, headings, links, line width, density, ribbon spacing, panels, and texture controls through [Style Settings](https://github.com/mgmeyers/obsidian-style-settings).
+- English/Italian study and academic callouts using ordinary Obsidian Markdown.
+- Keyboard focus indicators, reduced-motion support, system high-contrast/forced-color fallbacks, and print/PDF styles.
 
-## Install
+The name is not a medical or universal accessibility guarantee. Built-in colors are tested against specified surfaces; custom colors, snippets, plugins, and intentional dimming can change contrast. See the [release audit](docs/RELEASE_AUDIT_1.8.1.md) for measured results and native QA scope.
 
-1. Create `.obsidian/themes/Eye Safe Writer/` inside your vault.
-2. Copy `theme.css` and `manifest.json` into that folder.
-3. Select **Eye Safe Writer** under **Settings → Appearance → Themes**.
-4. Install the optional Style Settings plugin to customize palettes and readability.
-5. For Pomodoro support, copy `snippets/eye-safe-pomodoro.css` to `.obsidian/snippets/` and enable it under Appearance → CSS snippets.
+## Install and update
 
-To update an existing manual installation, replace `theme.css` and `manifest.json`; your vault notes are unaffected.
+### Manual installation
 
-## Troubleshooting left sidebar / ribbon overlap
+1. Download **both** `theme.css` and `manifest.json` from a [published GitHub release](https://github.com/nicolamoscufo/eye-safe-writer/releases).
+2. Put them in `<your vault>/.obsidian/themes/Eye Safe Writer/`.
+3. Select **Settings → Appearance → Themes → Eye Safe Writer**.
+4. Optionally install **Style Settings** through Obsidian's Community Plugins browser.
 
-Version 1.6.3 fixes the sidebar toggle overlapping the first ribbon action in Obsidian 1.14+. The theme now supports both the new `.mod-primary` ribbon class and the earlier `.mod-left` class. It also avoids graphical filters that move the toggle into the ribbon action area, including while hovering or focusing the editor.
+To update, replace both files together. Notes and saved Style Settings preferences are not removed. Do not install the `src/` modules individually.
 
-1. Update **both** `.obsidian/themes/Eye Safe Writer/theme.css` and `manifest.json` from this repository.
-2. Fully quit and reopen Obsidian.
-3. If you previously enabled an `eye-safe-ribbon-fix` CSS snippet, disable it: the fix is now built into the theme.
-4. If the overlap remains, temporarily disable other ribbon CSS snippets and test again; custom snippets may override the theme.
-5. Test with Obsidian's default theme: if the issue disappears, check that Eye Safe Writer 1.6.3 or newer is the version actually loaded.
+### Community Themes
 
-### Ribbon spacing
+Once the theme is listed, use **Settings → Appearance → Manage themes**, search for **Eye Safe Writer**, and install it. Use Obsidian's theme update controls for subsequent releases. Listing/submission status is recorded in the release audit; the presence of this repository does not mean the theme has been accepted.
 
-Actions are grouped near the top with compact spacing by default. To customize it, open **Settings → Style Settings → Eye Safe Writer → Layout and Typography → Left ribbon spacing** (in some Style Settings versions, the section is nested under Layout and Typography):
+## Customize with Style Settings
 
-- **Space between ribbon icons:** default 8px; range 4–60px.
-- **Ribbon button row height:** default 36px; range 32–72px.
-- **Distribute ribbon icons vertically:** off by default; enable it only if you prefer full-height distribution on tall displays.
+Open **Settings → Style Settings → Eye Safe Writer**. Existing setting identifiers and saved preferences are retained.
 
-The compact UI density preset uses 4px gaps and 32px rows; the spacious preset uses 12px gaps and 40px rows. Explicit ribbon values in Style Settings take precedence. Existing saved preferences are preserved when updating: to match the compact defaults, set the gap to **8**, the row height to **36**, and turn **Distribute ribbon icons vertically** off.
-
-On short windows with many plugin shortcuts, the left ribbon action list scrolls instead of letting buttons shrink into each other.
-
-## Recommended Workflow
-
-Eye Safe Writer works well with:
-
-- Obsidian Style Settings for theme customization.
-- Pomodoro Timer plugins for timed deep-work sessions.
-- Focus mode plugins for distraction-free writing.
-- Daily notes, Canvas, Tasks, and markdown-based knowledge management.
-
-## Style Settings
-
-Available controls:
-
-- Palette variants and light/dark themes.
-- Manual colors for links, accents, tags, emphasis, and headings.
-- Heading styles.
-- Typography scale and reading width.
-- UI density.
-- Panel appearance.
-- Paper textures.
-- Writing focus intensity.
-- **Clear navigation:** keep tabs, sidebar controls and inactive panes easy to read even when the editor has focus.
-- **Active writing line:** optionally highlight the current line in the source editor.
-- **Flat editor background:** remove the paper-like vignette while preserving palette colors.
-
-The three new readability options are off by default. Open **Settings → Style Settings → Eye Safe Writer → Readability and Accessibility** to enable them.
-
-## Activity presets
-
-Open **Settings → Style Settings → Eye Safe Writer → Activity Presets → Activity preset**. No additional workflow plugin is needed.
-
-| Preset | Prose font | Text size | Line height | Reading width | Best for |
-| --- | --- | --- | --- | --- | --- |
-| Default | Current theme font | 16.5px | 1.72 | 700px | Keeping your current appearance |
-| Study | Current theme font | 17px | 1.8 | 760px | Notes, explanations, and revision |
-| Writing | Georgia / Cambria / system serif | 18px | 1.85 | 660px | Longer prose and drafts |
-| Code | Current theme font; code stays monospace | 16px | 1.6 | 1000px | Technical documentation and wider code samples |
-
-Default is selected initially, so an update does not switch your workflow. The numbers above are defaults, not forced values: saved **Text size**, **Line height**, and **Readable line width** overrides in Style Settings take precedence. Reset those individual overrides if you want the preset to control them. Obsidian's custom text font also takes precedence over the preset font.
-
-Presets leave your palette, ribbon spacing, UI density, focus options, and notes untouched. Paragraph spacing changes in Reading view; text size, line height, and width apply in both Reading view and Live Preview. The Code preset uses `0.95em` for rendered code. On narrow windows the reading width fits the screen and the theme's mobile-friendly text sizing remains in effect. Select **Default** to return to the original typography.
-
-## Study callouts
-
-These use native Obsidian callouts, work in Reading view and rendered Live Preview, and do not require an activity preset or another plugin.
-
-| Meaning | English type | Italian type | Icon |
+| Preset | Default text size | Line height | Reading width |
 | --- | --- | --- | --- |
-| Definition | `definition` | `definizione` | Open book |
-| Formula | `formula` | `formula` | Sigma |
-| Example | `example` | `esempio` | Flask |
-| Exercise | `exercise` | `esercizio` | Pencil |
-| Question / doubt | `doubt` | `dubbio` | Question mark |
+| Default | 16.5px | 1.72 | 700px |
+| Study | 17px | 1.8 | 760px |
+| Writing | 18px, system serif | 1.85 | 660px |
+| Code | 16px | 1.6 | 1000px |
+| Academic / Research | 17px | 1.78 | 820px |
+
+Saved text size, line height, line width, and Obsidian font overrides take precedence. Reset individual overrides to let a preset control them. At narrow widths the default text size is 16px and content fits the view.
+
+- **Left ribbon spacing:** 8px gaps and 36px rows by default. Compact density uses 4px/32px; Spacious uses 12px/40px. Explicit saved ribbon values win. Full-height distribution is optional; crowded action lists scroll.
+- **Clear navigation:** prevents intentional chrome/inactive-pane dimming.
+- **Enhanced contrast:** strengthens subdued text and reveals navigation, inactive panes, and paragraphs; it disables texture. Prefer this if you need consistently visible controls.
+- **Calm / No dimming:** readable defaults. **Deep focus**, custom opacity values, and **Paragraph focus** intentionally reduce contrast away from the current area. Hover or keyboard interaction reveals controls. Previously saved opacity values remain effective; reset them or enable Enhanced contrast if navigation remains too faint after updating.
+- **Active writing line** and **Flat editor background:** optional, off by default.
+- Manual color overrides are optional and can reduce the tested contrast. Only one legacy palette snippet should be enabled at a time; prefer the built-in palette selector.
+- Links are underlined by default so color is not their only cue. Explicitly saved **Clean** links retain their previous no-underline appearance; this preference reduces non-color link identification. Enhanced Contrast restores underlines.
+
+### CSS-only paragraph focus
+
+Live Preview can emphasize an active **editor line**, not a complete multi-line paragraph. Reading View reveals the hovered or keyboard-focused paragraph while the reading area is interacted with. This is not caret-aware paragraph tracking, and Source Mode has no prose-token guarantee. Paragraph dimming is suppressed by Enhanced Contrast, forced colors, and print. No scripts are bundled with the theme.
+
+## Study and academic callouts
+
+These work in every preset. Use a descriptive title in any language:
+
+| Meaning | English type | Italian type |
+| --- | --- | --- |
+| Definition | `definition` | `definizione` |
+| Formula | `formula` | `formula` |
+| Example | `example` | `esempio` |
+| Exercise | `exercise` | `esercizio` |
+| Question / doubt | `doubt` | `dubbio` |
+| Theorem | `theorem` | `teorema` |
+| Proof | `proof` | `dimostrazione` |
+| Lemma | `lemma` | `lemma` |
+| Important | `important` | `importante` |
 
 ```md
-> [!definizione] Definizione — policy
-> Una policy descrive come scegliere un'azione dato uno stato.
+> [!theorem] Linearity of expectation
+> $\mathbb{E}[aX+bY]=a\mathbb{E}[X]+b\mathbb{E}[Y]$.
 
-> [!formula] Formula — valore atteso
-> $$\mathbb{E}[X] = \sum_x x\,P(X=x)$$
-
-> [!esercizio]- Esercizio — prova tu
-> Calcola il valore atteso e spiega i passaggi.
+> [!proof]- Proof — expand to read
+> Apply linearity of the integral.
 ```
 
-Use a descriptive title after `[!type]` in whichever language you prefer; the theme never inserts or replaces your text. Icons and titles distinguish the types even without color. The native `+` / `-` folding syntax, nested callouts, links, and math keep working. The built-in `example` type gets the study example styling; other native types keep their normal styles. In Source mode the underlying Markdown remains visible. Without this theme, the content still works as a native callout with fallback styling.
+Native folding (`+`/`-`), nesting, links, and mathematics remain native Obsidian features. Icons and explicit titles convey meaning without color. The built-in `example` and `important` types receive the theme's custom styling; other native types retain their native icons and palette-aware colors. See [study examples](examples/study-callouts.md) and [academic examples](examples/academic-notes.md).
 
-See [examples/study-callouts.md](examples/study-callouts.md) for a complete, copyable study note.
+**Academic print layout** opts into serif typesetting and pagination. Normal printing also removes textures/chrome and uses light paper, including when a dark palette is selected. Extremely wide tables may still need shorter cell content or landscape paper.
 
-## Pomodoro Integration
+## Plugin compatibility
 
-The included `eye-safe-pomodoro.css` snippet provides:
+Style Settings is optional. Notes and native callouts do not depend on it. Native QA exercises Style Settings and Tasks in an isolated vault; exact tested versions and limitations are in the audit. This is not a guarantee for every plugin or operating system.
 
-- Calm timer cards matching the current theme palette.
-- Large readable countdown typography.
-- Soft buttons and reduced visual noise.
-- Reduced-motion accessibility support.
+The optional [`eye-safe-pomodoro.css`](snippets/eye-safe-pomodoro.css) snippet styles commonly used timer container classes. Copy it to `.obsidian/snippets/` and enable it under Appearance. Individual timer plugin versions are not certified.
 
-It is designed to work with modern Obsidian Pomodoro plugins without changing plugin functionality.
+## Troubleshooting
 
-## QA Checklist
+- **Ribbon/sidebar overlap:** update both theme files, restart Obsidian, and disable obsolete `eye-safe-ribbon-fix` or competing ribbon snippets. The app owns the sidebar toggle; the theme supports both `.mod-left` and `.mod-primary` ribbon classes.
+- **Preset appears unchanged:** reset saved typography overrides in Style Settings. They deliberately take precedence.
+- **Unexpected palette or low contrast:** disable legacy palette snippets/manual color overrides, then test Enhanced contrast and reset saved opacity values.
+- **Clipped plugin controls or overflow:** compare with the default Obsidian theme and other snippets disabled. Report the Obsidian/installer version, OS, palette, preset, plugin versions, and a sanitized example.
 
-- Obsidian desktop on Windows, macOS, Linux.
-- Obsidian mobile and narrow layouts.
-- Light and dark mode.
-- Sidebar, ribbon, tabs, search, backlinks, graph, canvas, settings, modals.
-- Zoom 80%, 100%, 150%.
-- Keyboard navigation and focus states.
-- Ribbon toggle and action separation on Obsidian 1.14+, with both legacy and current ribbon classes.
-- Ribbon spacing in comfortable, compact, and spacious density, with full-height distribution both off and on.
-- Short-window ribbon scrolling with many plugin shortcuts and custom spacing values.
-- Reduced motion, high contrast, forced colors, print/export.
-- Readability settings enabled individually, including keyboard-only navigation.
-- Long tables and code blocks at narrow screen widths.
-- Each activity preset in Reading view and Live Preview, including returning to Default and saved manual typography overrides.
-- All study callout names in light/dark palettes, nested and collapsed states, narrow windows, and print/forced colors.
+Please [report regressions](https://github.com/nicolamoscufo/eye-safe-writer/issues) without private notes or account details.
 
-## Release
+## Development and releases
 
-- Update `manifest.json` version.
-- Add entry to `CHANGELOG.md`.
-- Test supported Obsidian workflows.
-- Update screenshots when releasing major visual changes.
-
-## Community Theme Submission
-
-```json
-{
-  "name": "Eye Safe Writer",
-  "author": "Nicola",
-  "repo": "nicolamoscufo/eye-safe-writer"
-}
-```
-
-## New in 1.8.0 — Academic / Research
-
-**Style Settings → Eye Safe Writer → Activity Presets → Academic / Research** sets 17px text, 1.78 line height and 820px reading width, with responsive mobile fallback. Saved manual font controls still take precedence.
-
-Additional native callouts, available in all presets: `theorem` / `teorema`, `proof` / `dimostrazione`, `lemma`, `important` / `importante`. See [the complete example](examples/academic-notes.md).
-
-**Style Settings → Academic and Advanced Focus** provides three default-off controls:
-- **Paragraph focus**: dims other Markdown prose lines around the active line in Live Preview and dims other rendered paragraphs on hover/keyboard focus in Reading view. Full multiline paragraph tracking is not possible with theme CSS alone.
-- **Academic print layout**: improved typography and page breaks for Obsidian PDF exports.
-- **Enhanced contrast**: improves subdued text and icon readability while respecting the selected palette.
-
-## Development
-
-`theme.css` is now generated from seven `src/` modules without changing how users install the theme. See [DEVELOPMENT.md](DEVELOPMENT.md) for build commands, CI, screenshots and native Obsidian QA requirements.
+`theme.css` and the seven legacy palette snippets are generated from `src/`. See [DEVELOPMENT.md](DEVELOPMENT.md) for reproducible checks, fixture/native testing, screenshots, and the gated draft-release procedure. See [CHANGELOG.md](CHANGELOG.md) for changes. Licensed under [MIT](LICENSE).

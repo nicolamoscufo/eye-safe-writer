@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Simulated Obsidian shell — not native app evidence</title>
+<style>
+/* Intentionally small stand-in for native layout and semantic mappings. Does
+   not load Obsidian, CodeMirror, MathJax, or any plugin implementation. */
+* { box-sizing: border-box; }
+body { margin:0; background:var(--background-primary); color:var(--text-normal); font-family:var(--font-text-theme); font-size:var(--font-text-size); line-height:var(--line-height-normal); }
+.workspace { display:flex; height:100vh; min-width:0; }
+.workspace-ribbon { display:flex; flex-direction:column; width:var(--ribbon-width); flex-shrink:0; }
+.side-dock-actions { padding-top:56px; }
+.side-dock-settings { padding-bottom:8px; }
+.sidebar-toggle-button { position:absolute; top:8px; left:8px; width:28px; height:28px; }
+.clickable-icon { display:flex; justify-content:center; align-items:center; cursor:pointer; color:var(--icon-color); }
+.clickable-icon svg { opacity:var(--icon-opacity); }
+.mod-left-split { width:210px; flex-shrink:0; }
+.mod-root { flex:1; min-width:0; }
+.workspace-tabs,.workspace-leaf { min-width:0; height:100%; }
+.workspace-leaf-content { position:relative; display:flex; flex-direction:column; height:100%; }
+.view-header { padding:8px; display:flex; justify-content:space-between; flex-shrink:0; }
+.view-content { position:relative; overflow:auto; min-height:0; flex:1; }
+.markdown-reading-view { overflow:auto; min-width:0; }
+.markdown-rendered { color:var(--text-normal); }
+.cm-content { outline:none; }
+.cm-strong { color:var(--bold-color); }
+.cm-em { color:var(--italic-color); }
+.cm-link { color:var(--link-color); }
+.cm-comment { color:var(--code-comment); }
+h1 { font-size:var(--h1-size); } h2 { font-size:var(--h2-size); }
+h3 { font-size:var(--h3-size); } h4 { font-size:var(--h4-size); }
+h5 { font-size:var(--h5-size); } h6 { font-size:var(--h6-size); }
+.qa-muted { color:var(--text-muted); } .qa-faint { color:var(--text-faint); }
+.qa-surface { padding:12px; }
+.qa-surface mark { background:var(--text-highlight-bg); }
+.callout { --callout-color:var(--callout-default); padding:12px; }
+.callout[data-callout=info] { --callout-color:var(--callout-info); }
+.callout[data-callout=tip],.callout[data-callout=success] { --callout-color:var(--callout-success); }
+.callout[data-callout=warning],.callout[data-callout=question] { --callout-color:var(--callout-warning); }
+.callout[data-callout=danger],.callout[data-callout=bug],.callout[data-callout=failure] { --callout-color:var(--callout-error); }
+.callout[data-callout=quote] { --callout-color:var(--callout-quote); }
+.callout-title { display:flex; gap:8px; color:var(--callout-color); }
+.callout-title-inner { color:var(--callout-title-color,inherit); }
+.callout-icon { color:var(--callout-color); }
+.internal-link { color:var(--link-color); text-decoration:var(--link-decoration); }
+.external-link { color:var(--link-external-color); text-decoration:var(--link-external-decoration); }
+.is-unresolved { opacity:var(--link-unresolved-opacity); }
+.nav-file-title { padding:8px; } .nav-header { display:flex; gap:8px; }
+button,input,select { font:inherit; color:var(--text-normal); }
+button.mod-cta { background:var(--interactive-accent); color:var(--text-on-accent); }
+button.mod-cta:hover { background:var(--interactive-accent-hover); }
+input { color:var(--text-normal); }
+pre { white-space:pre; } pre code { font-family:var(--font-monospace-theme); }
+td,th { border:1px solid var(--table-border-color); }
+.is-mobile .workspace-ribbon,.is-mobile .mod-left-split { display:none; }
+.modal { position:fixed; inset:10%; z-index:100; padding:20px; overflow:auto; }
+.modal[hidden] { display:none; }
+.popover { position:fixed; top:40px; right:10px; z-index:200; }
+.table-wrapper { max-width:100%; overflow-x:auto; }
+.mermaid svg { max-width:100%; }
+</style></head><body class="theme-light">
+<div class="workspace">
+<aside class="workspace-ribbon mod-primary"><button class="sidebar-toggle-button clickable-icon" aria-label="Toggle sidebar">☰</button><div class="side-dock-actions">
+<button class="side-dock-ribbon-action clickable-icon" aria-label="Search">⌕</button><button class="side-dock-ribbon-action clickable-icon" aria-label="Graph">◇</button><button class="side-dock-ribbon-action clickable-icon" aria-label="Canvas">▦</button>
+</div><div class="side-dock-settings"><button class="side-dock-ribbon-action clickable-icon" aria-label="Settings">⚙</button></div></aside>
+<aside class="workspace-split mod-left-split"><div class="workspace-tabs"><div class="workspace-leaf"><div class="workspace-leaf-content" data-type="file-explorer"><div class="nav-header"><button class="nav-action-button clickable-icon" aria-label="New note">+</button></div><div class="view-content"><div class="nav-file-title is-active" tabindex="0">Research notes</div><div class="nav-file-title" tabindex="0">Study callouts</div></div></div></div></div></aside>
+<main class="workspace-split mod-root"><div class="workspace-tabs"><div class="workspace-leaf mod-active"><div class="workspace-leaf-content" data-type="markdown"><header class="view-header"><span class="view-header-title">Research notes</span><button class="clickable-icon" aria-label="Reading view">▤</button></header><div class="view-content"><div class="markdown-reading-view"><article class="markdown-preview-sizer markdown-rendered"><h1>Eye Safe Writer</h1><p>A quiet place to think, study, and write.</p><h2>Research notes</h2><p>Clear <strong>emphasis</strong>, thoughtful <em>details</em>, and <a class="internal-link" href="#">connected ideas</a>.</p><div id="sample-callouts"></div><div class="table-wrapper"><table><tr><th>Concept</th><th>Description</th></tr><tr><td>Expectation</td><td>Weighted mean</td></tr></table></div><pre><code>const expectation = values.map(value =&gt; value * probability);</code></pre><ul><li>Review<ul><li>Check assumptions</li></ul></li><li><input type="checkbox">Unfinished</li><li class="task-list-item is-checked"><input type="checkbox" checked>Recorded result</li></ul><div class="math-block"><mjx-container display="true">E[aX+bY] = aE[X]+bE[Y]</mjx-container></div><div class="mermaid"><svg viewBox="0 0 400 80"><rect x="5" y="5" width="390" height="60" fill="none" stroke="currentColor"/><text x="20" y="40" fill="currentColor">Diagram fixture (not Mermaid execution)</text></svg></div></article></div><div class="markdown-source-view mod-cm6" hidden><div class="cm-editor"><div class="cm-scroller"><div class="cm-content" tabindex="0" contenteditable="true"><div class="cm-line HyperMD-paragraph cm-active">An <span class="cm-strong">active</span> writing line.</div><div class="cm-line HyperMD-paragraph">Another prose line.</div><div class="cm-line HyperMD-codeblock"><span class="cm-comment">// Code comment</span></div></div></div></div></div></div></div></div></div></main>
+</div><div class="modal mod-settings" hidden><h2 class="modal-title">Style Settings fixture</h2><div class="setting-item"><label for="palette">Palette</label><select id="palette"><option>Salvia</option><option>Nord</option></select></div><input type="text" aria-label="Custom value" value="Readable control"><button class="mod-cta">Save</button><button disabled>Unavailable</button></div>
+<div id="semantic-tests"></div>
+</body></html>

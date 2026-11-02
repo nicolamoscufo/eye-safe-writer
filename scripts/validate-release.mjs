@@ -1,0 +1,37 @@
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { PNG } from 'pngjs';
+import { build } from './build-theme.mjs';
+
+const json = async file => JSON.parse(await readFile(new URL('../' + file, import.meta.url), 'utf8'));
+const manifest = await json('manifest.json');
+const pkg = await json('package.json');
+const lock = await json('package-lock.json');
+const versions = await json('versions.json');
+const metadata = await json('community-theme.json');
+const semver = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/;
+for (const key of ['name', 'author', 'version', 'minAppVersion']) assert.ok(typeof manifest[key] === 'string' && manifest[key].trim(), key);
+assert.match(manifest.version, semver);
+assert.match(manifest.minAppVersion, semver);
+assert.equal(manifest.name, 'Eye Safe Writer');
+assert.equal(manifest.authorUrl, 'https://github.com/nicolamoscufo');
+assert.ok(!('id' in manifest), 'Theme manifests must not have plugin id');
+assert.equal(pkg.version, manifest.version);
+assert.equal(lock.version, manifest.version);
+assert.equal(lock.packages[''].version, manifest.version);
+assert.equal(versions[manifest.version], manifest.minAppVersion);
+for (const [version, minimum] of Object.entries(versions)) { assert.match(version, semver); assert.match(minimum, semver); }
+assert.equal(metadata.name, manifest.name);
+assert.equal(metadata.author, manifest.author);
+assert.equal(metadata.repository, 'https://github.com/nicolamoscufo/eye-safe-writer');
+assert.deepEqual(metadata.modes, ['light', 'dark']);
+assert.equal(pkg.dependencies, undefined, 'No runtime dependencies for a CSS theme');
+for (const file of ['README.md', 'DEVELOPMENT.md', 'LICENSE', 'CHANGELOG.md']) assert.ok((await readFile(new URL('../' + file, import.meta.url), 'utf8')).trim());
+const screenshot = PNG.sync.read(await readFile(new URL('../' + metadata.screenshot, import.meta.url)));
+assert.equal(screenshot.width, 512);
+assert.equal(screenshot.height, 288);
+assert.ok((await readFile(new URL('../CHANGELOG.md', import.meta.url), 'utf8')).includes(`## ${manifest.version} - `));
+const tag = process.env.RELEASE_TAG || (process.env.GITHUB_REF_TYPE === 'tag' ? process.env.GITHUB_REF_NAME : null);
+if (tag) assert.equal(tag, manifest.version, 'Release tag must exactly equal manifest.version (no v prefix)');
+await build(true);
+console.log(`Release metadata and assets validated: ${manifest.version}${tag ? ` (tag ${tag})` : ''}`);

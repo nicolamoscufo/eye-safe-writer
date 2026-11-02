@@ -1,0 +1,293 @@
+{
+  "report": [
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "setting": "",
+      "combinations": 11
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "setting": "eye-safe-focus-deep eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "setting": "",
+      "combinations": 11
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "setting": "eye-safe-focus-deep eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "setting": "",
+      "combinations": 11
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "setting": "eye-safe-focus-deep eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "setting": "",
+      "combinations": 11
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "setting": "eye-safe-focus-deep eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "setting": "",
+      "combinations": 11
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "setting": "eye-safe-focus-deep eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "setting": "",
+      "combinations": 11
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "setting": "eye-safe-focus-deep eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "setting": "",
+      "combinations": 11
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "setting": "eye-safe-focus-deep eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "setting": "",
+      "combinations": 11
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "setting": "eye-safe-focus-deep eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "setting": "",
+      "combinations": 11
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "setting": "eye-safe-focus-deep eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "setting": "",
+      "combinations": 11
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "setting": "eye-safe-focus-deep eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "setting": "",
+      "combinations": 11
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "setting": "eye-safe-focus-deep eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "setting": "",
+      "combinations": 11
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "setting": "eye-safe-focus-deep eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "setting": "",
+      "combinations": 11
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "setting": "eye-safe-focus-deep eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "setting": "",
+      "combinations": 11
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "setting": "eye-safe-focus-deep eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "setting": "",
+      "combinations": 11
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "setting": "eye-safe-focus-deep eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "setting": "",
+      "combinations": 11
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 11
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "setting": "eye-safe-focus-deep eye-safe-enhanced-contrast",
+      "combinations": 11
+    }
+  ],
+  "failures": []
+}
