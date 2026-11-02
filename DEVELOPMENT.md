@@ -78,9 +78,11 @@ This copies actual renderer screenshots to `screenshots/` and downsamples the ge
 4. Push and open a PR. Require successful **Theme validation**; respect repository protections. Merge, then verify the exact main commit.
 5. Create an unprefixed version tag equal to `manifest.version`, such as `1.8.1`, on the tested main commit. Push it once.
 6. `.github/workflows/release.yml` reuses the complete CI suite. It checks that the tag commit is on main, validates exact tag/manifest versions and tracked assets, rebuilds deterministically, then invokes **`obsidianmd/obsidian-workflows@v1`** with `type: theme`, `mode: release`, `strict: true`. Only that job has release/attestation write permissions.
-7. The official action creates **one draft release** and attaches `manifest.json` and `theme.css`, with release notes and attestations. Do not publish if checks failed or blocking issues remain.
+7. The official action creates **one draft release**, attaches `manifest.json` and `theme.css`, and attests `theme.css`. Add/review human-readable release notes; the action can leave them empty. Do not publish if checks failed or blocking issues remain.
 8. Download both draft attachments using authenticated API access; compare their SHA-256 hashes with the tested tag files. Review notes and publish. Download the public assets again and verify hashes, manifest version, tag commit, and non-draft/non-prerelease status.
 9. Record real commit/PR/run/release links and asset verification in the audit. Do not claim a tag, release, native test or submission that was not verified.
+
+The official scanner uses an isolated temporary dependency installation, independent of this repository's lockfile/overrides. Record any upstream advisory notices separately from the mandatory repository `npm audit` result. MathJax custom-element and paged-media compatibility warnings can be non-blocking; inspect them against native evidence rather than hiding them or claiming a warning-free release scan. Optionally verify the CSS provenance with `gh attestation verify theme.css --repo nicolamoscufo/eye-safe-writer --signer-workflow nicolamoscufo/eye-safe-writer/.github/workflows/release.yml`. The manifest is hash-verified, not covered by that CSS-only attestation.
 
 ## Community directory
 
