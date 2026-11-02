@@ -30,7 +30,7 @@ Documentation uses the Community directory, not a registry pull request. Tags mu
 
 The stable patch candidate retains all eight palettes, all five activity presets, stable Style Settings identifiers, and native Markdown functionality. It fixes semantic contrast, composited-texture contrast, opacity stacking, native pane overflow, customization mappings and print specificity. The illustrated thumbnail has been replaced by a genuine Obsidian capture. Build/metadata/contrast/browser tests and native Windows QA pass.
 
-**Delivery status at preparation:** not yet released or submitted. GitHub delivery results are recorded below only after execution. Community account authorization and developer-policy/support attestations must be performed personally by the owner.
+**Delivery status: RELEASED — READY FOR COMMUNITY SUBMISSION.** [Version 1.8.1](https://github.com/nicolamoscufo/eye-safe-writer/releases/tag/1.8.1) was published after green PR/main/tag checks and exact draft-asset verification. Both unauthenticated public downloads match the immutable tag; CSS provenance is verified. Community account authorization and developer-policy/support attestations must still be performed personally by the owner. Submission/acceptance is not claimed.
 
 ## Findings and disposition
 
@@ -38,7 +38,7 @@ Severity describes impact, not a claim of a security vulnerability. “Confirmed
 
 | Severity / type | Finding | Repair / evidence |
 | --- | --- | --- |
-| High / confirmed release blocker | No GitHub release assets, release workflow, recognized root `LICENSE`, or authentic thumbnail | Root MIT license renamed without changing its terms; real screenshots; version/tag/asset gates and official draft-release workflow |
+| High / confirmed release blocker | No GitHub release assets/release workflow or authentic thumbnail; root license used `LICENSE.md` | Standardized the root MIT filename to `LICENSE` without changing its terms (the official action also recognizes `LICENSE.md`); real screenshots; version/tag/asset gates and official draft-release workflow |
 | Medium / confirmed | Low-contrast emphasis, headings, faint text, links, code and button colors across several palettes | Palette-specific changes in `src/02-palettes.css`; semantic, UI and texture tests |
 | Medium / confirmed | Solid swatches alone missed dark-palette failures after SVG grain/fiber compositing | Rendered-background pixel tests exposed failures in Gruvbox, Rose Pine, Solarized and Nord; adjusted affected colors while retaining texture controls and palette character |
 | Medium / confirmed | Navigation accumulated container, icon and SVG opacity; Enhanced Contrast did not reveal every layer | Readable Calm defaults, no unintended nested dimming, complete Enhanced/system overrides in modules 01, 03, 06 and 07; explicit saved dimming remains supported |
@@ -128,7 +128,7 @@ The HTML fixture is explicitly simulated. Its narrow viewport includes `is-mobil
 
 - All seven `src/` modules and generated `theme.css`; generated palette snippets (all seven); corrected Academic Markdown example. Pomodoro snippet retained.
 - `manifest.json`, `package.json`, `package-lock.json`, `versions.json`, `.gitattributes`, `.gitignore`, `.stylelintrc.json`.
-- Build, release validation, lint, historical contrast, native and fixture smoke scripts; Node/browser tests and shared fixtures/contrast helpers.
+- Build, release validation, lint, historical contrast, native and fixture smoke scripts; Node/browser tests and shared fixtures/contrast helpers; sanitized publication/hash/provenance evidence.
 - `.github/workflows/theme-ci.yml`, reusable `validate.yml`, and a single `release.yml` publisher.
 - `LICENSE` (unchanged MIT terms, renamed from `LICENSE.md`); `community-theme.json` replaces obsolete PR-submission metadata.
 - README, development guide, changelog, authentic screenshot assets, this audit and sanitized evidence.
@@ -136,15 +136,39 @@ The HTML fixture is explicitly simulated. Its narrow viewport includes `is-mobil
 ## GitHub delivery record
 
 - Working branch: `release/eye-safe-writer-1.8.1`.
-- Commit / PR / Actions: **pending execution**.
-- Main merge / exact tag `1.8.1`: **not created yet**.
-- GitHub Release and downloadable asset verification: **not published yet**.
-- Publication is prohibited until mandatory checks pass and both release attachments match the tested tag files.
+- Source commit: [`0348935`](https://github.com/nicolamoscufo/eye-safe-writer/commit/0348935d8611e085285fbd4288a4ac89875f252d).
+- [PR #3](https://github.com/nicolamoscufo/eye-safe-writer/pull/3) passed [PR validation](https://github.com/nicolamoscufo/eye-safe-writer/actions/runs/41533100724) and was squash-merged on **2026-11-02 at 22:00:10 UTC**, without bypassing checks.
+- Main release commit: [`efc6cb7`](https://github.com/nicolamoscufo/eye-safe-writer/commit/efc6cb7889a09e1905a39e815f373e6d562398d8), tree-identical to the tested source commit. Its separate [main validation](https://github.com/nicolamoscufo/eye-safe-writer/actions/runs/41533410763) passed before tagging.
+- Exact annotated tag [`1.8.1`](https://github.com/nicolamoscufo/eye-safe-writer/tree/1.8.1) points to `efc6cb7889a09e1905a39e815f373e6d562398d8`; tag object `f0ced0b94b85f78fca8cc7544b165bd18b78a9dc`. It was created/pushed once; no existing tag/release was overwritten or force-pushed.
+- [Release workflow](https://github.com/nicolamoscufo/eye-safe-writer/actions/runs/41533774969): both complete validation and the official strict draft-release job passed. The official action resolved to `obsidianmd/obsidian-workflows@8167caed39664214d82c86fdfa32e06d8d55f61d`.
+- Downloaded both draft attachments at **22:05:17 UTC** and compared their bytes and SHA-256 with `git show 1.8.1:<filename>`. Both matched. Reviewed/filled the initially empty release notes before publication.
+- [Published release 1.8.1](https://github.com/nicolamoscufo/eye-safe-writer/releases/tag/1.8.1): **2026-11-02 at 22:06:32 UTC**; release ID `432018955`; verified **not draft, not prerelease**, with exactly the two expected installable assets.
+- Public downloads were independently fetched **without authentication** at **22:06:40 UTC**. Both returned **HTTP 200**, matched the tagged files byte-for-byte, and had the expected GitHub SHA-256 digests. The downloaded manifest declares `1.8.1` and minimum `1.13.0`.
+- `gh attestation verify` on the draft **and public** `theme.css`, constrained to this repository's `.github/workflows/release.yml`, passed. SLSA v1 provenance identifies tag `refs/tags/1.8.1` and source commit `efc6cb7`; official attestation ID `62851389`. The action attests **CSS only**; the manifest is separately byte/hash-verified.
+
+| Public asset | Bytes | SHA-256 |
+| --- | ---: | --- |
+| [`theme.css`](https://github.com/nicolamoscufo/eye-safe-writer/releases/download/1.8.1/theme.css) | 103800 | `5c41b26717c82fe815cd335ccff58b6383592caa6d6fc9ac69ff6b2515f323a6` |
+| [`manifest.json`](https://github.com/nicolamoscufo/eye-safe-writer/releases/download/1.8.1/manifest.json) | 156 | `754d0d063bdcdd70ca6b8c7d1242f9c63b21190ae92e5b4e8b0e71a58ff7b8d7` |
+
+Machine-readable delivery evidence: [`qa/release-1.8.1.json`](qa/release-1.8.1.json). Post-publication audit/README/CI maintenance does not change the released CSS, manifest, version or tag.
+
+### Non-blocking upstream advisories actually observed
+
+The official strict release action reported **0 errors, 8 warnings**; it was not a warning-free scan:
+
+- Five compatibility warnings classify supported print pagination declarations as partially supported **multicolumn** features; native PDF output was tested and visually inspected.
+- Two unknown-type warnings concern MathJax's genuine **`mjx-container`** custom element; actual native mathematics and PDF rendering passed.
+- One README warning matched the explanatory installation prefix **`<your vault>`**, not unfilled project identity/template content. The default-branch follow-up clarifies the path without that prefix.
+
+The official scanner's **isolated temporary npm installation** also reported **4 moderate advisories** in its upstream tool dependencies. This is separate from the repository's pinned, overridden dev dependency tree, whose mandatory `npm audit --audit-level=moderate` gate passed with **zero vulnerabilities**. No npm dependencies are shipped in the two theme assets; the upstream scanner notice is recorded, not hidden or represented as clean.
+
+GitHub emitted a Node 20 deprecation warning for the tagged workflow's `actions/upload-artifact@v4` (successfully forced to Node 24). The default-branch follow-up updates it to the documented Node 24 **`@v7`** interface with unchanged artifact inputs. Runner-image migration notices are infrastructure information, not theme failures.
 
 ## Community directory status
 
-**Not submitted by this audit.** The public compatibility registry had no matching repository entry when checked; authenticated draft/review state is not accessible. The current directory login flow requires the owner's Obsidian account and GitHub connection. No developer policies, account authorization, maintenance attestation or CAPTCHA has been accepted on the owner's behalf.
+**Not submitted by this audit.** The public compatibility registry had no matching name/repository entry when rechecked at **2026-11-02 22:06:39 UTC**; authenticated draft/review state is not accessible. The public [Themes portal](https://community.obsidian.md/themes) exposes a Sign in gate. The current directory flow requires the owner's Obsidian account and personal GitHub connection. No developer policies, account authorization, maintenance attestation or CAPTCHA has been accepted on the owner's behalf.
 
-Exact entry information and the owner's remaining steps are in [`COMMUNITY_SUBMISSION.md`](COMMUNITY_SUBMISSION.md). After GitHub publication, sign in, link GitHub personally, select or claim the theme, enter `screenshot.png` and both modes, review/accept the policies personally, submit, and inspect automated review results. Acceptance/listing is not claimed.
+Exact entry information and the owner's remaining steps are in [`COMMUNITY_SUBMISSION.md`](COMMUNITY_SUBMISSION.md). GitHub publication and public asset verification are complete. Sign in, inspect any existing account draft, link GitHub personally, select or claim the theme, enter `screenshot.png` and both modes, review/accept the policies personally, submit, and inspect automated review results. No obsolete registry PR was opened. Acceptance/listing is not claimed.
 
-**Current disposition: release preparation complete locally; GitHub delivery pending.**
+**Final disposition: RELEASED — READY FOR COMMUNITY SUBMISSION.**

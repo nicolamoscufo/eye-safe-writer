@@ -13,10 +13,12 @@ Submit through **https://community.obsidian.md**, not a registry pull request.
 | Author URL | https://github.com/nicolamoscufo |
 | Screenshot path (repository-relative) | `screenshot.png` |
 | Supported modes | **Light and Dark** |
-| Release version | **1.8.1**, only after publication/asset verification is recorded in the audit |
+| Published release | [**1.8.1**](https://github.com/nicolamoscufo/eye-safe-writer/releases/tag/1.8.1), both public assets verified against the tag |
 | Community owner | The owner's personally linked profile, or an explicitly selected organization |
 
 The screenshot is a genuine isolated-vault Obsidian capture, 512×288, 16:9. The repository includes a root MIT `LICENSE`, README, generated CSS and manifest. See [the audit](RELEASE_AUDIT_1.8.1.md) for actual release/submission status; this checklist is not proof of publication or acceptance.
+
+**Release ready; Community submission not completed.** The public compatibility registry contained no matching entry when checked on 2026-11-02. Signed-in draft/review state is unknown; inspect your account before creating a duplicate.
 
 ## Owner-only actions
 

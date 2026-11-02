@@ -1,0 +1,86 @@
+{
+  "repository": "nicolamoscufo/eye-safe-writer",
+  "status": "RELEASED — READY FOR COMMUNITY SUBMISSION",
+  "sourceCommit": "0348935d8611e085285fbd4288a4ac89875f252d",
+  "releaseCommit": "efc6cb7889a09e1905a39e815f373e6d562398d8",
+  "tag": "1.8.1",
+  "annotatedTagObject": "f0ced0b94b85f78fca8cc7544b165bd18b78a9dc",
+  "pullRequest": "https://github.com/nicolamoscufo/eye-safe-writer/pull/3",
+  "mergedAt": "2026-11-02T22:00:10Z",
+  "checks": {
+    "pr": "https://github.com/nicolamoscufo/eye-safe-writer/actions/runs/41533100724",
+    "main": "https://github.com/nicolamoscufo/eye-safe-writer/actions/runs/41533410763",
+    "release": "https://github.com/nicolamoscufo/eye-safe-writer/actions/runs/41533774969",
+    "allConclusions": "success",
+    "officialActionCommit": "8167caed39664214d82c86fdfa32e06d8d55f61d"
+  },
+  "release": {
+    "id": 432018955,
+    "url": "https://github.com/nicolamoscufo/eye-safe-writer/releases/tag/1.8.1",
+    "publishedAt": "2026-11-02T22:06:32Z",
+    "draft": false,
+    "prerelease": false,
+    "metadataCheckedAt": "2026-11-02T22:07:22.160Z",
+    "metadataAuthentication": "none"
+  },
+  "draftAssetsVerifiedAt": "2026-11-02T22:05:17.596Z",
+  "publicAssetsVerifiedAt": "2026-11-02T22:06:40.378Z",
+  "comparison": "Exact bytes and SHA-256 against git show 1.8.1:<filename>; GitHub asset digests also match",
+  "assets": [
+    {
+      "name": "theme.css",
+      "githubAssetId": 703328174,
+      "bytes": 103800,
+      "sha256": "5c41b26717c82fe815cd335ccff58b6383592caa6d6fc9ac69ff6b2515f323a6",
+      "url": "https://github.com/nicolamoscufo/eye-safe-writer/releases/download/1.8.1/theme.css",
+      "publicHttpStatus": 200,
+      "authentication": "none",
+      "matchesTaggedFile": true
+    },
+    {
+      "name": "manifest.json",
+      "githubAssetId": 703328171,
+      "bytes": 156,
+      "sha256": "754d0d063bdcdd70ca6b8c7d1242f9c63b21190ae92e5b4e8b0e71a58ff7b8d7",
+      "url": "https://github.com/nicolamoscufo/eye-safe-writer/releases/download/1.8.1/manifest.json",
+      "publicHttpStatus": 200,
+      "authentication": "none",
+      "matchesTaggedFile": true,
+      "version": "1.8.1",
+      "minAppVersion": "1.13.0"
+    }
+  ],
+  "provenance": {
+    "subject": "theme.css",
+    "officialAttestationId": 62851389,
+    "draftAndPublicDownloadsVerified": true,
+    "verifier": "gh attestation verify --repo nicolamoscufo/eye-safe-writer --signer-workflow nicolamoscufo/eye-safe-writer/.github/workflows/release.yml",
+    "signer": "https://github.com/nicolamoscufo/eye-safe-writer/.github/workflows/release.yml@refs/tags/1.8.1",
+    "sourceCommit": "efc6cb7889a09e1905a39e815f373e6d562398d8",
+    "predicateType": "https://slsa.dev/provenance/v1",
+    "manifestCoveredByAttestation": false
+  },
+  "nonBlockingNotices": {
+    "officialReleaseErrors": 0,
+    "officialReleaseWarnings": 8,
+    "warnings": [
+      "Five print-pagination compatibility warnings reported as multicolumn features",
+      "Two MathJax mjx-container custom-element selector warnings",
+      "One explanatory <your vault> README path-prefix heuristic warning"
+    ],
+    "officialScannerIsolatedTemporaryInstallModerateAdvisories": 4,
+    "repositoryNpmAuditVulnerabilities": 0,
+    "runtimeNpmDependenciesShipped": 0,
+    "ciMaintenance": "Node 20 upload-artifact@v4 notice addressed by a Node 24 @v7 default-branch follow-up; immutable release/tag unchanged"
+  },
+  "community": {
+    "submitted": false,
+    "acceptedOrListed": false,
+    "publicRegistryCheckedAt": "2026-11-02T22:06:39.890Z",
+    "publicRegistryMatches": [],
+    "authenticatedDraftState": "unknown",
+    "ownerOnlyGate": "Obsidian sign-in, GitHub account connection, ownership selection, Developer Policies and maintenance/support attestation; CAPTCHA if presented",
+    "portal": "https://community.obsidian.md",
+    "obsoleteRegistryPullRequestOpened": false
+  }
+}

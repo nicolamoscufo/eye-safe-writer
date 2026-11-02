@@ -21,7 +21,7 @@ The name is not a medical or universal accessibility guarantee. Built-in colors 
 ### Manual installation
 
 1. Download **both** `theme.css` and `manifest.json` from a [published GitHub release](https://github.com/nicolamoscufo/eye-safe-writer/releases).
-2. Put them in `<your vault>/.obsidian/themes/Eye Safe Writer/`.
+2. Inside your vault, put them in `.obsidian/themes/Eye Safe Writer/`.
 3. Select **Settings → Appearance → Themes → Eye Safe Writer**.
 4. Optionally install **Style Settings** through Obsidian's Community Plugins browser.
 
