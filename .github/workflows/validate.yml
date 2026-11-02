@@ -1,0 +1,46 @@
+name: Reusable theme checks
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      # Check BEFORE building so stale committed assets cannot be hidden.
+      - run: npm run check
+      - run: npm run build
+      - run: npm test
+      - run: npm run lint
+      - run: npm run visual:smoke
+      - run: npm audit --audit-level=moderate
+      - run: git diff --exit-code -- theme.css snippets/ manifest.json package-lock.json
+      - uses: obsidianmd/obsidian-workflows@v1
+        with:
+          type: theme
+          mode: pr
+          strict: 'true'
+          # Our mandatory lint step already uses the official configuration.
+          lint: 'false'
+          build: 'false'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: theme-browser-evidence
+          path: visual-artifacts/
+          if-no-files-found: warn
+          retention-days: 14

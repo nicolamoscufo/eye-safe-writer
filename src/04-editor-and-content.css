@@ -1,98 +1,25 @@
 
 /* Writing surface */
 
-.workspace-leaf-content[data-type="markdown"] :is(
-  .markdown-source-view,
-  .markdown-reading-view,
-  .markdown-preview-view,
-  .markdown-rendered,
-  .markdown-preview-sizer,
-  .markdown-preview-section,
-  .cm-editor,
-  .cm-scroller,
-  .cm-content
-) {
-  --color-base-00: inherit;
-  --color-base-05: inherit;
-  --color-base-10: inherit;
-  --color-base-20: inherit;
-  --color-base-25: inherit;
-  --color-base-30: inherit;
-  --color-base-35: inherit;
-  --color-base-40: inherit;
-  --color-base-50: inherit;
-  --color-base-60: inherit;
-  --color-base-70: inherit;
-  --color-base-100: inherit;
-  --background-primary: inherit;
-  --background-primary-alt: inherit;
-  --background-secondary: inherit;
-  --background-secondary-alt: inherit;
-  --background-modifier-hover: inherit;
-  --background-modifier-active-hover: inherit;
-  --background-modifier-border: inherit;
-  --background-modifier-border-hover: inherit;
-  --background-modifier-border-focus: inherit;
-  --background-modifier-box-shadow: inherit;
-  --background-modifier-form-field: inherit;
-  --text-normal: inherit;
-  --text-muted: inherit;
-  --text-faint: inherit;
-  --text-on-accent: inherit;
-  --text-accent: inherit;
-  --text-accent-hover: inherit;
-  --text-selection: inherit;
-  --text-highlight-bg: inherit;
-  --interactive-normal: inherit;
-  --interactive-hover: inherit;
-  --interactive-accent: inherit;
-  --interactive-accent-hover: inherit;
-  --writer-yellow: inherit;
-  --writer-red: inherit;
-  --writer-blue: inherit;
-  --writer-green: inherit;
-  --writer-purple: inherit;
-  --writer-berry: inherit;
-  --writer-orange: inherit;
-  --bold-color: inherit;
-  --italic-color: inherit;
-  --h1-color: inherit;
-  --h2-color: inherit;
-  --h3-color: inherit;
-  --h4-color: inherit;
-  --h5-color: inherit;
-  --h6-color: inherit;
-  --link-color: inherit;
-  --link-color-hover: inherit;
-  --link-external-color: inherit;
-  --link-external-color-hover: inherit;
-  --link-unresolved-color: inherit;
-  --hr-color: inherit;
-  --tag-color: inherit;
-  --tag-background: inherit;
-  --tag-border-color: inherit;
-  --checkbox-color: inherit;
-  --checkbox-color-hover: inherit;
-  --checkbox-marker-color: inherit;
-  --list-marker-color: inherit;
-  --code-background: inherit;
-  --code-normal: inherit;
-  --blockquote-border-color: inherit;
-  --table-border-color: inherit;
-  --table-header-background: inherit;
-  --table-row-alt-background: inherit;
+.workspace-leaf-content[data-type="markdown"] :where(.markdown-source-view, .markdown-reading-view) {
+  /* Custom properties already inherit. Do not reset component-local tokens
+     supplied by callouts, embeds, syntax highlighters or plugins. */
   color: var(--text-normal);
 }
 
 .markdown-source-view.mod-cm6 .cm-scroller,
 .markdown-reading-view {
   padding-inline: clamp(18px, 4vw, 64px);
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
 }
 
 .markdown-source-view.mod-cm6 .cm-content,
 .markdown-preview-sizer {
-  width: var(--file-line-width);
+  box-sizing: border-box;
+
+  /* Native readable-line rules can replace max-width with the configured
+     width. Bound width itself so wide presets still fit a split/narrow pane. */
+  width: min(var(--file-line-width), 100%);
   max-width: 100%;
   margin-inline: auto;
   padding-top: clamp(28px, 6vh, 72px);
@@ -117,7 +44,7 @@
 
 .markdown-source-view.mod-cm6 .cm-selectionBackground,
 .markdown-reading-view ::selection {
-  background: var(--text-selection) !important;
+  background: var(--text-selection);
 }
 
 .markdown-rendered p {
@@ -204,9 +131,7 @@
 
 .markdown-rendered blockquote,
 .HyperMD-quote {
-  color: var(--text-muted);
   color: color-mix(in srgb, var(--writer-green) 46%, var(--text-muted));
-  background: var(--background-modifier-hover);
   background: color-mix(in srgb, var(--writer-green) 4%, transparent);
   border-left: 2px solid var(--writer-green);
 }
@@ -223,7 +148,6 @@
 }
 
 .markdown-source-view.mod-cm6 .cm-formatting-strong {
-  color: var(--bold-color);
   color: color-mix(in srgb, var(--bold-color) 68%, var(--text-muted));
 }
 
@@ -235,7 +159,6 @@
 }
 
 .markdown-source-view.mod-cm6 .cm-formatting-em {
-  color: var(--italic-color);
   color: color-mix(in srgb, var(--italic-color) 62%, var(--text-muted));
 }
 
@@ -335,14 +258,29 @@
 }
 
 .markdown-rendered pre {
+  max-width: 100%;
+  overflow-x: auto;
   border: 1px solid var(--background-modifier-border);
   border-radius: var(--radius-m);
   box-shadow: none;
 }
 
+.markdown-rendered pre code {
+  color: var(--code-normal);
+  background: transparent;
+  padding: 0;
+}
+
 .markdown-rendered table {
   width: 100%;
   border-collapse: collapse;
+}
+
+/* Native Reading View table wrappers must contain intrinsic table width on
+   desktop too, not only below the mobile breakpoint. */
+.markdown-rendered .el-table {
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .markdown-rendered th {
@@ -362,9 +300,8 @@
 }
 
 .callout {
-  background: var(--background-primary-alt);
+  /* Obsidian 1.13+ accepts complete CSS colors, not RGB channel triples. */
   background: color-mix(in srgb, var(--callout-color) 5%, var(--background-primary));
-  border: 1px solid var(--background-modifier-border);
   border: 1px solid color-mix(in srgb, var(--callout-color) 28%, var(--background-modifier-border));
   border-radius: var(--radius-m);
   box-shadow: none;
@@ -404,7 +341,7 @@
   --callout-icon: help-circle;
 }
 
-.callout:where(
+.callout[data-callout]:where(
   [data-callout="definition"], [data-callout="definizione"],
   [data-callout="formula"],
   [data-callout="example"], [data-callout="esempio"],
@@ -424,8 +361,9 @@
   [data-callout="exercise"], [data-callout="esercizio"],
   [data-callout="doubt"], [data-callout="dubbio"]
 ) > .callout-title {
-  --callout-title-color: currentColor;
+  --callout-title-color: currentcolor;
   --callout-title-weight: 650;
+
   color: var(--text-normal);
   font-size: 1em;
   gap: 0.55em;
@@ -441,21 +379,35 @@
   color: var(--callout-color);
 }
 
-.internal-link,
-.external-link {
+.markdown-rendered .internal-link {
   color: var(--link-color);
 }
 
-.internal-link:hover,
-.external-link:hover {
+.markdown-rendered .external-link {
+  color: var(--link-external-color);
+}
+
+.markdown-rendered .internal-link:hover {
+  color: var(--link-color-hover);
+}
+
+.markdown-rendered .external-link:hover {
+  color: var(--link-external-color-hover);
+}
+
+.markdown-rendered .internal-link.is-unresolved {
+  color: var(--link-unresolved-color);
+  opacity: var(--link-unresolved-opacity);
+}
+
+.markdown-rendered .internal-link.is-unresolved:hover {
   color: var(--link-color-hover);
 }
 
 .tag,
 a.tag {
-  color: var(--writer-purple);
-  background: var(--background-primary-alt);
-  border: 1px solid var(--background-modifier-border);
+  color: var(--tag-color);
+  background: var(--tag-background);
   border: 1px solid color-mix(in srgb, var(--writer-purple) 30%, var(--background-modifier-border));
   border-radius: 999px;
   font-size: 0.82em;
@@ -474,18 +426,15 @@ input[type="checkbox"]:checked {
 
 .task-list-item.is-checked,
 .task-list-item[data-task="x"] {
-  background: var(--background-modifier-hover);
   background: linear-gradient(90deg, color-mix(in srgb, var(--writer-green) 7%, transparent), transparent 58%);
   border-radius: var(--radius-s);
   color: var(--text-faint);
-  opacity: 0.76;
-  text-decoration-color: var(--text-faint);
-  text-decoration-thickness: 0.08em;
+  opacity: 1;
 }
 
 .task-list-item.is-checked input[type="checkbox"],
 .task-list-item[data-task="x"] input[type="checkbox"] {
-  opacity: 0.78;
+  opacity: 1;
 }
 
 /* Popovers and controls */
@@ -509,8 +458,7 @@ select,
   box-shadow: none;
 }
 
-button:hover,
-.clickable-icon:hover {
+:where(button, .clickable-icon):hover {
   box-shadow: none;
 }
 

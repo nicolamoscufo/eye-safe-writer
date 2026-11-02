@@ -1,0 +1,54 @@
+name: Release
+on:
+  push:
+    tags: ['*']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    uses: ./.github/workflows/validate.yml
+
+  draft-release:
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Require a release commit already on main
+        run: git merge-base --is-ancestor "$GITHUB_SHA" origin/main
+      - run: npm ci
+      - run: npm run release:check
+      - run: npm run build
+      - run: git diff --exit-code -- theme.css snippets/ manifest.json
+      - name: Validate, attest and create the single draft release
+        id: release
+        uses: obsidianmd/obsidian-workflows@v1
+        with:
+          type: theme
+          mode: release
+          build: 'false'
+          strict: 'true'
+          scanner-lint: 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Record draft URL
+        env:
+          RELEASE_URL: ${{ steps.release.outputs.release-url }}
+        run: echo "Review draft and verify both assets before publishing — $RELEASE_URL" >> "$GITHUB_STEP_SUMMARY"

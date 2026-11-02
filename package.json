@@ -1,15 +1,27 @@
 {
   "name": "eye-safe-writer-theme",
   "private": true,
-  "version": "1.8.0",
+  "version": "1.8.1",
   "type": "module",
   "scripts": {
     "build": "node scripts/build-theme.mjs",
     "check": "node scripts/build-theme.mjs --check",
-    "test": "node --test tests/theme.test.mjs",
-    "visual:smoke": "node scripts/visual-smoke.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "lint": "node scripts/lint.mjs",
+    "visual:smoke": "node scripts/visual-smoke.mjs",
+    "native:smoke": "node scripts/native-smoke.mjs",
+    "release:check": "node scripts/validate-release.mjs"
   },
   "devDependencies": {
-    "playwright": "^1.55.0"
+    "playwright": "1.61.1",
+    "pngjs": "7.0.0",
+    "postcss": "8.5.32",
+    "stylelint": "17.16.0",
+    "stylelint-config-obsidianmd": "0.1.0",
+    "yaml": "2.9.1"
+  },
+  "engines": { "node": ">=24" },
+  "overrides": {
+    "multimatch": { "minimatch": "11.0.1" }
   }
 }

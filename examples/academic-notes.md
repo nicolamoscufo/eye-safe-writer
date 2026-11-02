@@ -3,7 +3,7 @@
 Choose **Academic / Research** in Style Settings → Eye Safe Writer → Activity Presets.
 
 > [!teorema] Linearità del valore atteso
-> $\\mathbb{E}[aX+bY]=a\\mathbb{E}[X]+b\\mathbb{E}[Y]$.
+> $\mathbb{E}[aX+bY]=a\mathbb{E}[X]+b\mathbb{E}[Y]$.
 
 > [!dimostrazione]- Dimostrazione
 > La dimostrazione segue dalla linearità dell'integrale.
@@ -18,7 +18,7 @@ Choose **Academic / Research** in Style Settings → Eye Safe Writer → Activit
 > This behaves as the Italian `dimostrazione` callout.
 
 $$
-\\mathbb{E}[X]=\\sum_x x\\,P(X=x)
+\mathbb{E}[X]=\sum_x x\,P(X=x)
 $$
 
 | Concept | Description |

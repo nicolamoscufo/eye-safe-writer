@@ -1,0 +1,901 @@
+{
+  "report": [
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "setting": "default",
+      "combinations": 277,
+      "minimum": 4.850662028679379
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 4.850662028679379
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "setting": "eye-safe-headings-mono",
+      "combinations": 277,
+      "minimum": 4.850662028679379
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "setting": "eye-safe-headings-accent",
+      "combinations": 277,
+      "minimum": 4.850662028679379
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "setting": "eye-safe-headings-muted",
+      "combinations": 277,
+      "minimum": 4.850662028679379
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "setting": "eye-safe-links-underlined",
+      "combinations": 277,
+      "minimum": 4.850662028679379
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "setting": "eye-safe-links-high-contrast",
+      "combinations": 277,
+      "minimum": 4.850662028679379
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "setting": "eye-safe-focus-deep eye-safe-paragraph-focus eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 4.850662028679379
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "setting": "default",
+      "combinations": 277,
+      "minimum": 5.058288421785811
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 5.568083383732139
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "setting": "eye-safe-headings-mono",
+      "combinations": 277,
+      "minimum": 5.058288421785811
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "setting": "eye-safe-headings-accent",
+      "combinations": 277,
+      "minimum": 5.058288421785811
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "setting": "eye-safe-headings-muted",
+      "combinations": 277,
+      "minimum": 5.058288421785811
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "setting": "eye-safe-links-underlined",
+      "combinations": 277,
+      "minimum": 5.058288421785811
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "setting": "eye-safe-links-high-contrast",
+      "combinations": 277,
+      "minimum": 5.058288421785811
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "setting": "eye-safe-focus-deep eye-safe-paragraph-focus eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 5.568083383732139
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "setting": "default",
+      "combinations": 277,
+      "minimum": 4.863272071113225
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 4.863272071113225
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "setting": "eye-safe-headings-mono",
+      "combinations": 277,
+      "minimum": 4.863272071113225
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "setting": "eye-safe-headings-accent",
+      "combinations": 277,
+      "minimum": 4.863272071113225
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "setting": "eye-safe-headings-muted",
+      "combinations": 277,
+      "minimum": 4.863272071113225
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "setting": "eye-safe-links-underlined",
+      "combinations": 277,
+      "minimum": 4.863272071113225
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "setting": "eye-safe-links-high-contrast",
+      "combinations": 277,
+      "minimum": 4.863272071113225
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "setting": "eye-safe-focus-deep eye-safe-paragraph-focus eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 4.863272071113225
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "setting": "default",
+      "combinations": 277,
+      "minimum": 5.199207016412944
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 5.162041195038072
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "setting": "eye-safe-headings-mono",
+      "combinations": 277,
+      "minimum": 5.199207016412944
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "setting": "eye-safe-headings-accent",
+      "combinations": 277,
+      "minimum": 5.199207016412944
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "setting": "eye-safe-headings-muted",
+      "combinations": 277,
+      "minimum": 5.199207016412944
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "setting": "eye-safe-links-underlined",
+      "combinations": 277,
+      "minimum": 5.199207016412944
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "setting": "eye-safe-links-high-contrast",
+      "combinations": 277,
+      "minimum": 5.199207016412944
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "setting": "eye-safe-focus-deep eye-safe-paragraph-focus eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 5.162041195038072
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "setting": "default",
+      "combinations": 277,
+      "minimum": 4.856414746466249
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 4.856414746466249
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "setting": "eye-safe-headings-mono",
+      "combinations": 277,
+      "minimum": 4.856414746466249
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "setting": "eye-safe-headings-accent",
+      "combinations": 277,
+      "minimum": 4.856414746466249
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "setting": "eye-safe-headings-muted",
+      "combinations": 277,
+      "minimum": 4.856414746466249
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "setting": "eye-safe-links-underlined",
+      "combinations": 277,
+      "minimum": 4.856414746466249
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "setting": "eye-safe-links-high-contrast",
+      "combinations": 277,
+      "minimum": 4.856414746466249
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "setting": "eye-safe-focus-deep eye-safe-paragraph-focus eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 4.856414746466249
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "setting": "default",
+      "combinations": 277,
+      "minimum": 4.968094988063619
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 7.21690149804101
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "setting": "eye-safe-headings-mono",
+      "combinations": 277,
+      "minimum": 4.968094988063619
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "setting": "eye-safe-headings-accent",
+      "combinations": 277,
+      "minimum": 4.968094988063619
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "setting": "eye-safe-headings-muted",
+      "combinations": 277,
+      "minimum": 4.968094988063619
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "setting": "eye-safe-links-underlined",
+      "combinations": 277,
+      "minimum": 4.968094988063619
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "setting": "eye-safe-links-high-contrast",
+      "combinations": 277,
+      "minimum": 4.968094988063619
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "setting": "eye-safe-focus-deep eye-safe-paragraph-focus eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 7.21690149804101
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "setting": "default",
+      "combinations": 277,
+      "minimum": 4.860085130060513
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 4.860085130060513
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "setting": "eye-safe-headings-mono",
+      "combinations": 277,
+      "minimum": 4.860085130060513
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "setting": "eye-safe-headings-accent",
+      "combinations": 277,
+      "minimum": 4.860085130060513
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "setting": "eye-safe-headings-muted",
+      "combinations": 277,
+      "minimum": 4.860085130060513
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "setting": "eye-safe-links-underlined",
+      "combinations": 277,
+      "minimum": 4.860085130060513
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "setting": "eye-safe-links-high-contrast",
+      "combinations": 277,
+      "minimum": 4.860085130060513
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "setting": "eye-safe-focus-deep eye-safe-paragraph-focus eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 4.860085130060513
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "setting": "default",
+      "combinations": 277,
+      "minimum": 5.218330887365945
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 5.799578698977955
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "setting": "eye-safe-headings-mono",
+      "combinations": 277,
+      "minimum": 5.218330887365945
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "setting": "eye-safe-headings-accent",
+      "combinations": 277,
+      "minimum": 5.218330887365945
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "setting": "eye-safe-headings-muted",
+      "combinations": 277,
+      "minimum": 5.218330887365945
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "setting": "eye-safe-links-underlined",
+      "combinations": 277,
+      "minimum": 5.218330887365945
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "setting": "eye-safe-links-high-contrast",
+      "combinations": 277,
+      "minimum": 5.218330887365945
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "setting": "eye-safe-focus-deep eye-safe-paragraph-focus eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 5.799578698977955
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "setting": "default",
+      "combinations": 277,
+      "minimum": 4.854630150571643
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 4.854630150571643
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "setting": "eye-safe-headings-mono",
+      "combinations": 277,
+      "minimum": 4.854630150571643
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "setting": "eye-safe-headings-accent",
+      "combinations": 277,
+      "minimum": 4.854630150571643
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "setting": "eye-safe-headings-muted",
+      "combinations": 277,
+      "minimum": 4.854630150571643
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "setting": "eye-safe-links-underlined",
+      "combinations": 277,
+      "minimum": 4.854630150571643
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "setting": "eye-safe-links-high-contrast",
+      "combinations": 277,
+      "minimum": 4.854630150571643
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "setting": "eye-safe-focus-deep eye-safe-paragraph-focus eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 4.854630150571643
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "setting": "default",
+      "combinations": 277,
+      "minimum": 5.2980870291135185
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 5.418619963536406
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "setting": "eye-safe-headings-mono",
+      "combinations": 277,
+      "minimum": 5.2980870291135185
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "setting": "eye-safe-headings-accent",
+      "combinations": 277,
+      "minimum": 5.2980870291135185
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "setting": "eye-safe-headings-muted",
+      "combinations": 277,
+      "minimum": 5.2980870291135185
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "setting": "eye-safe-links-underlined",
+      "combinations": 277,
+      "minimum": 5.2980870291135185
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "setting": "eye-safe-links-high-contrast",
+      "combinations": 277,
+      "minimum": 5.2980870291135185
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "setting": "eye-safe-focus-deep eye-safe-paragraph-focus eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 5.418619963536406
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "setting": "default",
+      "combinations": 277,
+      "minimum": 4.631661443436875
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 4.606791563023914
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "setting": "eye-safe-headings-mono",
+      "combinations": 277,
+      "minimum": 4.631661443436875
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "setting": "eye-safe-headings-accent",
+      "combinations": 277,
+      "minimum": 4.631661443436875
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "setting": "eye-safe-headings-muted",
+      "combinations": 277,
+      "minimum": 4.631661443436875
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "setting": "eye-safe-links-underlined",
+      "combinations": 277,
+      "minimum": 4.631661443436875
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "setting": "eye-safe-links-high-contrast",
+      "combinations": 277,
+      "minimum": 4.631661443436875
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "setting": "eye-safe-focus-deep eye-safe-paragraph-focus eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 4.606791563023914
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "setting": "default",
+      "combinations": 277,
+      "minimum": 4.858676719520689
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 4.858676719520689
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "setting": "eye-safe-headings-mono",
+      "combinations": 277,
+      "minimum": 4.858676719520689
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "setting": "eye-safe-headings-accent",
+      "combinations": 277,
+      "minimum": 4.858676719520689
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "setting": "eye-safe-headings-muted",
+      "combinations": 277,
+      "minimum": 4.858676719520689
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "setting": "eye-safe-links-underlined",
+      "combinations": 277,
+      "minimum": 4.858676719520689
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "setting": "eye-safe-links-high-contrast",
+      "combinations": 277,
+      "minimum": 4.858676719520689
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "setting": "eye-safe-focus-deep eye-safe-paragraph-focus eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 4.858676719520689
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "setting": "default",
+      "combinations": 277,
+      "minimum": 4.852086346863824
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 4.852086346863824
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "setting": "eye-safe-headings-mono",
+      "combinations": 277,
+      "minimum": 4.852086346863824
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "setting": "eye-safe-headings-accent",
+      "combinations": 277,
+      "minimum": 4.852086346863824
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "setting": "eye-safe-headings-muted",
+      "combinations": 277,
+      "minimum": 4.852086346863824
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "setting": "eye-safe-links-underlined",
+      "combinations": 277,
+      "minimum": 4.852086346863824
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "setting": "eye-safe-links-high-contrast",
+      "combinations": 277,
+      "minimum": 4.852086346863824
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "setting": "eye-safe-focus-deep eye-safe-paragraph-focus eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 4.852086346863824
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "setting": "default",
+      "combinations": 277,
+      "minimum": 4.935769757957169
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 4.935769757957169
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "setting": "eye-safe-headings-mono",
+      "combinations": 277,
+      "minimum": 4.935769757957169
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "setting": "eye-safe-headings-accent",
+      "combinations": 277,
+      "minimum": 4.935769757957169
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "setting": "eye-safe-headings-muted",
+      "combinations": 277,
+      "minimum": 4.935769757957169
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "setting": "eye-safe-links-underlined",
+      "combinations": 277,
+      "minimum": 4.935769757957169
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "setting": "eye-safe-links-high-contrast",
+      "combinations": 277,
+      "minimum": 4.935769757957169
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "setting": "eye-safe-focus-deep eye-safe-paragraph-focus eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 4.935769757957169
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "setting": "default",
+      "combinations": 277,
+      "minimum": 4.854685950978411
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 4.854685950978411
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "setting": "eye-safe-headings-mono",
+      "combinations": 277,
+      "minimum": 4.854685950978411
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "setting": "eye-safe-headings-accent",
+      "combinations": 277,
+      "minimum": 4.854685950978411
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "setting": "eye-safe-headings-muted",
+      "combinations": 277,
+      "minimum": 4.854685950978411
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "setting": "eye-safe-links-underlined",
+      "combinations": 277,
+      "minimum": 4.854685950978411
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "setting": "eye-safe-links-high-contrast",
+      "combinations": 277,
+      "minimum": 4.854685950978411
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "setting": "eye-safe-focus-deep eye-safe-paragraph-focus eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 4.854685950978411
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "setting": "default",
+      "combinations": 277,
+      "minimum": 6.073284388990469
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "setting": "eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 6.073284388990469
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "setting": "eye-safe-headings-mono",
+      "combinations": 277,
+      "minimum": 6.073284388990469
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "setting": "eye-safe-headings-accent",
+      "combinations": 277,
+      "minimum": 6.073284388990469
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "setting": "eye-safe-headings-muted",
+      "combinations": 277,
+      "minimum": 6.073284388990469
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "setting": "eye-safe-links-underlined",
+      "combinations": 277,
+      "minimum": 6.073284388990469
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "setting": "eye-safe-links-high-contrast",
+      "combinations": 277,
+      "minimum": 6.073284388990469
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "setting": "eye-safe-focus-deep eye-safe-paragraph-focus eye-safe-enhanced-contrast",
+      "combinations": 277,
+      "minimum": 6.073284388990469
+    }
+  ],
+  "failures": []
+}

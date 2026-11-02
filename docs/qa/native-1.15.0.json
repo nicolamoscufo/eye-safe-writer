@@ -1,0 +1,1386 @@
+{
+  "date": "2026-11-02T21:51:23.071Z",
+  "scope": "Real Windows Obsidian renderer, installed Electron launcher, isolated public-note vault/profile. Narrow desktop is not a native mobile app test.",
+  "runtime": {
+    "app": "1.15.0",
+    "electron": "39.8.3",
+    "chromium": "142.0.7444.265",
+    "vault": "Eye Safe QA"
+  },
+  "plugins": [
+    {
+      "id": "obsidian-style-settings",
+      "version": "1.0.9",
+      "repository": "mgmeyers/obsidian-style-settings"
+    },
+    {
+      "id": "obsidian-tasks-plugin",
+      "version": "8.6.0",
+      "repository": "obsidian-tasks-group/obsidian-tasks"
+    }
+  ],
+  "isolated": true,
+  "cases": [
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "preset": "default",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "preset": "study",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "preset": "writing",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "preset": "code",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "preset": "academic",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "preset": "default",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "preset": "study",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "preset": "writing",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "preset": "code",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "preset": "academic",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "preset": "default",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "preset": "study",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "preset": "writing",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "preset": "code",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "preset": "academic",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "preset": "default",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "preset": "study",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "preset": "writing",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "preset": "code",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "preset": "academic",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "preset": "default",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "preset": "study",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "preset": "writing",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "preset": "code",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "preset": "academic",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "preset": "default",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "preset": "study",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "preset": "writing",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "preset": "code",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "preset": "academic",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "preset": "default",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "preset": "study",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "preset": "writing",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "preset": "code",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "preset": "academic",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "preset": "default",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "preset": "study",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "preset": "writing",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "preset": "code",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "preset": "academic",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "preset": "default",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "preset": "study",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "preset": "writing",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "preset": "code",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "preset": "academic",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "preset": "default",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "preset": "study",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "preset": "writing",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "preset": "code",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "preset": "academic",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "preset": "default",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "preset": "study",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "preset": "writing",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "preset": "code",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "preset": "academic",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "preset": "default",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "preset": "study",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "preset": "writing",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "preset": "code",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "preset": "academic",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "preset": "default",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "preset": "study",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "preset": "writing",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "preset": "code",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "preset": "academic",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "preset": "default",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "preset": "study",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "preset": "writing",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "preset": "code",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "preset": "academic",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "preset": "default",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "preset": "study",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "preset": "writing",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "preset": "code",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "preset": "academic",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "preset": "default",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "preset": "study",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "preset": "writing",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "preset": "code",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "preset": "academic",
+      "view": "reading",
+      "savedNativeFontSize": 16
+    },
+    {
+      "view": "live-preview",
+      "native": true
+    },
+    {
+      "view": "source",
+      "native": true
+    },
+    {
+      "view": "reading",
+      "features": [
+        "MathJax",
+        "Mermaid",
+        "Tasks query",
+        "nested lists",
+        "checkboxes",
+        "native callouts",
+        "long document",
+        "wide table",
+        "wide code"
+      ]
+    }
+  ],
+  "measurements": [
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "checks": 73,
+      "minimum": 3.875533387786963,
+      "textMinimum": 5.05558006076199,
+      "uiMinimum": 3.875533387786963,
+      "failures": []
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "checks": 73,
+      "minimum": 3.905718719307185,
+      "textMinimum": 5.9480068419690655,
+      "uiMinimum": 3.905718719307185,
+      "failures": []
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "checks": 73,
+      "minimum": 3.951767496687028,
+      "textMinimum": 5.326725237884487,
+      "uiMinimum": 3.951767496687028,
+      "failures": []
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "checks": 73,
+      "minimum": 3.96613945632183,
+      "textMinimum": 5.301728992638271,
+      "uiMinimum": 3.96613945632183,
+      "failures": []
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "checks": 73,
+      "minimum": 4.158447802500576,
+      "textMinimum": 5.226758681162846,
+      "uiMinimum": 4.158447802500576,
+      "failures": []
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "checks": 73,
+      "minimum": 4.027332110763612,
+      "textMinimum": 7.567385392804125,
+      "uiMinimum": 4.027332110763612,
+      "failures": []
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "checks": 73,
+      "minimum": 3.9044305610782937,
+      "textMinimum": 5.117485752379766,
+      "uiMinimum": 3.9044305610782937,
+      "failures": []
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "checks": 73,
+      "minimum": 3.775704232089649,
+      "textMinimum": 5.87875551984207,
+      "uiMinimum": 3.775704232089649,
+      "failures": []
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "checks": 73,
+      "minimum": 3.905109141936915,
+      "textMinimum": 4.971338391697415,
+      "uiMinimum": 3.905109141936915,
+      "failures": []
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "checks": 73,
+      "minimum": 3.8206560287289597,
+      "textMinimum": 5.288246962318735,
+      "uiMinimum": 3.8206560287289597,
+      "failures": []
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "checks": 73,
+      "minimum": 3.871842778814075,
+      "textMinimum": 4.854266340918045,
+      "uiMinimum": 3.871842778814075,
+      "failures": []
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "checks": 73,
+      "minimum": 3.504396635103153,
+      "textMinimum": 4.918257891155512,
+      "uiMinimum": 3.504396635103153,
+      "failures": []
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "checks": 73,
+      "minimum": 3.900410524231208,
+      "textMinimum": 5.3006636141486085,
+      "uiMinimum": 3.900410524231208,
+      "failures": []
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "checks": 73,
+      "minimum": 3.524338432699594,
+      "textMinimum": 5.420421435745514,
+      "uiMinimum": 3.524338432699594,
+      "failures": []
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "checks": 73,
+      "minimum": 4.2221773053666425,
+      "textMinimum": 5.239657152914164,
+      "uiMinimum": 4.2221773053666425,
+      "failures": []
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "checks": 73,
+      "minimum": 4.89291061460601,
+      "textMinimum": 7.083463627446291,
+      "uiMinimum": 4.89291061460601,
+      "failures": []
+    }
+  ],
+  "diagramMeasurements": [
+    {
+      "palette": "salvia",
+      "mode": "light",
+      "labels": [
+        {
+          "label": "Question",
+          "foreground": [
+            52,
+            48,
+            43,
+            1
+          ],
+          "filter": "none",
+          "minimum": 10.253891973751559
+        },
+        {
+          "label": "Evidence",
+          "foreground": [
+            52,
+            48,
+            43,
+            1
+          ],
+          "filter": "none",
+          "minimum": 10.253891973751559
+        },
+        {
+          "label": "Understanding",
+          "foreground": [
+            52,
+            48,
+            43,
+            1
+          ],
+          "filter": "none",
+          "minimum": 10.253891973751559
+        }
+      ]
+    },
+    {
+      "palette": "salvia",
+      "mode": "dark",
+      "labels": [
+        {
+          "label": "Question",
+          "foreground": [
+            216,
+            210,
+            196,
+            1
+          ],
+          "filter": "none",
+          "minimum": 11.3597933323779
+        },
+        {
+          "label": "Evidence",
+          "foreground": [
+            216,
+            210,
+            196,
+            1
+          ],
+          "filter": "none",
+          "minimum": 11.3597933323779
+        },
+        {
+          "label": "Understanding",
+          "foreground": [
+            216,
+            210,
+            196,
+            1
+          ],
+          "filter": "none",
+          "minimum": 11.3597933323779
+        }
+      ]
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "light",
+      "labels": [
+        {
+          "label": "Question",
+          "foreground": [
+            60,
+            56,
+            54,
+            1
+          ],
+          "filter": "none",
+          "minimum": 8.452415305667195
+        },
+        {
+          "label": "Evidence",
+          "foreground": [
+            60,
+            56,
+            54,
+            1
+          ],
+          "filter": "none",
+          "minimum": 8.452415305667195
+        },
+        {
+          "label": "Understanding",
+          "foreground": [
+            60,
+            56,
+            54,
+            1
+          ],
+          "filter": "none",
+          "minimum": 8.452415305667195
+        }
+      ]
+    },
+    {
+      "palette": "gruvbox",
+      "mode": "dark",
+      "labels": [
+        {
+          "label": "Question",
+          "foreground": [
+            235,
+            219,
+            178,
+            1
+          ],
+          "filter": "none",
+          "minimum": 11.95176123994368
+        },
+        {
+          "label": "Evidence",
+          "foreground": [
+            235,
+            219,
+            178,
+            1
+          ],
+          "filter": "none",
+          "minimum": 11.95176123994368
+        },
+        {
+          "label": "Understanding",
+          "foreground": [
+            235,
+            219,
+            178,
+            1
+          ],
+          "filter": "none",
+          "minimum": 11.95176123994368
+        }
+      ]
+    },
+    {
+      "palette": "amoled",
+      "mode": "light",
+      "labels": [
+        {
+          "label": "Question",
+          "foreground": [
+            31,
+            34,
+            32,
+            1
+          ],
+          "filter": "none",
+          "minimum": 12.916367119923043
+        },
+        {
+          "label": "Evidence",
+          "foreground": [
+            31,
+            34,
+            32,
+            1
+          ],
+          "filter": "none",
+          "minimum": 12.916367119923043
+        },
+        {
+          "label": "Understanding",
+          "foreground": [
+            31,
+            34,
+            32,
+            1
+          ],
+          "filter": "none",
+          "minimum": 12.916367119923043
+        }
+      ]
+    },
+    {
+      "palette": "amoled",
+      "mode": "dark",
+      "labels": [
+        {
+          "label": "Question",
+          "foreground": [
+            236,
+            236,
+            231,
+            1
+          ],
+          "filter": "none",
+          "minimum": 17.40174486786029
+        },
+        {
+          "label": "Evidence",
+          "foreground": [
+            236,
+            236,
+            231,
+            1
+          ],
+          "filter": "none",
+          "minimum": 17.40174486786029
+        },
+        {
+          "label": "Understanding",
+          "foreground": [
+            236,
+            236,
+            231,
+            1
+          ],
+          "filter": "none",
+          "minimum": 17.40174486786029
+        }
+      ]
+    },
+    {
+      "palette": "tokyo",
+      "mode": "light",
+      "labels": [
+        {
+          "label": "Question",
+          "foreground": [
+            52,
+            59,
+            88,
+            1
+          ],
+          "filter": "none",
+          "minimum": 7.884788978607182
+        },
+        {
+          "label": "Evidence",
+          "foreground": [
+            52,
+            59,
+            88,
+            1
+          ],
+          "filter": "none",
+          "minimum": 7.884788978607182
+        },
+        {
+          "label": "Understanding",
+          "foreground": [
+            52,
+            59,
+            88,
+            1
+          ],
+          "filter": "none",
+          "minimum": 7.884788978607182
+        }
+      ]
+    },
+    {
+      "palette": "tokyo",
+      "mode": "dark",
+      "labels": [
+        {
+          "label": "Question",
+          "foreground": [
+            192,
+            202,
+            245,
+            1
+          ],
+          "filter": "none",
+          "minimum": 11.140571845492714
+        },
+        {
+          "label": "Evidence",
+          "foreground": [
+            192,
+            202,
+            245,
+            1
+          ],
+          "filter": "none",
+          "minimum": 11.140571845492714
+        },
+        {
+          "label": "Understanding",
+          "foreground": [
+            192,
+            202,
+            245,
+            1
+          ],
+          "filter": "none",
+          "minimum": 11.140571845492714
+        }
+      ]
+    },
+    {
+      "palette": "rosepine",
+      "mode": "light",
+      "labels": [
+        {
+          "label": "Question",
+          "foreground": [
+            87,
+            82,
+            121,
+            1
+          ],
+          "filter": "none",
+          "minimum": 6.065334694845162
+        },
+        {
+          "label": "Evidence",
+          "foreground": [
+            87,
+            82,
+            121,
+            1
+          ],
+          "filter": "none",
+          "minimum": 6.065334694845162
+        },
+        {
+          "label": "Understanding",
+          "foreground": [
+            87,
+            82,
+            121,
+            1
+          ],
+          "filter": "none",
+          "minimum": 6.065334694845162
+        }
+      ]
+    },
+    {
+      "palette": "rosepine",
+      "mode": "dark",
+      "labels": [
+        {
+          "label": "Question",
+          "foreground": [
+            224,
+            222,
+            244,
+            1
+          ],
+          "filter": "none",
+          "minimum": 14.14725444440633
+        },
+        {
+          "label": "Evidence",
+          "foreground": [
+            224,
+            222,
+            244,
+            1
+          ],
+          "filter": "none",
+          "minimum": 14.14725444440633
+        },
+        {
+          "label": "Understanding",
+          "foreground": [
+            224,
+            222,
+            244,
+            1
+          ],
+          "filter": "none",
+          "minimum": 14.14725444440633
+        }
+      ]
+    },
+    {
+      "palette": "solarized",
+      "mode": "light",
+      "labels": [
+        {
+          "label": "Question",
+          "foreground": [
+            80,
+            99,
+            106,
+            1
+          ],
+          "filter": "none",
+          "minimum": 5.140713349578696
+        },
+        {
+          "label": "Evidence",
+          "foreground": [
+            80,
+            99,
+            106,
+            1
+          ],
+          "filter": "none",
+          "minimum": 5.140713349578696
+        },
+        {
+          "label": "Understanding",
+          "foreground": [
+            80,
+            99,
+            106,
+            1
+          ],
+          "filter": "none",
+          "minimum": 5.140713349578696
+        }
+      ]
+    },
+    {
+      "palette": "solarized",
+      "mode": "dark",
+      "labels": [
+        {
+          "label": "Question",
+          "foreground": [
+            163,
+            175,
+            175,
+            1
+          ],
+          "filter": "none",
+          "minimum": 7.432233445162782
+        },
+        {
+          "label": "Evidence",
+          "foreground": [
+            163,
+            175,
+            175,
+            1
+          ],
+          "filter": "none",
+          "minimum": 7.432233445162782
+        },
+        {
+          "label": "Understanding",
+          "foreground": [
+            163,
+            175,
+            175,
+            1
+          ],
+          "filter": "none",
+          "minimum": 7.432233445162782
+        }
+      ]
+    },
+    {
+      "palette": "nord",
+      "mode": "light",
+      "labels": [
+        {
+          "label": "Question",
+          "foreground": [
+            46,
+            52,
+            64,
+            1
+          ],
+          "filter": "none",
+          "minimum": 9.245243340706116
+        },
+        {
+          "label": "Evidence",
+          "foreground": [
+            46,
+            52,
+            64,
+            1
+          ],
+          "filter": "none",
+          "minimum": 9.245243340706116
+        },
+        {
+          "label": "Understanding",
+          "foreground": [
+            46,
+            52,
+            64,
+            1
+          ],
+          "filter": "none",
+          "minimum": 9.245243340706116
+        }
+      ]
+    },
+    {
+      "palette": "nord",
+      "mode": "dark",
+      "labels": [
+        {
+          "label": "Question",
+          "foreground": [
+            236,
+            239,
+            244,
+            1
+          ],
+          "filter": "none",
+          "minimum": 12.652503192893713
+        },
+        {
+          "label": "Evidence",
+          "foreground": [
+            236,
+            239,
+            244,
+            1
+          ],
+          "filter": "none",
+          "minimum": 12.652503192893713
+        },
+        {
+          "label": "Understanding",
+          "foreground": [
+            236,
+            239,
+            244,
+            1
+          ],
+          "filter": "none",
+          "minimum": 12.652503192893713
+        }
+      ]
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "light",
+      "labels": [
+        {
+          "label": "Question",
+          "foreground": [
+            76,
+            79,
+            105,
+            1
+          ],
+          "filter": "none",
+          "minimum": 6.035201182516654
+        },
+        {
+          "label": "Evidence",
+          "foreground": [
+            76,
+            79,
+            105,
+            1
+          ],
+          "filter": "none",
+          "minimum": 6.035201182516654
+        },
+        {
+          "label": "Understanding",
+          "foreground": [
+            76,
+            79,
+            105,
+            1
+          ],
+          "filter": "none",
+          "minimum": 6.035201182516654
+        }
+      ]
+    },
+    {
+      "palette": "cappuccino",
+      "mode": "dark",
+      "labels": [
+        {
+          "label": "Question",
+          "foreground": [
+            205,
+            214,
+            244,
+            1
+          ],
+          "filter": "none",
+          "minimum": 12.966838588869136
+        },
+        {
+          "label": "Evidence",
+          "foreground": [
+            205,
+            214,
+            244,
+            1
+          ],
+          "filter": "none",
+          "minimum": 12.966838588869136
+        },
+        {
+          "label": "Understanding",
+          "foreground": [
+            205,
+            214,
+            244,
+            1
+          ],
+          "filter": "none",
+          "minimum": 12.966838588869136
+        }
+      ]
+    }
+  ],
+  "nativePdf": {
+    "bytes": 118767,
+    "exporter": "Obsidian native PDF modal/renderer and Electron backend",
+    "fileDialog": "QA supplied the artifact path; OS file picker not tested"
+  },
+  "errors": [],
+  "baselineRef": "c28365c"
+}

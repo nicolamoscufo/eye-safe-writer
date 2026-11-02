@@ -9,20 +9,11 @@ body.eye-safe-high-legibility {
   --writing-inactive-pane-opacity: 1;
 }
 
-body.eye-safe-high-legibility .workspace-tab-header,
-body.eye-safe-high-legibility .workspace-ribbon .clickable-icon,
-body.eye-safe-high-legibility .nav-action-button,
-body.eye-safe-high-legibility .nav-header .clickable-icon,
-body.eye-safe-high-legibility .view-header-title,
-body.eye-safe-high-legibility .view-actions,
-body.eye-safe-high-legibility .view-header-nav-buttons,
-body.eye-safe-high-legibility .titlebar-button-container,
-body.eye-safe-high-legibility .nav-folder-collapse-indicator {
+body.eye-safe-high-legibility :where(.workspace-tab-header, .workspace-ribbon .clickable-icon, .nav-action-button, .nav-header .clickable-icon, .view-header-title, .view-actions, .view-header-nav-buttons, .titlebar-button-container, .nav-folder-collapse-indicator) {
   opacity: 1;
 }
 
 body.eye-safe-active-line-guide .markdown-source-view.mod-cm6 .cm-line.cm-active {
-  background: var(--background-modifier-hover);
   background: color-mix(in srgb, var(--interactive-accent) 7%, transparent);
   border-radius: var(--radius-s);
 }
@@ -32,19 +23,19 @@ body.eye-safe-flat-writing-surface .workspace-leaf-content[data-type="markdown"]
 }
 
 /* Focusing a control must not leave it visually dimmed. */
-.workspace-ribbon .clickable-icon:focus-visible,
-.side-dock-actions .clickable-icon:focus-visible,
-.workspace-ribbon-collapse-btn .clickable-icon:focus-visible,
-.nav-action-button:focus-visible,
-.nav-header .clickable-icon:focus-visible,
-.workspace-tab-header:focus-visible,
-.view-header .clickable-icon:focus-visible,
-.titlebar-button:focus-visible {
+:where(.workspace-ribbon .clickable-icon, .side-dock-actions .clickable-icon, .workspace-ribbon-collapse-btn .clickable-icon, .nav-action-button, .nav-header .clickable-icon, .workspace-tab-header, .view-header .clickable-icon, .titlebar-button):focus-visible {
   color: var(--icon-color-hover);
   opacity: 1;
 }
 
-@media (max-width: 700px) {
+/* Reveal saved/Deep focus dimming on pointer and keyboard interaction. Never
+   filter the ribbon: filters relocate its app-owned sidebar toggle. */
+.workspace :where(.mod-left-split, .mod-right-split, .workspace-ribbon, .status-bar, .titlebar, .workspace-tab-header-container):is(:hover, :focus-within) {
+  opacity: 1;
+  filter: none;
+}
+
+@media (width <= 700px) {
   .markdown-rendered pre,
   .markdown-rendered table {
     max-width: 100%;
@@ -89,36 +80,59 @@ body.eye-safe-flat-writing-surface .workspace-leaf-content[data-type="markdown"]
 }
 
 @media print {
-  body,
-  .theme-light,
-  .theme-dark {
-    --background-primary: #ffffff;
-    --background-primary-alt: #ffffff;
+  /* Match palette specificity without !important, including dark variants. */
+  body[class][class] {
+    --background-primary: #fff;
+    --background-primary-alt: #fff;
+    --background-secondary: #fff;
+    --background-secondary-alt: #fff;
     --text-normal: #202020;
-    --text-muted: #444444;
-    --text-faint: #555555;
+    --text-muted: #444;
+    --text-faint: #555;
+    --text-on-accent: #fff;
     --text-accent: #16466b;
     --link-color: #16466b;
-    --paper-surface: #ffffff;
+    --link-external-color: #16466b;
+    --link-unresolved-color: #16466b;
+    --writer-yellow: #5f4600;
+    --writer-red: #872b29;
+    --writer-blue: #16466b;
+    --writer-green: #315c40;
+    --writer-purple: #5c437a;
+    --writer-berry: #793b68;
+    --writer-orange: #794616;
+    --code-background: #f3f3f3;
+    --code-normal: #202020;
+    --table-header-background: #eee;
+    --tag-background: #fff;
+    --paper-surface: #fff;
     --paper-edge-color: transparent;
+    --eye-safe-texture-display: none;
+    --quiet-ui-opacity: 1;
+    --hidden-ui-opacity: 1;
+    --writing-quiet-ui-opacity: 1;
+    --writing-hidden-ui-opacity: 1;
+    --writing-secondary-ui-opacity: 1;
+    --writing-inactive-pane-opacity: 1;
+
     color: #202020;
   }
 
   .workspace-leaf-content[data-type="markdown"] {
-    background: #ffffff;
+    background: #fff;
     box-shadow: none;
   }
 }
 
 /* Keep interface calm while preserving discoverability. */
 
-@media (max-width: 900px) {
+@media (width <= 900px) {
   body:not(.is-mobile) {
     --sidebar-ribbon-width: 42px;
   }
 }
 
-@media (max-width: 700px) {
+@media (width <= 700px) {
   body {
     --font-text-size: 16px;
     --file-line-width: 100%;
@@ -138,12 +152,20 @@ body.eye-safe-flat-writing-surface .workspace-leaf-content[data-type="markdown"]
 }
 
 @media (prefers-contrast: more) {
-  body {
+  body[class][class] {
+    --link-decoration: underline;
+    --link-external-decoration: underline;
     --quiet-ui-opacity: 1;
     --hidden-ui-opacity: 1;
     --paper-grain-opacity: 0;
     --paper-fiber-opacity: 0;
     --paper-panel-shadow: none;
+    --eye-safe-texture-display: none;
+    --writing-quiet-ui-opacity: 1;
+    --writing-hidden-ui-opacity: 1;
+    --writing-secondary-ui-opacity: 1;
+    --writing-inactive-pane-opacity: 1;
+    --eye-safe-paragraph-opacity: 1;
   }
 
   .mod-left-split,
@@ -175,10 +197,18 @@ body.eye-safe-flat-writing-surface .workspace-leaf-content[data-type="markdown"]
 }
 
 @media (forced-colors: active) {
-  body {
+  body[class][class] {
     --paper-grain-opacity: 0;
     --paper-fiber-opacity: 0;
     --paper-panel-shadow: none;
+    --eye-safe-texture-display: none;
+    --quiet-ui-opacity: 1;
+    --hidden-ui-opacity: 1;
+    --writing-quiet-ui-opacity: 1;
+    --writing-hidden-ui-opacity: 1;
+    --writing-secondary-ui-opacity: 1;
+    --writing-inactive-pane-opacity: 1;
+    --eye-safe-paragraph-opacity: 1;
   }
 
   body::before,
@@ -227,9 +257,10 @@ body.eye-safe-flat-writing-surface .workspace-leaf-content[data-type="markdown"]
   }
 
   .callout {
-    background: white;
+    background: #fff;
     color: #202020;
-    border-color: #555555;
+    border-color: #555;
+    /* stylelint-disable-next-line plugin/no-unsupported-browser-features -- Print pagination uses supported break-inside, not multicolumn layout. */
     break-inside: avoid;
   }
 
@@ -240,12 +271,20 @@ body.eye-safe-flat-writing-surface .workspace-leaf-content[data-type="markdown"]
 }
 
 @media (prefers-reduced-motion: reduce) {
+  body {
+    --anim-duration-none: 0s;
+    --anim-duration-superfast: 0.01ms;
+    --anim-duration-fast: 0.01ms;
+    --anim-duration-moderate: 0.01ms;
+    --anim-duration-slow: 0.01ms;
+  }
+
   *,
   *::before,
   *::after {
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
+    scroll-behavior: auto;
+    transition-duration: 0.01ms;
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
   }
 }
