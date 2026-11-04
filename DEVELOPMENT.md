@@ -58,6 +58,19 @@ npm run native:smoke
 
 Set `OBSIDIAN_PATH` to another executable location. The default Windows path is `C:\Program Files\Obsidian\Obsidian.exe`. `OBSIDIAN_VERSION` defaults to `1.15.0`; also test `1.13.4` (earliest available public 1.13 package). The declared minimum `1.13.0` uses the full-color callout API but is not available as a public GitHub release for repeat testing.
 
+### Ribbon visibility
+
+`OBSIDIAN_RIBBON=default` (the default) preserves the app's new-vault ribbon preference and records the observed geometry. Obsidian 1.15.1 introduces a hidden ribbon by default in new vaults. Use `OBSIDIAN_RIBBON=hidden` and `OBSIDIAN_RIBBON=visible` for explicit coverage of both states; these set `showRibbon` only in the disposable QA vault's `appearance.json`. A requested/observed visibility mismatch fails, rather than silently skipping the case.
+
+```sh
+OBSIDIAN_RIBBON=hidden npm run native:smoke
+OBSIDIAN_RIBBON=visible npm run native:smoke
+```
+
+In PowerShell, set `$env:OBSIDIAN_RIBBON = 'hidden'` or `'visible'` before running `npm run native:smoke`; remove that environment variable afterward to return to the app default. Explicit modes write separate `native-artifacts/<app-version>/ribbon-hidden/` and `ribbon-visible/` directories. Evidence records the requested mode, observed visibility and editor measurements. Hidden/absent ribbons do not require a first action row or ribbon-hosted toggle; visible ribbons still require rendered controls, no overlaps and no containing-block filter. If a hidden ribbon removes the sidebar button, evidence explicitly marks button interaction untested and records the public sidedock operation instead.
+
+`npm test` covers hidden/absent/visible ribbons and deliberate visible-control failures using the same reader/assertions as native QA. Those browser fixtures and pure measurement tests are not native compatibility evidence. The native script still requires an installed Obsidian launcher and a public digest-verified app package; do not claim a 1.15.1 Catalyst run unless that app was actually available and tested. Reference: https://obsidian.md/changelog/2026-11-03-desktop-v1.15.1/.
+
 The script downloads public Obsidian ASAR release code, verifies its SHA-256 release digest, and launches it using the installed Electron runtime. It creates a new isolated profile and vault under the OpenCode temporary directory on Windows (the OS temporary directory elsewhere), installs public Style Settings/Tasks releases **only there**, and approves only that self-created vault's plugin/known Mermaid execution. It never opens or screenshots a personal vault/profile, connects accounts, or accepts directory developer policies. Downloads are QA tooling, not theme CSS network dependencies. Set `GH_TOKEN` only if public API rate limits require existing authenticated read access; it is used only for GitHub API metadata, not forwarded to asset hosts or written to disk.
 
 Outputs go to ignored `native-artifacts/<app-version>/`. The isolated temporary profile is retained for diagnosis; remove only that specific QA directory when no longer needed. The script checks real reading/editor modes, native sidebar toggling, all palette/preset combinations, native-rendered color/UI contrast, MathJax, Mermaid and Tasks, long documents, narrow **desktop** layouts, settings and PDF. Electron omits CDP `Page.printToPDF`, so QA invokes Obsidian's real PDF modal/renderer/backend with a supplied artifact filepath; the OS file picker itself is not tested. It compares the previous CSS in the same app/vault. This does not certify Android/iOS, macOS/Linux or every installer/plugin version.

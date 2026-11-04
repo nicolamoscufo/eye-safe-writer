@@ -11,15 +11,19 @@ import assert from 'node:assert/strict';
 import { palettes } from './build-theme.mjs';
 import { measureSolidContrast } from '../tests/lib/cascade.mjs';
 import { measureSvgLabels } from '../tests/lib/svg-contrast.mjs';
+import { checkRibbonLayout, ribbonAppearance } from './lib/ribbon-qa.mjs';
 
 const executable = process.env.OBSIDIAN_PATH || 'C:\\Program Files\\Obsidian\\Obsidian.exe';
 const version = process.env.OBSIDIAN_VERSION || '1.15.0';
+const ribbonMode = process.env.OBSIDIAN_RIBBON ?? 'default';
+const ribbonPreferences = ribbonAppearance(ribbonMode);
+const expectedRibbonVisible = ribbonMode === 'default' ? undefined : ribbonMode === 'visible';
 const capture = process.argv.includes('--capture-release');
 const temporary = process.env.LOCALAPPDATA ? path.join(process.env.LOCALAPPDATA, 'Temp', 'opencode') : tmpdir();
 const root = await mkdtemp(path.join(temporary, 'eye-safe-native-'));
 const vault = path.join(root, 'Eye Safe QA'), profile = path.join(root, 'profile');
 const config = path.join(vault, '.obsidian');
-const artifacts = `native-artifacts/${version}`;
+const artifacts = `native-artifacts/${version}${ribbonMode === 'default' ? '' : `/ribbon-${ribbonMode}`}`;
 await mkdir(path.join(config, 'themes', 'Eye Safe Writer'), { recursive:true });
 await mkdir(profile, { recursive:true });
 await mkdir(artifacts, { recursive:true });
@@ -61,7 +65,7 @@ for (const repo of ['mgmeyers/obsidian-style-settings', 'obsidian-tasks-group/ob
   plugins.push({ id:manifest.id, version:manifest.version, repository:repo });
 }
 await writeFile(path.join(profile, 'obsidian.json'), JSON.stringify({ autoUpdate:false, vaults:{ '0123456789abcdef':{ path:vault, ts:Date.now(), open:true } } }));
-await writeFile(path.join(config, 'appearance.json'), JSON.stringify({ cssTheme:'Eye Safe Writer', theme:'moonstone', baseFontSize:16 }));
+await writeFile(path.join(config, 'appearance.json'), JSON.stringify({ cssTheme:'Eye Safe Writer', theme:'moonstone', baseFontSize:16, ...ribbonPreferences }));
 await writeFile(path.join(config, 'app.json'), JSON.stringify({ showInlineTitle:false, livePreview:true, spellcheck:false, safeMode:false }));
 await writeFile(path.join(config, 'community-plugins.json'), JSON.stringify(plugins.map(p => p.id)));
 await writeFile(path.join(config, 'core-plugins.json'), JSON.stringify(['file-explorer','global-search','switcher','backlink','outline','graph','canvas']));
@@ -80,8 +84,10 @@ const endpoint = await new Promise((resolve,reject) => {
 });
 const browser = await chromium.connectOverCDP(endpoint);
 const errors = [], measurements = [], diagramMeasurements = [], cases = [];
+const ribbonMeasurements = [];
 let nativePdf;
 let runtime;
+let sidebarToggle;
 try {
   const context = browser.contexts()[0];
   context.on('page',p=>p.on('pageerror',error=>errors.push(error.message)));
@@ -198,13 +204,11 @@ try {
     await page.waitForFunction(expected=>document.querySelector('.markdown-source-view')?.classList.contains('is-live-preview')===expected,!source);
     await page.locator('.cm-content').first().focus();
     await settle();
-    const rows=await page.locator('.workspace-ribbon .side-dock-actions .side-dock-ribbon-action').evaluateAll(xs=>xs.map(x=>{const r=x.getBoundingClientRect();return [r.top,r.bottom];}));
-    for(let i=1;i<rows.length;i++) assert.ok(rows[i][0]>=rows[i-1][1],'Native ribbon overlap');
-    const toggle=await page.locator('.sidebar-toggle-button.mod-left').boundingBox();
-    assert.ok(toggle.y+toggle.height<=rows[0][0],'Native sidebar toggle overlaps first ribbon action');
-    assert.equal(await page.locator('.workspace-ribbon').first().evaluate(el=>getComputedStyle(el).filter),'none');
+    const ribbon=await checkRibbonLayout(page,expectedRibbonVisible);
+    ribbonMeasurements.push({view:source?'source':'live-preview',...ribbon});
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Native editor overflow');
     await page.screenshot({path:`${artifacts}/${source?'source':'live-preview'}.png`});
-    cases.push({view:source?'source':'live-preview',native:true});
+    cases.push({view:source?'source':'live-preview',native:true,ribbonVisible:ribbon.visible});
   }
   await open('Long document.md');
   await endOfNote();
@@ -222,7 +226,17 @@ try {
   // Native sidebar toggle must work without colliding with app/plugin actions.
   await page.evaluate(()=>app.workspace.leftSplit.collapse());
   assert.equal(await page.evaluate(()=>app.workspace.leftSplit.collapsed),true);
-  await page.locator('.sidebar-toggle-button.mod-left').click();
+  const toggle=page.locator('.sidebar-toggle-button.mod-left').first();
+  if(await toggle.isVisible()) {
+    await toggle.click();
+    sidebarToggle={exercised:true,method:'native sidebar button'};
+  } else {
+    // Hiding the ribbon may remove its button. Do not claim button coverage;
+    // still exercise the public sidedock operation in this isolated QA vault.
+    assert.equal((await checkRibbonLayout(page,expectedRibbonVisible)).visible,false,'A visible ribbon must retain its sidebar button');
+    await page.evaluate(()=>app.workspace.leftSplit.expand());
+    sidebarToggle={exercised:false,reason:'button not visible with hidden ribbon',method:'WorkspaceSidedock.expand'};
+  }
   assert.equal(await page.evaluate(()=>app.workspace.leftSplit.collapsed),false);
 
   await open('Eye Safe Writer.md');
@@ -306,15 +320,15 @@ try {
     },source.toString('base64'));
     await writeFile('screenshot.png',Buffer.from(thumbnail,'base64'));
   }
-  const evidence={date:new Date().toISOString(),scope:'Real Windows Obsidian renderer, installed Electron launcher, isolated public-note vault/profile. Narrow desktop is not a native mobile app test.',runtime,plugins,isolated:true,cases,measurements,diagramMeasurements,nativePdf,errors,baselineRef};
+  const evidence={date:new Date().toISOString(),scope:'Real Windows Obsidian renderer, installed Electron launcher, isolated public-note vault/profile. Narrow desktop is not a native mobile app test.',runtime,plugins,isolated:true,ribbonMode,ribbonMeasurements,sidebarToggle,cases,measurements,diagramMeasurements,nativePdf,errors,baselineRef};
   await writeFile(`${artifacts}/evidence.json`,JSON.stringify(evidence,null,2));
   assert.deepEqual(errors,[],'Native renderer errors');
   const failures=measurements.flatMap(x=>x.failures.map(m=>({palette:x.palette,mode:x.mode,...m})));
   assert.deepEqual(failures,[],`Native contrast failures: ${JSON.stringify(failures.slice(0,12))}`);
   assert.deepEqual(diagramMeasurements.flatMap(c=>c.labels.filter(l=>l.minimum<4.5).map(l=>({palette:c.palette,mode:c.mode,...l}))),[],'Native filtered SVG label contrast');
-  console.log(`Native Obsidian ${version}: ${cases.length} cases, ${measurements.reduce((n,m)=>n+m.checks,0)} color/UI checks; plugins ${plugins.map(p=>`${p.id} ${p.version}`).join(', ')}; artifacts ${artifacts}`);
+  console.log(`Native Obsidian ${version} (ribbon ${ribbonMode}): ${cases.length} cases, ${measurements.reduce((n,m)=>n+m.checks,0)} color/UI checks; plugins ${plugins.map(p=>`${p.id} ${p.version}`).join(', ')}; artifacts ${artifacts}`);
 } catch(error) {
-  await writeFile(`${artifacts}/failure.json`,JSON.stringify({runtime,errors,measurements,error:String(error)},null,2));
+  await writeFile(`${artifacts}/failure.json`,JSON.stringify({runtime,ribbonMode,ribbonMeasurements,sidebarToggle,errors,measurements,error:String(error)},null,2));
   for(const page of browser.contexts()[0]?.pages()||[]) await page.screenshot({path:`${artifacts}/failure.png`}).catch(()=>{});
   await writeFile(`${artifacts}/failure-dom.json`,JSON.stringify(await Promise.all((browser.contexts()[0]?.pages()||[]).map(async p=>({url:p.url(),text:await p.locator('body').innerText().catch(()=>''),html:await p.locator('body').innerHTML().catch(()=>'' )}))),null,2));
   throw error;
