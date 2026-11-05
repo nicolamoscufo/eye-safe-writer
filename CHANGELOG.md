@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.8.2 - 2026-11-05
+
+- Fixed taps on the sidebar, reading/editing toggle, and note menu when Obsidian Mobile's floating toolbar overlaps the note.
+- Kept the paper texture below the note on mobile while preserving the native toolbar stacking order.
+- Added a touch regression test for the toolbar, the note, and the sidebar backdrop.
+
 ## 1.8.1 - 2026-11-02
 
 - Adjusted palette-specific emphasis, headings, links, muted text, code, callout, button and focus colors after measuring their actual semantic surfaces.

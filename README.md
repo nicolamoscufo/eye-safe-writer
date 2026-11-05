@@ -1,7 +1,7 @@
 # Eye Safe Writer
 
 Warm paper surfaces, quiet chrome, and eight light/dark palettes for Obsidian.
-Version **1.8.1** requires **Obsidian 1.13.0 or later**.
+Version **1.8.2** requires **Obsidian 1.13.0 or later**.
 
 ![Eye Safe Writer in Obsidian, light mode](screenshot.png)
 
@@ -14,7 +14,7 @@ Version **1.8.1** requires **Obsidian 1.13.0 or later**.
 - English/Italian study and academic callouts using ordinary Obsidian Markdown.
 - Keyboard focus indicators, reduced-motion support, system high-contrast/forced-color fallbacks, and print/PDF styles.
 
-The name is not a medical or universal accessibility guarantee. Built-in colors are tested against specified surfaces; custom colors, snippets, plugins, and intentional dimming can change contrast. See the [release audit](docs/RELEASE_AUDIT_1.8.1.md) for measured results and native QA scope.
+The name is not a medical or universal accessibility guarantee. Built-in colors are tested against specified surfaces. Custom colors, snippets, plugins, and intentional dimming can change contrast. See the [1.8.1 accessibility audit](docs/RELEASE_AUDIT_1.8.1.md) for measured results and the [1.8.2 release audit](docs/RELEASE_AUDIT_1.8.2.md) for the mobile fix.
 
 ## Install and update
 
@@ -29,7 +29,7 @@ To update, replace both files together. Notes and saved Style Settings preferenc
 
 ### Community Themes
 
-Once the theme is listed, use **Settings → Appearance → Manage themes**, search for **Eye Safe Writer**, and install it. Use Obsidian's theme update controls for subsequent releases. Listing/submission status is recorded in the release audit; the presence of this repository does not mean the theme has been accepted.
+Once the theme is listed, use **Settings → Appearance → Manage themes**, search for **Eye Safe Writer**, and install it. Use Obsidian's theme update controls for subsequent releases. Check the Community directory for the current listing status.
 
 ## Customize with Style Settings
 
@@ -93,6 +93,7 @@ The optional [`eye-safe-pomodoro.css`](snippets/eye-safe-pomodoro.css) snippet s
 
 ## Troubleshooting
 
+- **Mobile note toolbar:** update both theme files to 1.8.2 or later. If you applied the temporary `eye-safe-writer-mobile-toolbar-fix` snippet, disable it after updating.
 - **Ribbon/sidebar overlap:** update both theme files, restart Obsidian, and disable obsolete `eye-safe-ribbon-fix` or competing ribbon snippets. The app owns the sidebar toggle; the theme supports both `.mod-left` and `.mod-primary` ribbon classes.
 - **Preset appears unchanged:** reset saved typography overrides in Style Settings. They deliberately take precedence.
 - **Unexpected palette or low contrast:** disable legacy palette snippets/manual color overrides, then test Enhanced contrast and reset saved opacity values.

@@ -3,8 +3,62 @@ import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { palettes } from '../scripts/build-theme.mjs';
-import { loadFixture, icon } from './lib/fixture.mjs';
+import { loadFixture, icon, theme } from './lib/fixture.mjs';
 import { measureSolidContrast } from './lib/cascade.mjs';
+
+test('the floating mobile note toolbar receives taps over Markdown content', async () => {
+  const browser = await chromium.launch();
+  try {
+    const page = await browser.newPage({
+      viewport: { width: 390, height: 844 },
+      isMobile: true,
+      hasTouch: true,
+    });
+    // Model Obsidian Mobile's fixed header over a full-height flex item.
+    await page.setContent(`<!doctype html>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+        body { margin: 0; }
+        .workspace-leaf-content { position: relative; display: flex; flex-direction: column; height: 100vh; }
+        .view-header { position: fixed; inset: 0 0 auto; z-index: 1; display: flex; }
+        .view-actions { display: flex; margin-inline-start: auto; }
+        .view-content { flex: 1; padding: 80px 12px 12px; }
+        .workspace-drawer-backdrop { position: fixed; inset: 0; z-index: 5; }
+      </style>
+      <body class="theme-light is-mobile is-phone mod-ios is-floating-nav">
+        <div class="workspace-leaf-content" data-type="markdown">
+          <div class="view-header">
+            <div class="view-header-left">
+              <button class="view-action clickable-icon" data-target="sidebar">Sidebar</button>
+            </div>
+            <div class="view-actions">
+              <button class="view-action clickable-icon" data-target="mode">Edit</button>
+              <button class="view-action clickable-icon" data-target="more">More</button>
+            </div>
+          </div>
+          <div class="view-content"><button data-target="note">Note action</button></div>
+        </div>
+        <div class="workspace-drawer-backdrop" data-target="backdrop" hidden></div>
+      </body>`);
+    await page.addStyleTag({ content: theme });
+    await page.evaluate(() => {
+      document.addEventListener('click', event => {
+        document.body.dataset.lastTapped = event.target.closest('[data-target]')?.dataset.target ?? 'content';
+      });
+    });
+
+    async function tap(target, expected = target) {
+      const bounds = await page.locator(`[data-target="${target}"]`).boundingBox();
+      assert.ok(bounds, `${target} must be visible`);
+      await page.touchscreen.tap(bounds.x + bounds.width / 2, bounds.y + bounds.height / 2);
+      assert.equal(await page.locator('body').getAttribute('data-last-tapped'), expected, `Tap on ${target}`);
+    }
+
+    for (const target of ['sidebar', 'mode', 'more', 'note']) await tap(target);
+    await page.locator('.workspace-drawer-backdrop').evaluate(el => { el.hidden = false; });
+    await tap('sidebar', 'backdrop');
+  } finally { await browser.close(); }
+});
 
 test('chrome, icons, buttons, controls and focus indicators across all 16 palettes', async () => {
   const browser = await chromium.launch();
