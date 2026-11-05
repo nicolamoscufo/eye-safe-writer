@@ -8,12 +8,19 @@ permissions:
 
 jobs:
   native:
-    runs-on: ubuntu-24.04
-    timeout-minutes: 12
+    name: Native Obsidian ${{ matrix.version }} on Windows
+    runs-on: windows-latest
+    timeout-minutes: 15
     strategy:
       fail-fast: false
       matrix:
-        obsidian: ['1.13.4', '1.15.0']
+        include:
+          - version: '1.13.4'
+            installer_url: 'https://github.com/obsidianmd/obsidian-releases/releases/download/v1.13.4/Obsidian-1.13.4.exe'
+            sha256: '8c761aaa40310d339b6936092e91e99a9886daf1fd655f4c8d59e9f7fa46e7a0'
+          - version: '1.15.0'
+            installer_url: 'https://github.com/obsidianmd/obsidian-releases/releases/download/v1.15.0/Obsidian-1.15.0.exe'
+            sha256: 'b0f60c75a12f96d54cb16b9fc32919966f2ebf029d9af75d67a19ba6555e1da0'
     steps:
       - uses: actions/checkout@v7
         with:
@@ -23,34 +30,41 @@ jobs:
         with:
           node-version: '24'
       - run: npm ci
-      - name: Extract the verified official desktop launcher
-        shell: bash
+      - name: Install the verified official Windows launcher in the disposable runner
+        shell: pwsh
+        env:
+          INSTALLER_URL: ${{ matrix.installer_url }}
+          INSTALLER_SHA256: ${{ matrix.sha256 }}
         run: |
-          set -euo pipefail
-          package_dir="$(mktemp -d "$RUNNER_TEMP/obsidian-qa.XXXXXX")"
-          curl --fail --silent --show-error --location --retry 2 'https://github.com/obsidianmd/obsidian-releases/releases/download/v1.15.0/obsidian-1.15.0.tar.gz' --output "$package_dir/obsidian.tar.gz"
-          printf '%s  %s\n' '75594ae09914ca0191dde13c0697dee653322287a3a806c15519332d9ada14d3' "$package_dir/obsidian.tar.gz" | sha256sum --check
-          tar -xzf "$package_dir/obsidian.tar.gz" -C "$package_dir"
-          launcher="$(find "$package_dir" -type f -name obsidian -print -quit)"
-          test -x "$launcher"
-          printf 'OBSIDIAN_PATH=%s\n' "$launcher" >> "$GITHUB_ENV"
+          $ErrorActionPreference = 'Stop'
+          $installer = Join-Path $env:RUNNER_TEMP 'Obsidian-setup.exe'
+          $appDir = Join-Path $env:RUNNER_TEMP 'Obsidian-native-qa'
+          curl.exe --fail --silent --show-error --location --retry 2 $env:INSTALLER_URL --output $installer
+          if ($LASTEXITCODE -ne 0) { throw 'Obsidian installer download failed' }
+          if ((Get-FileHash -Algorithm SHA256 $installer).Hash -ne $env:INSTALLER_SHA256) { throw 'Obsidian installer SHA-256 mismatch' }
+          $setup = Start-Process -FilePath $installer -ArgumentList '/S', "/D=$appDir" -Wait -PassThru
+          if ($setup.ExitCode -ne 0) { throw "Obsidian installer exit code $($setup.ExitCode)" }
+          $launchers = @(
+            (Join-Path $appDir 'Obsidian.exe'),
+            (Join-Path $env:LOCALAPPDATA 'Obsidian/Obsidian.exe'),
+            (Join-Path $env:LOCALAPPDATA 'Programs/Obsidian/Obsidian.exe'),
+            (Join-Path $env:ProgramFiles 'Obsidian/Obsidian.exe')
+          )
+          $launcher = $launchers | Where-Object { Test-Path -LiteralPath $_ -PathType Leaf } | Select-Object -First 1
+          if (!$launcher) { throw 'Obsidian.exe missing after installation' }
+          New-Item -ItemType Directory -Force -Path (Join-Path $env:LOCALAPPDATA 'Temp/opencode') | Out-Null
+          "OBSIDIAN_PATH=$launcher" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
       - name: Run the repository native suite
         env:
-          OBSIDIAN_VERSION: ${{ matrix.obsidian }}
+          OBSIDIAN_VERSION: ${{ matrix.version }}
           OBSIDIAN_BASELINE_REF: '1.8.1'
-        run: xvfb-run -a npm run native:smoke
-      - name: Label native evidence for this runner platform
-        run: |
-          node --input-type=module - <<'JS'
-          import { readFileSync, writeFileSync } from 'node:fs';
-          const file = 'native-artifacts/${{ matrix.obsidian }}/evidence.json';
-          const evidence = JSON.parse(readFileSync(file, 'utf8'));
-          evidence.scope = 'Native Linux Obsidian renderer in an isolated test vault on GitHub Actions. Desktop only.';
-          writeFileSync(file, JSON.stringify(evidence, null, 2));
-          JS
+        run: npm run native:smoke
       - uses: actions/upload-artifact@v7
+        if: always()
         with:
-          name: native-obsidian-${{ matrix.obsidian }}
-          path: native-artifacts/${{ matrix.obsidian }}/evidence.json
-          if-no-files-found: error
+          name: native-windows-obsidian-${{ matrix.version }}
+          path: |
+            native-artifacts/${{ matrix.version }}/evidence.json
+            native-artifacts/${{ matrix.version }}/failure.json
+          if-no-files-found: warn
           retention-days: 14
