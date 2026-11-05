@@ -1,0 +1,56 @@
+name: Isolated native Obsidian QA
+on:
+  push:
+    branches: ['qa/eye-safe-writer-1.8.2-native']
+
+permissions:
+  contents: read
+
+jobs:
+  native:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        obsidian: ['1.13.4', '1.15.0']
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - run: npm ci
+      - name: Extract the verified official desktop launcher
+        shell: bash
+        run: |
+          set -euo pipefail
+          package_dir="$(mktemp -d "$RUNNER_TEMP/obsidian-qa.XXXXXX")"
+          curl --fail --silent --show-error --location --retry 2 'https://github.com/obsidianmd/obsidian-releases/releases/download/v1.15.0/obsidian-1.15.0.tar.gz' --output "$package_dir/obsidian.tar.gz"
+          printf '%s  %s\n' '75594ae09914ca0191dde13c0697dee653322287a3a806c15519332d9ada14d3' "$package_dir/obsidian.tar.gz" | sha256sum --check
+          tar -xzf "$package_dir/obsidian.tar.gz" -C "$package_dir"
+          launcher="$(find "$package_dir" -type f -name obsidian -print -quit)"
+          test -x "$launcher"
+          printf 'OBSIDIAN_PATH=%s\n' "$launcher" >> "$GITHUB_ENV"
+      - name: Run the repository native suite
+        env:
+          OBSIDIAN_VERSION: ${{ matrix.obsidian }}
+          OBSIDIAN_BASELINE_REF: '1.8.1'
+        run: xvfb-run -a npm run native:smoke
+      - name: Label native evidence for this runner platform
+        run: |
+          node --input-type=module - <<'JS'
+          import { readFileSync, writeFileSync } from 'node:fs';
+          const file = 'native-artifacts/${{ matrix.obsidian }}/evidence.json';
+          const evidence = JSON.parse(readFileSync(file, 'utf8'));
+          evidence.scope = 'Native Linux Obsidian renderer in an isolated test vault on GitHub Actions. Desktop only.';
+          writeFileSync(file, JSON.stringify(evidence, null, 2));
+          JS
+      - uses: actions/upload-artifact@v7
+        with:
+          name: native-obsidian-${{ matrix.obsidian }}
+          path: native-artifacts/${{ matrix.obsidian }}/evidence.json
+          if-no-files-found: error
+          retention-days: 14
