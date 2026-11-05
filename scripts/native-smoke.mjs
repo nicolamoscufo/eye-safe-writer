@@ -94,7 +94,7 @@ try {
   assert.equal(runtime.app,version);
   // This trust decision applies only to our own freshly created QA vault and
   // the two public plugins explicitly requested for compatibility testing.
-  const trust = page.getByRole('button',{name:/I trust|Mi fido/});
+  const trust = page.getByRole('button',{name:/Trust author and enable plugins|I trust|Mi fido/i});
   if (await trust.count()) {
     // Native trust asynchronously loads plugins and then opens Community
     // Plugins. Wait for that final navigation, not just plugin constructors.
