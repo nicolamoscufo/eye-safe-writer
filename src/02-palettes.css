@@ -1105,7 +1105,7 @@
   isolation: isolate;
 }
 
-.workspace-leaf-content[data-type="markdown"] > :is(.view-header, .view-content) {
+:where(body:not(.is-mobile)) .workspace-leaf-content[data-type="markdown"] > :is(.view-header, .view-content) {
   z-index: 1;
 }
 
@@ -1117,6 +1117,13 @@ body:not(.eye-safe-no-texture) .workspace-leaf-content[data-type="markdown"]::af
   inset: 0;
   pointer-events: none;
   z-index: 0;
+}
+
+/* The floating mobile header overlaps the note. Keep Obsidian's stacking
+   order and place the texture below both children of the isolated leaf. */
+body.is-mobile:not(.eye-safe-no-texture) .workspace-leaf-content[data-type="markdown"]::before,
+body.is-mobile:not(.eye-safe-no-texture) .workspace-leaf-content[data-type="markdown"]::after {
+  z-index: -1;
 }
 
 body:not(.eye-safe-no-texture) .workspace-leaf-content[data-type="markdown"]::before {
