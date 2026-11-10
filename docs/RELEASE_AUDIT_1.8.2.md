@@ -16,11 +16,19 @@ The analysis uses the app stylesheet and the construction order of the header an
 
 ## Delivery
 
-Tested candidate in [PR #5](https://github.com/nicolamoscufo/eye-safe-writer/pull/5). Merge, the `1.8.2` tag, and publication are pending.
+Published the stable [Eye Safe Writer 1.8.2 release](https://github.com/nicolamoscufo/eye-safe-writer/releases/tag/1.8.2) on 2026-11-05.
 
-Candidate asset SHA-256 hashes
+- [PR #5](https://github.com/nicolamoscufo/eye-safe-writer/pull/5) was squash merged as [`8cdd105`](https://github.com/nicolamoscufo/eye-safe-writer/commit/8cdd1059fda43903715516c931dae3a460470d0c) with the same tree as the tested candidate. [Theme validation on main](https://github.com/nicolamoscufo/eye-safe-writer/actions/runs/42078108125) passed for that commit.
+- The annotated `1.8.2` tag resolves to that commit. The [release workflow](https://github.com/nicolamoscufo/eye-safe-writer/actions/runs/42078473328) passed and generated the draft attachments. The GitHub attestation record for `theme.css` matched the CSS digest and the release workflow invocation.
+- The authenticated draft downloads and both anonymous public downloads matched the tagged files byte for byte. The public manifest reports version `1.8.2`, and GitHub lists the release as the latest stable version.
+
+Verified asset SHA-256 hashes
 
 | Asset | SHA-256 |
 | --- | --- |
 | `manifest.json` | `f4e109f86dbd6841bb65b78b98505f64d5439232b412582c881edb5185d822ed` |
 | `theme.css` | `4295853fbe1d9a98f28b8792e57399cea067a5d12afd81be0d9d633dbb0b237f` |
+
+## Release scanner
+
+The pinned project dependency audit reported zero vulnerabilities. The release scanner reported zero errors and seven compatibility warnings. Five concern multicolumn print styles and two concern the MathJax `mjx-container` element. Native Windows QA covered PDF export and MathJax rendering.
