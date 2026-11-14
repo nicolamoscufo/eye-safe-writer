@@ -1962,7 +1962,7 @@ body.eye-safe-links-high-contrast {
 .workspace-ribbon,
 .mod-left-split,
 .mod-right-split,
-.view-header,
+:where(body:not(.is-ios.is-phone.is-floating-nav)) .view-header,
 .status-bar,
 .titlebar {
   border-color: var(--background-modifier-border);
@@ -2199,7 +2199,7 @@ body.eye-safe-ribbon-distributed:not(.is-mobile) .workspace-ribbon:is(.mod-prima
   display: none;
 }
 
-.view-header {
+:where(body:not(.is-ios.is-phone.is-floating-nav)) .view-header {
   background: color-mix(in srgb, var(--background-primary) 78%, transparent);
   border-bottom: 1px solid color-mix(in srgb, var(--background-modifier-border) 55%, transparent);
 }
@@ -2290,6 +2290,11 @@ body.eye-safe-ribbon-distributed:not(.is-mobile) .workspace-ribbon:is(.mod-prima
   transition:
     background-color var(--anim-duration-fast) ease,
     color var(--anim-duration-fast) ease;
+}
+
+/* Keep the file drawer legible and honor Obsidian's preferred text scale. */
+.is-mobile.is-ios .workspace-drawer.mod-left :is(.nav-file-title, .nav-folder-title) {
+  font-size: max(16px, var(--font-ui-medium, 16px));
 }
 
 .nav-file-title {
@@ -3023,7 +3028,8 @@ button.mod-cta {
   border: 1px solid transparent;
 }
 
-button:not(.mod-cta) {
+/* Obsidian paints the iOS note actions and their pressed and active states. */
+button:not(.mod-cta, :where(.is-mobile.is-ios .view-header .view-action.clickable-icon)) {
   background: var(--paper-panel-background-muted);
   border: 1px solid var(--paper-panel-border);
 }
