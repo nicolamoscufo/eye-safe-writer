@@ -209,7 +209,8 @@ button.mod-cta {
   border: 1px solid transparent;
 }
 
-button:not(.mod-cta) {
+/* Obsidian paints the iOS note actions and their pressed and active states. */
+button:not(.mod-cta, :where(.is-mobile.is-ios .view-header .view-action.clickable-icon)) {
   background: var(--paper-panel-background-muted);
   border: 1px solid var(--paper-panel-border);
 }
