@@ -1962,7 +1962,7 @@ body.eye-safe-links-high-contrast {
 .workspace-ribbon,
 .mod-left-split,
 .mod-right-split,
-.view-header,
+:where(body:not(.is-ios.is-phone.is-floating-nav)) .view-header,
 .status-bar,
 .titlebar {
   border-color: var(--background-modifier-border);

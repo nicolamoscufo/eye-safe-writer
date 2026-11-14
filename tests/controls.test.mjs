@@ -59,8 +59,10 @@ test('iOS floating note actions stay tappable and the file drawer follows prefer
     });
 
     const action = page.locator('[data-target="mode"]');
+    const header = page.locator('.view-header');
     const background = locator => locator.evaluate(el => getComputedStyle(el).backgroundColor);
-    assert.equal(await background(page.locator('.view-header')), 'rgba(0, 0, 0, 0)');
+    assert.equal(await background(header), 'rgba(0, 0, 0, 0)');
+    assert.equal(await header.evaluate(el => getComputedStyle(el).borderBottomColor), 'rgba(0, 0, 0, 0)');
     assert.equal(await background(action), 'rgba(0, 0, 0, 0)');
     assert.equal(await action.evaluate(el => getComputedStyle(el).borderTopWidth), '0px');
     const { width, height } = await action.boundingBox();
@@ -71,6 +73,8 @@ test('iOS floating note actions stay tappable and the file drawer follows prefer
     for (const name of ['.nav-folder-title-content', '.nav-file-title-content']) {
       assert.equal(await page.locator(name).evaluate(el => getComputedStyle(el).fontSize), '20px');
     }
+    await page.locator('body').evaluate(el => el.style.setProperty('--font-ui-medium', '14px'));
+    assert.equal(await page.locator('.nav-file-title-content').evaluate(el => getComputedStyle(el).fontSize), '16px');
 
     async function tap(target, expected = target) {
       const bounds = await page.locator(`[data-target="${target}"]`).boundingBox();
