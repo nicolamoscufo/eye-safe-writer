@@ -1,7 +1,7 @@
 # Eye Safe Writer
 
 Warm paper surfaces, quiet chrome, and eight light/dark palettes for Obsidian.
-Version **1.8.2** requires **Obsidian 1.13.0 or later**.
+Version **1.8.3** requires **Obsidian 1.13.0 or later**.
 
 ![Eye Safe Writer in Obsidian, light mode](screenshot.png)
 
@@ -14,7 +14,7 @@ Version **1.8.2** requires **Obsidian 1.13.0 or later**.
 - English/Italian study and academic callouts using ordinary Obsidian Markdown.
 - Keyboard focus indicators, reduced-motion support, system high-contrast/forced-color fallbacks, and print/PDF styles.
 
-The name is not a medical or universal accessibility guarantee. Built-in colors are tested against specified surfaces. Custom colors, snippets, plugins, and intentional dimming can change contrast. See the [1.8.1 accessibility audit](docs/RELEASE_AUDIT_1.8.1.md) for measured results and the [1.8.2 release audit](docs/RELEASE_AUDIT_1.8.2.md) for the mobile fix.
+The name is not a medical or universal accessibility guarantee. Built-in colors are tested against specified surfaces. Custom colors, snippets, plugins, and intentional dimming can change contrast. See the [1.8.1 accessibility audit](docs/RELEASE_AUDIT_1.8.1.md) for measured results and the [1.8.2 release audit](docs/RELEASE_AUDIT_1.8.2.md) for the mobile touch fix and the [1.8.3 audit](docs/RELEASE_AUDIT_1.8.3.md) for the iOS drawer and toolbar changes.
 
 ## Install and update
 

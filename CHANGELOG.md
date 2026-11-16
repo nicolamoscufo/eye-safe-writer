@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.8.3 - Unreleased
+
+- On iOS, file and folder names in the left drawer follow Obsidian’s preferred text size, with a 16 px minimum.
+- Retain Obsidian’s native styling and touch areas for the floating note actions.
+
 ## 1.8.2 - 2026-11-05
 
 - Fixed taps on the sidebar, reading/editing toggle, and note menu when Obsidian Mobile's floating toolbar overlaps the note.
