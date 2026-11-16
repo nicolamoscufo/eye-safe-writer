@@ -375,6 +375,11 @@ body.eye-safe-ribbon-distributed:not(.is-mobile) .workspace-ribbon:is(.mod-prima
   transition: opacity var(--anim-duration-fast) ease;
 }
 
+/* Opt the Android note action group out of Obsidian's raised surface. */
+:where(.is-mobile.is-android .view-header) .view-actions.mod-raised {
+  --raised: none;
+}
+
 .status-bar {
   color: var(--text-faint);
   font-size: var(--font-ui-smallest);
