@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.8.3 - Unreleased
+## 1.8.3 - 2026-11-16
 
 - On iOS, file and folder names in the left drawer follow Obsidian’s preferred text size, with a 16 px minimum.
 - On iOS, retain Obsidian’s native styling and touch areas for the floating note actions.
