@@ -2218,6 +2218,11 @@ body.eye-safe-ribbon-distributed:not(.is-mobile) .workspace-ribbon:is(.mod-prima
   transition: opacity var(--anim-duration-fast) ease;
 }
 
+/* Opt the Android note action group out of Obsidian's raised surface. */
+:where(.is-mobile.is-android .view-header) .view-actions.mod-raised {
+  --raised: none;
+}
+
 .status-bar {
   color: var(--text-faint);
   font-size: var(--font-ui-smallest);
@@ -3028,8 +3033,11 @@ button.mod-cta {
   border: 1px solid transparent;
 }
 
-/* Obsidian paints the iOS note actions and their pressed and active states. */
-button:not(.mod-cta, :where(.is-mobile.is-ios .view-header .view-action.clickable-icon)) {
+/* Let Obsidian paint the native states of mobile note actions. */
+button:not(.mod-cta, :where(
+  .is-mobile.is-ios .view-header .view-action.clickable-icon,
+  .is-mobile.is-android .view-header .view-actions .view-action.clickable-icon
+)) {
   background: var(--paper-panel-background-muted);
   border: 1px solid var(--paper-panel-border);
 }

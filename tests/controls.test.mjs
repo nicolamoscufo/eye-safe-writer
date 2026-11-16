@@ -89,6 +89,75 @@ test('iOS floating note actions stay tappable and the file drawer follows prefer
   } finally { await browser.close(); }
 });
 
+test('Android note actions have a clear background and keep native touch feedback', async () => {
+  const browser = await chromium.launch();
+  try {
+    const page = await browser.newPage({
+      viewport: { width: 393, height: 873 },
+      isMobile: true,
+      hasTouch: true,
+    });
+    // Model Obsidian Mobile 1.15.1's raised surface and clickable-icon states.
+    await page.setContent(`<!doctype html>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+        .view-header, .view-actions { display: flex; }
+        .view-actions { margin-inline-start: auto; }
+        .view-action { width: 48px; height: 48px; border: 0; }
+        .clickable-icon { color: var(--text-normal); background-color: transparent; }
+        .clickable-icon.has-active-menu { background-color: var(--background-modifier-hover); }
+        .is-phone .mod-raised { background: var(--raised, var(--background-secondary)); }
+        .is-mobile.is-floating-nav .mod-raised {
+          backdrop-filter: var(--raised, blur(8px));
+          box-shadow: var(--raised, 0 2px 4px #0003);
+          border: var(--raised, 1px solid transparent);
+        }
+      </style>
+      <body class="theme-light is-mobile is-android is-phone is-floating-nav">
+        <div class="view-header">
+          <div class="view-header-left">
+            <button class="view-action clickable-icon mod-raised" aria-label="Sidebar">${icon}</button>
+          </div>
+          <div class="view-actions mod-raised">
+            <button class="view-action clickable-icon" aria-label="Reading view">${icon}</button>
+            <button class="view-action clickable-icon" aria-label="More options">${icon}</button>
+          </div>
+        </div>
+      </body>`);
+    await page.addStyleTag({ content: theme });
+    const transparent = 'rgba(0, 0, 0, 0)';
+    const background = locator => locator.evaluate(el => getComputedStyle(el).backgroundColor);
+    const group = page.locator('.view-actions');
+    for (const mode of ['light', 'dark']) {
+      await page.locator('body').evaluate((el, mode) => {
+        el.classList.toggle('theme-light', mode === 'light');
+        el.classList.toggle('theme-dark', mode === 'dark');
+      }, mode);
+      assert.equal(await background(group), transparent, `${mode} action group`);
+      for (const property of ['backdropFilter', 'boxShadow']) {
+        assert.equal(await group.evaluate((el, property) => getComputedStyle(el)[property], property), 'none');
+      }
+      assert.notEqual(await background(page.getByRole('button', { name: 'Sidebar' })), transparent);
+      for (const name of ['Reading view', 'More options']) {
+        const action = page.getByRole('button', { name });
+        assert.equal(await background(action), transparent, `${mode} ${name}`);
+        assert.equal(await action.evaluate(el => getComputedStyle(el).borderTopWidth), '0px');
+        assert.ok(await action.locator('svg').isVisible(), `${name} icon must stay visible`);
+        const { width, height } = await action.boundingBox();
+        assert.ok(width >= 44 && height >= 44, `${name} must keep its touch area`);
+      }
+    }
+    const reading = page.getByRole('button', { name: 'Reading view' });
+    await reading.evaluate(el => el.addEventListener('click', () => { el.dataset.tapped = 'true'; }));
+    await reading.tap();
+    assert.equal(await reading.getAttribute('data-tapped'), 'true');
+    const more = page.getByRole('button', { name: 'More options' });
+    await more.evaluate(el => el.addEventListener('click', () => el.classList.add('has-active-menu')));
+    await more.tap();
+    assert.notEqual(await background(more), transparent, 'The open menu keeps its native highlight');
+  } finally { await browser.close(); }
+});
+
 test('chrome, icons, buttons, controls and focus indicators across all 16 palettes', async () => {
   const browser = await chromium.launch();
   const failures = [], report = [];
