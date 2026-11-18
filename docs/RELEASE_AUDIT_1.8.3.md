@@ -11,7 +11,11 @@
 
 ## Delivery
 
-The [1.8.3 candidate](https://github.com/nicolamoscufo/eye-safe-writer/pull/8) is unpublished. Tagging, the release workflow, and the draft and public asset comparisons are pending.
+The [release PR #8](https://github.com/nicolamoscufo/eye-safe-writer/pull/8) merged as [`5d44318f474af6421cb5aeaae6cef2e01c70f2d0`](https://github.com/nicolamoscufo/eye-safe-writer/commit/5d44318f474af6421cb5aeaae6cef2e01c70f2d0). Its tree matches candidate `47b7df7161dd1f26e23c833f6b73558bf2449151`, and tag `1.8.3` points to the merge commit.
+
+[Candidate Theme validation](https://github.com/nicolamoscufo/eye-safe-writer/actions/runs/43943535640) passed on its third attempt, including npm audit and the official validation. GitHub withdrew GHSA-fc5q-39xc-vjpf on November 18, 2026; the candidate's independent `npm audit --audit-level=moderate` reported zero vulnerabilities.
+
+The [official release workflow](https://github.com/nicolamoscufo/eye-safe-writer/actions/runs/44385331380) passed and created the draft. The [published release](https://github.com/nicolamoscufo/eye-safe-writer/releases/tag/1.8.3) is neither draft nor prerelease. Both draft attachments were downloaded with authenticated API access and their SHA-256 hashes matched the tag files; the public attachments were downloaded and matched again after publication. The public manifest reports version `1.8.3`.
 
 Candidate asset SHA-256 hashes
 
