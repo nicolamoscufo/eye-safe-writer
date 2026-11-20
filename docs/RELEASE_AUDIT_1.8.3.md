@@ -11,7 +11,7 @@
 
 ## Delivery
 
-The [1.8.3 candidate](https://github.com/nicolamoscufo/eye-safe-writer/pull/8) is unpublished. Tagging, the release workflow, and the draft and public asset comparisons are pending.
+[Eye Safe Writer 1.8.3](https://github.com/nicolamoscufo/eye-safe-writer/releases/tag/1.8.3) was published on November 18, 2026. [PR #8](https://github.com/nicolamoscufo/eye-safe-writer/pull/8) was merged as `5d44318`, the commit referenced by the `1.8.3` tag. The [release workflow](https://github.com/nicolamoscufo/eye-safe-writer/actions/runs/44385331380) succeeded. On November 19, the public attachments were downloaded and matched byte for byte against the tagged files.
 
 Candidate asset SHA-256 hashes
 
